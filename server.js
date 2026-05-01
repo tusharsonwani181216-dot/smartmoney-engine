@@ -1,3 +1,9 @@
+app.get("/", (req, res) => {
+  res.send("✅ SmartMoney Backend Running");
+});
+app.get("/api/ohlc-data", (req, res) => {
+  res.json(require("./ohlc-data.json"));
+});
 const express = require("express");
 const cors = require("cors");
 const fs = require("fs");
