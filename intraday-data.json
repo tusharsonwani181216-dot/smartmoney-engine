@@ -1,0 +1,52 @@
+{
+  "updatedAt": "2026-05-01T03:55:23.306Z",
+  "source": "Seed sample data. Click Update Now to fetch latest available data.",
+  "stocks": [
+    {
+      "market": "NSE",
+      "symbol": "RELIANCE.NS",
+      "name": "Reliance Industries",
+      "price": 2860,
+      "vwap": 2845,
+      "rsi": 58,
+      "volumeSpike": 85,
+      "openingHigh": 2855,
+      "openingLow": 2825,
+      "support": 2830,
+      "resistance": 2910,
+      "trend": "bullish",
+      "candle": "bullish"
+    },
+    {
+      "market": "NSE",
+      "symbol": "TCS.NS",
+      "name": "Tata Consultancy Services",
+      "price": 3950,
+      "vwap": 3975,
+      "rsi": 42,
+      "volumeSpike": 70,
+      "openingHigh": 3980,
+      "openingLow": 3935,
+      "support": 3910,
+      "resistance": 3995,
+      "trend": "bearish",
+      "candle": "bearish"
+    },
+    {
+      "market": "NSE",
+      "symbol": "HDFCBANK.NS",
+      "name": "HDFC Bank",
+      "price": 1560,
+      "vwap": 1552,
+      "rsi": 55,
+      "volumeSpike": 60,
+      "openingHigh": 1558,
+      "openingLow": 1540,
+      "support": 1542,
+      "resistance": 1585,
+      "trend": "bullish",
+      "candle": "bullish"
+    }
+  ],
+  "errors": []
+}

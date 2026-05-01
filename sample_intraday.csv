@@ -1,0 +1,4 @@
+market,symbol,name,price,vwap,rsi,volumeSpike,openingHigh,openingLow,support,resistance,trend,candle
+NSE,RELIANCE,Reliance Industries,2860,2845,58,85,2855,2825,2830,2910,bullish,bullish
+NSE,TCS,Tata Consultancy Services,3950,3975,42,70,3980,3935,3910,3995,bearish,bearish
+NSE,HDFCBANK,HDFC Bank,1560,1552,55,60,1558,1540,1542,1585,bullish,bullish

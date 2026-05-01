@@ -1,0 +1,44 @@
+{
+  "stocks": [
+    {
+      "market": "NSE",
+      "symbol": "RELIANCE.NS",
+      "name": "Reliance Industries"
+    },
+    {
+      "market": "NSE",
+      "symbol": "TCS.NS",
+      "name": "Tata Consultancy Services"
+    },
+    {
+      "market": "NSE",
+      "symbol": "INFY.NS",
+      "name": "Infosys"
+    },
+    {
+      "market": "NSE",
+      "symbol": "HDFCBANK.NS",
+      "name": "HDFC Bank"
+    },
+    {
+      "market": "NSE",
+      "symbol": "ICICIBANK.NS",
+      "name": "ICICI Bank"
+    },
+    {
+      "market": "NSE",
+      "symbol": "SBIN.NS",
+      "name": "State Bank of India"
+    },
+    {
+      "market": "NSE",
+      "symbol": "MARUTI.NS",
+      "name": "Maruti Suzuki"
+    },
+    {
+      "market": "NSE",
+      "symbol": "SUNPHARMA.NS",
+      "name": "Sun Pharma"
+    }
+  ]
+}

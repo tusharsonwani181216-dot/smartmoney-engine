@@ -1,0 +1,18 @@
+{
+  "name": "smartmoney-real-ohlc",
+  "version": "1.0.0",
+  "description": "SmartMoney Real OHLC Candle Engine",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "seed": "node seed-data.js",
+    "update": "node update-data.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "cors": "^2.8.5"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

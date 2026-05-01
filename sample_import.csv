@@ -1,0 +1,6 @@
+market,symbol,name,sector,price,salesGrowth,profitGrowth,debt,roe,pe,promoter,volumeGrowth,delivery,rsi,weekPos
+NSE,RELIANCE,Reliance Industries,Energy,2860,12,14,0.55,14,26,50,22,40,55,62
+NSE,TCS,Tata Consultancy Services,IT,3950,9,12,0.1,45,31,72,14,50,52,58
+NSE,HDFCBANK,HDFC Bank,Banking,1560,14,18,0.7,17,18,0,31,42,56,51
+BSE,500325,Reliance Industries,Energy,2860,12,14,0.55,14,26,50,22,40,55,62
+BSE,532540,Tata Consultancy Services,IT,3950,9,12,0.1,45,31,72,14,50,52,58
