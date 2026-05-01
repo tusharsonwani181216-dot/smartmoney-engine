@@ -6,14 +6,13 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 10000;
 
 function loadOHLC() {
   try {
-    const raw = fs.readFileSync("ohlc-data.json");
-    return JSON.parse(raw);
-  } catch {
-    return { stocks: [] };
+    return JSON.parse(fs.readFileSync("./ohlc-data.json", "utf8"));
+  } catch (err) {
+    return { error: "OHLC file load failed", details: err.message, stocks: [] };
   }
 }
 
@@ -27,21 +26,11 @@ app.get("/api/ohlc-data", (req, res) => {
 
 app.post("/api/update-now", (req, res) => {
   const data = loadOHLC();
-
   data.updatedAt = new Date().toISOString();
-  data.lastUpdateIST = new Date().toLocaleString("en-IN", {
-    timeZone: "Asia/Kolkata"
-  });
-
-  fs.writeFileSync("ohlc-data.json", JSON.stringify(data, null, 2));
-
-  res.json({
-    ok: true,
-    updated: data.lastUpdateIST,
-    count: data.stocks?.length || 0
-  });
+  fs.writeFileSync("./ohlc-data.json", JSON.stringify(data, null, 2));
+  res.json({ ok: true, updatedAt: data.updatedAt, count: data.stocks?.length || 0 });
 });
 
 app.listen(PORT, () => {
-  console.log(`✅ Backend running on ${PORT}`);
+  console.log("✅ SmartMoney Backend Running on port " + PORT);
 });
