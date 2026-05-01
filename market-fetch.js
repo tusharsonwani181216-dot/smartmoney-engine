@@ -1,64 +1,107 @@
-const yahooFinance = require('yahoo-finance2').default;
-const fs = require('fs-extra');
+const YahooFinance = require("yahoo-finance2").default;
+const yahooFinance = new YahooFinance();
 
-const NSE = [
-'RELIANCE.NS','TCS.NS','INFY.NS','HDFCBANK.NS','ICICIBANK.NS',
-'SBIN.NS','BHARTIARTL.NS','ITC.NS','LT.NS','AXISBANK.NS',
-'KOTAKBANK.NS','WIPRO.NS','TECHM.NS','SUNPHARMA.NS','TITAN.NS',
-'ULTRACEMCO.NS','MARUTI.NS','POWERGRID.NS','NTPC.NS','ONGC.NS',
-'TATAMOTORS.NS','M&M.NS','BAJFINANCE.NS','HCLTECH.NS','CIPLA.NS'
+const fs = require("fs");
+
+const SYMBOLS = [
+  "RELIANCE.NS",
+  "TCS.NS",
+  "INFY.NS",
+  "HDFCBANK.NS",
+  "ICICIBANK.NS",
+  "SBIN.NS",
+  "BHARTIARTL.NS",
+  "ITC.NS",
+  "LT.NS",
+  "AXISBANK.NS",
+  "KOTAKBANK.NS",
+  "WIPRO.NS",
+  "TECHM.NS",
+  "SUNPHARMA.NS",
+  "TITAN.NS",
+  "ULTRACEMCO.NS",
+  "MARUTI.NS",
+  "POWERGRID.NS",
+  "NTPC.NS",
+  "ONGC.NS",
+  "TATAMOTORS.NS",
+  "M&M.NS",
+  "BAJFINANCE.NS",
+  "HCLTECH.NS",
+  "CIPLA.NS"
 ];
 
-const BSE = [
-'500325.BO','532540.BO','500209.BO','500180.BO','532174.BO'
-];
+function generateCandles(price) {
+  let candles = [];
+  let base = price || 100;
 
-async function fetchStock(symbol){
-  try{
+  for (let i = 0; i < 40; i++) {
+    const open = base + (Math.random() - 0.5) * 10;
+    const close = open + (Math.random() - 0.5) * 12;
+
+    candles.push({
+      time: i,
+      open: Number(open.toFixed(2)),
+      high: Number((Math.max(open, close) + 5).toFixed(2)),
+      low: Number((Math.min(open, close) - 5).toFixed(2)),
+      close: Number(close.toFixed(2)),
+      volume: Math.floor(Math.random() * 1000000)
+    });
+
+    base = close;
+  }
+
+  return candles;
+}
+
+async function fetchStock(symbol) {
+  try {
     const q = await yahooFinance.quote(symbol);
-    const candles = [];
-    let base = q.regularMarketPrice || 100;
 
-    for(let i=0;i<60;i++){
-      candles.push({
-        time:i,
-        open:base + Math.random()*5,
-        high:base + Math.random()*10,
-        low:base - Math.random()*10,
-        close:base + Math.random()*6,
-        volume:Math.floor(Math.random()*1000000)
-      });
-    }
+    const price =
+      q.regularMarketPrice ||
+      q.postMarketPrice ||
+      q.previousClose ||
+      100;
 
     return {
-      market:symbol.includes('.BO') ? 'BSE' : 'NSE',
       symbol,
-      name:q.shortName || symbol,
-      candles
+      name: q.shortName || symbol,
+      price,
+      candles: generateCandles(price)
     };
-  }catch(e){
+  } catch (err) {
+    console.log("FAILED:", symbol, err.message);
     return null;
   }
 }
 
-async function run(){
-  const all = [...NSE, ...BSE];
+async function run() {
   const stocks = [];
 
-  for(const s of all){
-    const d = await fetchStock(s);
-    if(d) stocks.push(d);
-    console.log('Loaded', s);
+  for (const symbol of SYMBOLS) {
+    console.log("Loading:", symbol);
+
+    const data = await fetchStock(symbol);
+
+    if (data) {
+      stocks.push(data);
+    }
   }
 
-  const output = {
-    updatedAt:new Date().toISOString(),
-    stocks
-  };
+  fs.writeFileSync(
+    "ohlc-data.json",
+    JSON.stringify(
+      {
+        updatedAt: new Date().toISOString(),
+        stocks
+      },
+      null,
+      2
+    )
+  );
 
-  await fs.writeJson('./ohlc-data.json', output, {spaces:2});
-
-  console.log('DONE:', stocks.length);
+  console.log("DONE:", stocks.length);
 }
 
 run();
