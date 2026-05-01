@@ -1,9 +1,3 @@
-app.get("/", (req, res) => {
-  res.send("✅ SmartMoney Backend Running");
-});
-app.get("/api/ohlc-data", (req, res) => {
-  res.json(require("./ohlc-data.json"));
-});
 const express = require("express");
 const cors = require("cors");
 const fs = require("fs");
@@ -24,29 +18,27 @@ function loadOHLC() {
 }
 
 app.get("/", (req, res) => {
-  res.send("SmartMoney Backend Running");
+  res.send("✅ SmartMoney Backend Running");
 });
 
 app.get("/api/ohlc-data", (req, res) => {
-  const data = loadOHLC();
-  res.json(data);
+  res.json(loadOHLC());
 });
 
 app.post("/api/update-now", (req, res) => {
   const data = loadOHLC();
 
-  data.lastUpdate = new Date().toLocaleString("en-IN", {
+  data.updatedAt = new Date().toISOString();
+  data.lastUpdateIST = new Date().toLocaleString("en-IN", {
     timeZone: "Asia/Kolkata"
   });
 
-  fs.writeFileSync(
-    "ohlc-data.json",
-    JSON.stringify(data, null, 2)
-  );
+  fs.writeFileSync("ohlc-data.json", JSON.stringify(data, null, 2));
 
   res.json({
     ok: true,
-    updated: data.lastUpdate
+    updated: data.lastUpdateIST,
+    count: data.stocks?.length || 0
   });
 });
 
