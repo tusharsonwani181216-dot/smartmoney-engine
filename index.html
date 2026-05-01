@@ -1,293 +1,35 @@
 <!DOCTYPE html>
 <html lang="hi">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>SmartMoney Real OHLC</title>
 <style>
-*{box-sizing:border-box;margin:0;padding:0;font-family:Inter,Arial,sans-serif}
-body{background:#f3f6fb;color:#132033;padding:18px}.app{max-width:1360px;margin:auto}
-.topbar{background:linear-gradient(135deg,#071b3a,#123f78);color:white;border-radius:24px;padding:24px;box-shadow:0 16px 40px rgba(7,27,58,.22)}
-.topbar h1{font-size:32px;margin-bottom:8px}.topbar p{opacity:.9;line-height:1.5}.notice{margin-top:14px;background:rgba(255,255,255,.12);padding:12px 14px;border-radius:14px;font-size:14px}
-.card{background:white;border-radius:22px;padding:18px;box-shadow:0 10px 28px rgba(15,35,70,.08);border:1px solid #e5ecf6;margin-top:18px}
-h2{font-size:20px;margin-bottom:14px;color:#0b2143}
-input,select,textarea{padding:12px;border:1px solid #d7e0ec;border-radius:12px;outline:none;font-size:14px;background:#fbfdff}
-button{border:none;border-radius:14px;padding:12px 14px;font-weight:800;cursor:pointer;transition:.2s}button:hover{transform:translateY(-1px)}
-.primary{background:#0f6bdc;color:white}.secondary{background:#edf4ff;color:#0f4d9b}.danger{background:#ffecec;color:#b42318}.dark{background:#10233f;color:white}
-.toolbar{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:14px;align-items:center}.stats{display:grid;grid-template-columns:repeat(6,1fr);gap:12px;margin-bottom:18px}
-.stat{background:#f8fbff;border:1px solid #e6eef9;border-radius:18px;padding:14px}.stat small{color:#66758a;font-weight:700}.stat b{display:block;margin-top:6px;font-size:20px}
-.table-wrap{overflow-x:auto;border-radius:16px;border:1px solid #e6eef9}table{width:100%;border-collapse:collapse;min-width:1120px;background:white}
-th{background:#f0f5fb;color:#34445a;font-size:13px;text-align:left;padding:12px}td{padding:12px;border-top:1px solid #edf2f7;font-size:14px;vertical-align:middle}
-tr:hover{background:#fbfdff}.badge{display:inline-flex;padding:7px 10px;border-radius:999px;font-weight:900;font-size:12px;white-space:nowrap}
-.green{background:#e7f8ef;color:#087443}.yellow{background:#fff7dc;color:#936200}.orange{background:#fff0e6;color:#b54708}.red{background:#ffecec;color:#b42318}.gray{background:#f2f4f7;color:#667085}.blue{background:#e8f2ff;color:#0f4d9b}
-.scoreBox{height:10px;background:#e8eef6;border-radius:20px;overflow:hidden;margin-top:6px}.scoreFill{height:100%;border-radius:20px;background:linear-gradient(90deg,#f04438,#fdb022,#12b76a)}
-.hint{background:#fff7dc;border:1px solid #f7d879;color:#795500;padding:12px;border-radius:14px;line-height:1.5;margin-bottom:14px}.status{background:#f8fbff;border:1px solid #e6eef9;border-radius:14px;padding:12px;color:#667085;font-weight:700;margin-bottom:14px}
-.grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}.bigScore{text-align:center;padding:20px;border-radius:22px;background:linear-gradient(180deg,#f8fbff,#edf5ff);border:1px solid #dce9f8}.bigScore .num{font-size:54px;font-weight:950;color:#0d4f9d}
-.analysisCard{background:#f8fbff;border:1px solid #e7eef8;border-radius:16px;padding:14px;line-height:1.55;margin-top:10px}
-.analysisList{list-style:none;display:grid;gap:10px}.analysisList li{background:#f8fbff;border:1px solid #e7eef8;border-radius:14px;padding:12px;line-height:1.45}
-.chartWrap{background:#fff;border:1px solid #e6eef9;border-radius:18px;padding:14px;margin-top:14px;overflow-x:auto}.chartCanvas{width:100%;height:470px;display:block}
-.chartLegend{display:flex;gap:12px;flex-wrap:wrap;margin-top:10px;color:#667085;font-size:13px}.legendDot{width:12px;height:12px;border-radius:50%;display:inline-block;margin-right:5px}
-.footer{text-align:center;color:#667085;margin-top:18px;font-size:13px}
-@media(max-width:960px){.stats,.grid{grid-template-columns:1fr 1fr}}@media(max-width:560px){body{padding:10px}.topbar h1{font-size:24px}.stats,.grid{grid-template-columns:1fr}}
+body{font-family:Arial,sans-serif;background:#f3f6fb;color:#132033;padding:18px}.app{max-width:1200px;margin:auto}
+.top{background:#0b2b57;color:white;padding:24px;border-radius:20px}.card{background:white;margin-top:18px;padding:18px;border-radius:18px;border:1px solid #e5ecf6}
+button{padding:12px 16px;border:0;border-radius:12px;font-weight:700;margin:4px;cursor:pointer}.primary{background:#0f6bdc;color:white}.secondary{background:#edf4ff;color:#0f4d9b}
+table{width:100%;border-collapse:collapse;background:white}th,td{padding:12px;border-top:1px solid #eee;text-align:left}th{background:#f0f5fb}
+.badge{padding:6px 10px;border-radius:999px;font-weight:700}.green{background:#e7f8ef;color:#087443}.orange{background:#fff0e6;color:#b54708}.gray{background:#f2f4f7;color:#667085}
+canvas{width:100%;height:420px;border:1px solid #e5ecf6;border-radius:12px}
 </style>
 </head>
-<body>
-<div class="app">
-<section class="topbar">
-<h1>SmartMoney Real OHLC Engine</h1>
-<p>Real 5-min OHLC candle fetch + candlestick chart + VWAP/Support/Resistance + intraday signals.</p>
-<div class="notice">⚠️ Educational guide only. Yahoo connector unofficial hai. Production/live trading ke liye authorized NSE/vendor API use karo.</div>
-</section>
-
-<section class="card">
-<h2>Controls</h2>
-<div class="toolbar">
-<button class="primary" onclick="updateNow()">🔄 Update Real OHLC</button>
-<button class="secondary" onclick="loadData()">🌐 Load OHLC Data</button>
-<button class="primary" onclick="toggleAuto()" id="autoBtn">Auto Refresh OFF</button>
-<input id="refreshMin" type="number" value="5" style="width:90px"> <span>min</span>
-<input id="search" placeholder="Search symbol/company" oninput="render()" style="width:230px">
-<select id="signalFilter" onchange="render()"><option value="all">All Signals</option><option>BUY STUDY</option><option>SELL STUDY</option><option>NO TRADE</option></select>
-<input id="capital" type="number" value="10000" style="width:120px" oninput="saveRisk();render()"> <span>Capital</span>
-<input id="riskPct" type="number" value="0.5" style="width:90px" oninput="saveRisk();render()"> <span>Risk %</span>
-<input id="todayPL" type="number" value="0" style="width:120px" oninput="saveRisk();render()"> <span>Today P/L</span>
-<button class="secondary" onclick="showWatchlist()">⚙️ Watchlist</button>
+<body><div class="app">
+<div class="top"><h1>SmartMoney Real OHLC</h1><p>Render backend connected: https://smartmoney-engine-1e4g.onrender.com</p></div>
+<div class="card">
+<button class="primary" onclick="updateNow()">Update Real OHLC</button>
+<button class="secondary" onclick="loadData()">Load OHLC Data</button>
+<div id="status">Ready</div>
 </div>
-<div id="status" class="status">Status: Backend start karo → Update Real OHLC dabao.</div>
-<div class="hint"><b>Run:</b> npm install → npm run seed → npm start. Real OHLC ke liye Update Real OHLC dabao.</div>
-</section>
-
-<section class="card">
-<h2>Intraday Dashboard</h2>
-<div class="stats">
-<div class="stat"><small>Total</small><b id="total">0</b></div>
-<div class="stat"><small>Buy Study</small><b id="buyCount">0</b></div>
-<div class="stat"><small>Sell Study</small><b id="sellCount">0</b></div>
-<div class="stat"><small>No Trade</small><b id="noCount">0</b></div>
-<div class="stat"><small>Daily Lock</small><b id="lockStatus">OFF</b></div>
-<div class="stat"><small>Last Update IST</small><b id="lastUpdate" style="font-size:13px">-</b></div>
+<div class="card"><h2>Dashboard</h2><table><thead><tr><th>Stock</th><th>Signal</th><th>Price</th><th>Action</th></tr></thead><tbody id="rows"></tbody></table></div>
+<div class="card" id="chartBox" style="display:none"><h2 id="chartTitle">Chart</h2><canvas id="chart" width="1100" height="420"></canvas></div>
 </div>
-<div class="table-wrap">
-<table>
-<thead><tr><th>Stock</th><th>Signal</th><th>Score</th><th>Risk</th><th>OHLC Summary</th><th>Levels</th><th>Position</th><th>Reason</th><th>Action</th></tr></thead>
-<tbody id="rows"></tbody>
-</table>
-</div>
-<section id="summaryBox" class="card" style="box-shadow:none;margin-top:18px"></section>
-<section id="chartBox" class="card" style="box-shadow:none;margin-top:18px;display:none"></section>
-<section id="panel" class="card" style="box-shadow:none;display:none"></section>
-<section id="detailBox" class="grid"></section>
-</section>
-
-<div class="footer">Flow: Update Real OHLC → Signal Study → Chart → Broker app. No automatic trading.</div>
-</div>
-
 <script>
-const RISK_KEY='real_ohlc_risk_v1';
-let stocks=[], autoTimer=null, selectedIndex=-1;
-let risk=JSON.parse(localStorage.getItem(RISK_KEY)||'{"capital":10000,"riskPct":0.5,"todayPL":0,"dailyLossPct":2}');
-const num=v=>isNaN(parseFloat(v))?0:parseFloat(v);
-function statusMsg(m){status.textContent=m}
-function initRisk(){capital.value=risk.capital;riskPct.value=risk.riskPct;todayPL.value=risk.todayPL}
-function saveRisk(){risk={capital:num(capital.value),riskPct:num(riskPct.value),todayPL:num(todayPL.value),dailyLossPct:2};localStorage.setItem(RISK_KEY,JSON.stringify(risk))}
-function isLocked(){return risk.todayPL <= -(risk.capital*risk.dailyLossPct/100)}
-function formatIST(ts){if(!ts)return'-';try{return new Date(ts).toLocaleString('en-IN',{timeZone:'Asia/Kolkata',hour12:true,year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',second:'2-digit'})}catch(e){return ts}}
-function avg(arr){const c=arr.filter(x=>Number.isFinite(Number(x))).map(Number);return c.length?c.reduce((a,b)=>a+b,0)/c.length:0}
-function calcRsi(closes,period=14){if(closes.length<period+1)return 50;let gains=0,losses=0;for(let i=closes.length-period;i<closes.length;i++){const d=closes[i]-closes[i-1];if(d>=0)gains+=d;else losses-=d}if(losses===0)return 70;const rs=gains/losses;return Math.round((100-(100/(1+rs)))*10)/10}
-function rr(entry,sl,target){return Math.abs(entry-sl)?Math.abs(target-entry)/Math.abs(entry-sl):0}
-function metrics(s){
- const c=s.candles||[]; if(!c.length)return null;
- const last=c[c.length-1], closes=c.map(x=>x.close), highs=c.map(x=>x.high), lows=c.map(x=>x.low), vols=c.map(x=>x.volume||0);
- const vwap=avg(closes.slice(-20));
- const rsi=calcRsi(closes);
- const openingHigh=Math.max(...highs.slice(0,3));
- const openingLow=Math.min(...lows.slice(0,3));
- const support=Math.min(...lows.slice(-20));
- const resistance=Math.max(...highs.slice(-20));
- const lastVol=avg(vols.slice(-5)), baseVol=avg(vols.slice(0,Math.max(5,vols.length-5)));
- const volumeSpike=baseVol?((lastVol-baseVol)/baseVol)*100:0;
- const first=closes[0], price=last.close;
- const trend=price>vwap&&price>first?'bullish':price<vwap&&price<first?'bearish':'sideways';
- const candle=last.close>last.open?'bullish':last.close<last.open?'bearish':'neutral';
- return {price,vwap:Math.round(vwap*100)/100,rsi,openingHigh,openingLow,support,resistance,volumeSpike:Math.round(volumeSpike*10)/10,trend,candle,last};
-}
-function analyze(s){
- const m=metrics(s); if(!m)return {score:0,signal:'NO TRADE',reasons:['No OHLC data'],warnings:['Update data first'],entry:0,sl:0,target:0,qty:0,maxRisk:0,riskLevel:'High',rr:0,m:null};
- let raw=50,reasons=[],warnings=[];
- const aboveVWAP=m.price>m.vwap, belowVWAP=m.price<m.vwap;
- if(m.trend==='bullish'){raw+=10;reasons.push('Real OHLC trend bullish hai.')}
- if(m.trend==='bearish'){raw-=10;reasons.push('Real OHLC trend bearish hai.')}
- if(aboveVWAP){raw+=10;reasons.push('Price VWAP ke upar hai.')}
- if(belowVWAP){raw-=10;reasons.push('Price VWAP ke niche hai.')}
- if(m.volumeSpike>=80){raw+=12;reasons.push('Real volume spike strong hai.')}
- else if(m.volumeSpike>=30){raw+=7;reasons.push('Volume better than average hai.')}
- else {raw-=8;warnings.push('Volume weak/normal hai.')}
- if(m.rsi>=45&&m.rsi<=62){raw+=10;reasons.push('RSI healthy zone me hai.')}
- else if(m.rsi>62&&m.rsi<=70){raw+=4;warnings.push('RSI thoda high hai.')}
- else if(m.rsi>70){raw-=15;warnings.push('RSI overbought hai.')}
- else if(m.rsi<35){raw-=10;warnings.push('RSI weak hai.')}
- if(m.price>m.openingHigh){raw+=8;reasons.push('Opening range breakout.')}
- if(m.price<m.openingLow){raw-=8;reasons.push('Opening range breakdown.')}
- if(m.candle==='bullish')raw+=4; if(m.candle==='bearish')raw-=4;
- const score=Math.max(0,Math.min(96,Math.round(raw)));
- let signal='NO TRADE';
- if(isLocked()){signal='NO TRADE';warnings.push('Daily loss lock ON hai.')}
- else if(score>=72&&aboveVWAP&&m.volumeSpike>=30&&m.rsi<=70)signal='BUY STUDY';
- else if(score<=42&&belowVWAP&&m.volumeSpike>=30&&m.rsi>=30)signal='SELL STUDY';
- const entry=m.price, buySL=m.support, buyTarget=m.resistance, sellSL=m.resistance, sellTarget=m.support;
- const sl=signal==='SELL STUDY'?sellSL:buySL, target=signal==='SELL STUDY'?sellTarget:buyTarget;
- const riskPerShare=Math.abs(entry-sl), maxRisk=risk.capital*risk.riskPct/100, qty=riskPerShare?Math.floor(maxRisk/riskPerShare):0;
- const riskLevel=score>=72?'Low':score>=50?'Medium':'High';
- return {score,signal,reasons,warnings,entry,sl,target,qty,maxRisk,riskPerShare,riskLevel,rr:rr(entry,sl,target),m};
-}
-function sigClass(sig){return sig==='BUY STUDY'?'green':sig==='SELL STUDY'?'orange':'gray'}
-async function updateNow(){try{statusMsg('Status: Fetching real OHLC candles...');const res=await fetch('/api/update-now',{method:'POST'});const data=await res.json();if(!data.ok)throw new Error(data.error||'update failed');statusMsg(`Status: Real OHLC updated for ${data.count} stocks.`);await loadData()}catch(e){statusMsg('Status: OHLC update failed. '+e.message)}}
-async function loadData(){try{const res=await fetch('/api/ohlc-data');const data=await res.json();stocks=data.stocks||[];lastUpdate.textContent=formatIST(data.updatedAt);statusMsg(`Status: ${stocks.length} OHLC stocks loaded. Source: ${data.source||'-'}`);selectedIndex=stocks.length?0:-1;render()}catch(e){statusMsg('Status: backend not running. CMD: npm install, npm run seed, npm start')}}
-function toggleAuto(){if(autoTimer){clearInterval(autoTimer);autoTimer=null;autoBtn.textContent='Auto Refresh OFF';autoBtn.className='primary';return}const mins=Math.max(1,num(refreshMin.value)||5);autoTimer=setInterval(updateNow,mins*60*1000);autoBtn.textContent='Auto Refresh ON';autoBtn.className='danger';updateNow()}
-function render(){
- saveRisk();
- const q=search.value.toLowerCase(), f=signalFilter.value, rows=document.getElementById('rows');rows.innerHTML='';
- let list=stocks.map((s,i)=>({...s,idx:i,a:analyze(s)})).filter(s=>(f==='all'||s.a.signal===f)).filter(s=>String(s.symbol).toLowerCase().includes(q)||String(s.name).toLowerCase().includes(q));
- let buy=0,sell=0,no=0;stocks.forEach(s=>{const a=analyze(s);if(a.signal==='BUY STUDY')buy++;else if(a.signal==='SELL STUDY')sell++;else no++});
- total.textContent=stocks.length;buyCount.textContent=buy;sellCount.textContent=sell;noCount.textContent=no;lockStatus.textContent=isLocked()?'ON':'OFF';lockStatus.style.color=isLocked()?'#b42318':'#087443';
- if(!list.length){rows.innerHTML='<tr><td colspan="9" style="text-align:center;padding:30px;color:#667085">Real OHLC data nahi hai. Update Real OHLC dabao.</td></tr>';return}
- list.sort((a,b)=>b.a.score-a.a.score).forEach(s=>{
- const m=s.a.m;
- rows.innerHTML+=`<tr><td><b>${s.symbol}</b><br><small>${s.name||'-'} / ${s.market}</small></td><td><span class="badge ${sigClass(s.a.signal)}">${s.a.signal}</span></td><td><b>${s.a.score}/100</b><div class="scoreBox"><div class="scoreFill" style="width:${s.a.score}%"></div></div></td><td><span class="badge ${s.a.riskLevel==='Low'?'green':s.a.riskLevel==='Medium'?'yellow':'red'}">${s.a.riskLevel}</span></td><td>O ₹${m.last.open}<br>H ₹${m.last.high}<br>L ₹${m.last.low}<br>C ₹${m.last.close}<br>RSI ${m.rsi}</td><td>Entry ₹${s.a.entry}<br>SL ₹${s.a.sl}<br>Target ₹${s.a.target}<br>RR 1:${Math.round(s.a.rr*10)/10}</td><td>Qty ${s.a.qty}<br>Max Risk ₹${Math.round(s.a.maxRisk)}</td><td>${s.a.reasons.slice(0,2).join('<br>')}<br>${s.a.warnings.slice(0,1).join('<br>')}</td><td><button class="secondary" onclick="selectStock(${s.idx})">View</button> <button class="primary" onclick="showChart(${s.idx})">Chart</button></td></tr>`;
- });
- renderSummary(list); renderDetail();
-}
-function renderSummary(list){
- const box=summaryBox;if(!stocks.length){box.innerHTML='';return}
- const all=stocks.map((s,i)=>({...s,idx:i,a:analyze(s)})).sort((x,y)=>y.a.score-x.a.score);
- const buy=all.filter(s=>s.a.signal==='BUY STUDY'), sell=all.filter(s=>s.a.signal==='SELL STUDY'), no=all.filter(s=>s.a.signal==='NO TRADE');
- let mode='Wait Mode', cls='yellow', guide='Setup clear nahi hai. Beginner ke liye wait safer hai.';
- if(buy.length>0){mode='Buy Study Mode';cls='green';guide='Bullish setups available. Checklist + SL ke baad hi trade study.'}
- if(sell.length>buy.length){mode='Sell Study Mode';cls='orange';guide='Bearish pressure zyada hai. Fresh buy avoid.'}
- if(isLocked()){mode='Daily Loss Lock';cls='red';guide='Aaj new trade avoid.'}
- const top=all.slice(0,3);
- box.innerHTML=`<h2>📊 Real OHLC Analysis Summary</h2><div class="grid"><div class="analysisCard"><b>Market Mode</b><br><br><span class="badge ${cls}">${mode}</span><br><br>${guide}</div><div class="analysisCard"><b>Signals</b><br><br>BUY: <b>${buy.length}</b><br>SELL: <b>${sell.length}</b><br>NO TRADE: <b>${no.length}</b></div></div><div class="grid">${top.map(s=>`<div class="analysisCard"><b>${s.symbol}</b><br><span class="badge ${sigClass(s.a.signal)}">${s.a.signal}</span><br><br>Score: ${s.a.score}/100<br>Reason:<br>${s.a.reasons.slice(0,2).join('<br>')||'-'}</div>`).join('')}</div>`;
-}
-function selectStock(i){selectedIndex=i;renderDetail();detailBox.scrollIntoView({behavior:'smooth'})}
-function renderDetail(){
- if(selectedIndex<0||!stocks[selectedIndex]){detailBox.innerHTML='';return}
- const s=stocks[selectedIndex],a=analyze(s);
- detailBox.innerHTML=`<div class="card" style="box-shadow:none"><div class="bigScore"><small>${s.symbol} / ${s.market}</small><div class="num">${a.score}</div><span class="badge ${sigClass(a.signal)}">${a.signal}</span></div><div class="analysisCard"><b>Signal Explanation:</b><br>${a.reasons.join('<br>')||'No strong reason'}</div><div class="analysisCard"><b>Risk Warning:</b><br>${a.warnings.join('<br>')||'SL compulsory.'}</div></div><div class="card" style="box-shadow:none"><h2>Trade Plan Slip</h2><ul class="analysisList"><li><b>Entry:</b> ₹${a.entry}</li><li><b>Stop Loss:</b> ₹${a.sl}</li><li><b>Target:</b> ₹${a.target}</li><li><b>Quantity:</b> ${a.qty}</li><li><b>Max Loss:</b> ₹${Math.round(a.maxRisk)}</li><li><b>RR:</b> 1:${Math.round(a.rr*10)/10}</li></ul></div>`;
-}
-function showChart(i){
- selectedIndex=i;
- const s=stocks[i],a=analyze(s),m=a.m;
- chartBox.style.display='block';
- chartBox.innerHTML=`<h2>📈 Real OHLC Candlestick Chart — ${s.symbol}</h2><div class="chartWrap"><canvas id="candleCanvas" class="chartCanvas" width="1250" height="470"></canvas><div class="chartLegend"><span><span class="legendDot" style="background:#16a34a"></span>Bull</span><span><span class="legendDot" style="background:#dc2626"></span>Bear</span><span><span class="legendDot" style="background:#2563eb"></span>VWAP</span><span><span class="legendDot" style="background:#f59e0b"></span>Support/Resistance</span><span><span class="legendDot" style="background:#7c3aed"></span>Entry/SL/Target</span></div></div><div class="analysisCard"><b>Chart Reading:</b><br>${chartReading(s,a)}</div>`;
- drawCandles('candleCanvas',s.candles,a,m);
- renderDetail();
- chartBox.scrollIntoView({behavior:'smooth'});
-}
-function drawCandles(canvasId,candles,a,m){
- const canvas=document.getElementById(canvasId),ctx=canvas.getContext('2d'),W=canvas.width,H=canvas.height;
- ctx.clearRect(0,0,W,H);
-
- const padL=65,padR=145,padT=30,padB=50;
- const vals=[];
- candles.forEach(c=>vals.push(c.high,c.low));
- [m.vwap,m.support,m.resistance,a.entry,a.sl,a.target].forEach(v=>{if(v)vals.push(v)});
-
- let min=Math.min(...vals),max=Math.max(...vals),range=max-min||1;
- min-=range*.10; max+=range*.10;
-
- const y=v=>padT+(max-v)/(max-min)*(H-padT-padB);
- const x=i=>padL+i*(W-padL-padR)/(Math.max(1,candles.length-1));
-
- ctx.strokeStyle='#e7eef8';ctx.fillStyle='#667085';ctx.font='12px Arial';ctx.lineWidth=1;
- for(let g=0;g<=5;g++){
-  const yy=padT+g*(H-padT-padB)/5;
-  ctx.beginPath();ctx.moveTo(padL,yy);ctx.lineTo(W-padR,yy);ctx.stroke();
-  ctx.fillText('₹'+(max-g*(max-min)/5).toFixed(2),W-padR+12,yy+4);
- }
-
- const cw=Math.max(5,(W-padL-padR)/candles.length*.45);
- candles.forEach((c,i)=>{
-  const xx=x(i),yo=y(c.open),yc=y(c.close),yh=y(c.high),yl=y(c.low),bull=c.close>=c.open;
-  ctx.strokeStyle=bull?'#16a34a':'#dc2626';ctx.fillStyle=bull?'#16a34a':'#dc2626';ctx.lineWidth=2;
-  ctx.beginPath();ctx.moveTo(xx,yh);ctx.lineTo(xx,yl);ctx.stroke();
-  ctx.fillRect(xx-cw/2,Math.min(yo,yc),cw,Math.max(3,Math.abs(yc-yo)));
- });
-
- const levelItems=[
-  {val:m.vwap,color:'#2563eb',label:'VWAP',dash:true},
-  {val:m.support,color:'#f59e0b',label:'Support',dash:true},
-  {val:m.resistance,color:'#f59e0b',label:'Resistance',dash:true},
-  {val:a.entry,color:'#7c3aed',label:'Entry',dash:false},
-  {val:a.sl,color:'#dc2626',label:'SL',dash:false},
-  {val:a.target,color:'#16a34a',label:'Target',dash:false}
- ].filter(item=>item.val);
-
- // draw lines first
- levelItems.forEach(item=>{
-  const yy=y(item.val);
-  ctx.save();
-  ctx.strokeStyle=item.color;ctx.lineWidth=2;
-  if(item.dash)ctx.setLineDash([8,6]);
-  ctx.beginPath();ctx.moveTo(padL,yy);ctx.lineTo(W-padR,yy);ctx.stroke();
-  ctx.restore();
- });
-
- // stack labels on right to avoid overlap
- const labels=levelItems.map(item=>({...item,yy:y(item.val)})).sort((a,b)=>a.yy-b.yy);
- const minGap=22;
- for(let i=1;i<labels.length;i++){
-  if(labels[i].yy-labels[i-1].yy<minGap){
-    labels[i].yy=labels[i-1].yy+minGap;
-  }
- }
- // keep labels inside chart
- for(let i=labels.length-1;i>=0;i--){
-  if(labels[i].yy>H-padB-8) labels[i].yy=H-padB-8;
-  if(i>0 && labels[i].yy-labels[i-1].yy<minGap) labels[i-1].yy=labels[i].yy-minGap;
- }
- labels.forEach(item=>{
-  const text=item.label+' ₹'+Number(item.val).toFixed(2);
-  const tx=W-padR+8, ty=item.yy;
-  ctx.save();
-  ctx.font='12px Arial';
-  const tw=ctx.measureText(text).width+14;
-  ctx.fillStyle='rgba(255,255,255,.95)';
-  ctx.strokeStyle=item.color;
-  ctx.lineWidth=1;
-  roundRect(ctx,tx-6,ty-14,tw,20,8,true,true);
-  ctx.fillStyle=item.color;
-  ctx.fillText(text,tx,ty);
-  // small connector to actual line
-  ctx.strokeStyle=item.color;ctx.setLineDash([3,4]);
-  ctx.beginPath();ctx.moveTo(W-padR-4,y(item.val));ctx.lineTo(tx-8,ty-6);ctx.stroke();
-  ctx.restore();
- });
-
- ctx.strokeStyle='#94a3b8';ctx.lineWidth=1;
- ctx.beginPath();ctx.moveTo(padL,padT);ctx.lineTo(padL,H-padB);ctx.lineTo(W-padR,H-padB);ctx.stroke();
-
- ctx.fillStyle='#667085';ctx.font='12px Arial';
- ctx.fillText('9:15',padL,H-20);
- ctx.fillText('Real 5-min OHLC candles',W/2-70,H-20);
- ctx.fillText('Now',W-padR-28,H-20);
-}
-
-function roundRect(ctx,x,y,w,h,r,fill,stroke){
- if(w<2*r)r=w/2;if(h<2*r)r=h/2;
- ctx.beginPath();
- ctx.moveTo(x+r,y);
- ctx.arcTo(x+w,y,x+w,y+h,r);
- ctx.arcTo(x+w,y+h,x,y+h,r);
- ctx.arcTo(x,y+h,x,y,r);
- ctx.arcTo(x,y,x+w,y,r);
- ctx.closePath();
- if(fill)ctx.fill();
- if(stroke)ctx.stroke();
-}
-function chartReading(s,a){let t=[];const m=a.m;if(m.price>m.vwap)t.push('Price VWAP ke upar hai.');else t.push('Price VWAP ke niche hai.');if(m.price>m.openingHigh)t.push('Opening range breakout.');else if(m.price<m.openingLow)t.push('Opening range breakdown.');else t.push('Opening range ke andar hai.');t.push(a.signal+' — sirf study signal, order nahi.');return t.join('<br>')}
-async function showWatchlist(){const res=await fetch('/api/watchlist');const data=await res.json();const txt=(data.stocks||[]).map(s=>`${s.market},${s.symbol},${s.name}`).join('\n');panel.style.display='block';panel.innerHTML=`<h2>⚙️ Watchlist</h2><textarea id="wlText" style="width:100%;height:180px">${txt}</textarea><br><br><button class="primary" onclick="saveWatchlist()">Save Watchlist</button>`;panel.scrollIntoView({behavior:'smooth'})}
-async function saveWatchlist(){const lines=wlText.value.split(/\r?\n/).map(x=>x.trim()).filter(Boolean);const stocks=lines.map(line=>{const [market,symbol,...rest]=line.split(',');return{market:(market||'NSE').trim(),symbol:(symbol||'').trim(),name:rest.join(',').trim()||symbol}});await fetch('/api/watchlist',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({stocks})});statusMsg(`Watchlist saved (${stocks.length}). Click Update Real OHLC.`)}
-initRisk();loadData();
-</script>
-</body>
-</html>
+const API="https://smartmoney-engine-1e4g.onrender.com";let stocks=[];
+function statusMsg(t){document.getElementById('status').textContent=t}
+async function updateNow(){statusMsg('Updating...');const r=await fetch(API+'/api/update-now',{method:'POST'});const d=await r.json();statusMsg(JSON.stringify(d));await loadData();}
+async function loadData(){const r=await fetch(API+'/api/ohlc-data');const d=await r.json();stocks=d.stocks||[];render();statusMsg('Loaded '+stocks.length+' stocks');}
+function signal(s){let c=s.candles||[];if(c.length<2)return 'NO TRADE';let last=c[c.length-1],first=c[0];return last.close>first.close?'BUY STUDY':last.close<first.close?'SELL STUDY':'NO TRADE'}
+function cls(x){return x==='BUY STUDY'?'green':x==='SELL STUDY'?'orange':'gray'}
+function render(){rows.innerHTML=stocks.map((s,i)=>`<tr><td><b>${s.symbol}</b><br>${s.name||''}</td><td><span class="badge ${cls(signal(s))}">${signal(s)}</span></td><td>₹${s.candles?.at(-1)?.close||'-'}</td><td><button class="primary" onclick="draw(${i})">Chart</button></td></tr>`).join('')}
+function draw(i){let s=stocks[i],c=s.candles||[];chartBox.style.display='block';chartTitle.textContent='Real OHLC Chart — '+s.symbol;let ctx=chart.getContext('2d'),W=chart.width,H=chart.height;ctx.clearRect(0,0,W,H);if(!c.length)return;let vals=[];c.forEach(x=>vals.push(x.high,x.low));let min=Math.min(...vals),max=Math.max(...vals),pad=40;let y=v=>pad+(max-v)/(max-min)*(H-pad*2);let x=i=>pad+i*(W-pad*2)/(c.length-1);c.forEach((k,i)=>{let xx=x(i),yo=y(k.open),yc=y(k.close),yh=y(k.high),yl=y(k.low),bull=k.close>=k.open;ctx.strokeStyle=bull?'#16a34a':'#dc2626';ctx.fillStyle=ctx.strokeStyle;ctx.beginPath();ctx.moveTo(xx,yh);ctx.lineTo(xx,yl);ctx.stroke();ctx.fillRect(xx-4,Math.min(yo,yc),8,Math.max(3,Math.abs(yc-yo)));});chartBox.scrollIntoView({behavior:'smooth'})}
+loadData();
+</script></body></html>

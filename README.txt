@@ -1,26 +1,15 @@
-SmartMoney Real OHLC Candle Engine
+SmartMoney Frontend - Render Connected
 
-CMD:
+Backend connected:
+https://smartmoney-engine-1e4g.onrender.com
+
+Replace file:
+E:\smartmoney_engine\index.html
+
+Deploy:
 E:
-cd smartmoney_real_ohlc
-npm install
-npm run seed
-npm start
+cd smartmoney_engine
+firebase deploy
 
-Browser:
-http://localhost:3000
-
-Use:
-1. Update Real OHLC
-2. Load OHLC Data
-3. Chart button
-4. Real 5-min OHLC candlestick chart dikhega
-
-Important:
-- Yahoo Finance connector unofficial hai.
-- Production/live trading ke liye authorized NSE/vendor API chahiye.
-- Educational only. Not financial advice.
-
-Chart Label Fix:
-- Right side stacked labels
-- No overlap between Entry, SL, Target, VWAP, Support, Resistance
+Open:
+https://smartmoney-engine-india.web.app
