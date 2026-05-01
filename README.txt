@@ -1,17 +1,18 @@
-SmartMoney Backend First Full Build
+SmartMoney 30 Stock Ready Build
 
-Fix:
-- Backend first load: /api/summary-data
-- Fallback: /api/ohlc-data
-- Last fallback: local ohlc-data.json
-- So dashboard can show 30/50/75/100 stocks from backend, not only 4 local sample stocks.
-- Chart full candles load on click.
+Is ZIP me local ohlc-data.json me 30 stocks already added hain.
+Ab Firebase deploy ke turant baad 4 ki jagah 30 stocks dikhenge.
 
-Deploy frontend:
+Important:
+1) Firebase deploy updates frontend + local ohlc-data.json.
+2) Backend Render update ke liye git push bhi zaruri hai.
+3) Agar backend old data de raha ho tab bhi local 30 stocks fallback force fix chalega.
+
+Commands:
 firebase deploy
 
-Deploy backend:
+Backend:
 npm install
 git add .
-git commit -m "backend first full stocks"
+git commit -m "30 stock ready build"
 git push

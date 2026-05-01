@@ -228,5 +228,31 @@ function updateLastDate(v){if(v)lastDataUpdate.textContent=new Date(v).toLocaleS
 setInterval(updateClock,1000);
 showApp();
 </script>
+
+<script>
+/* 30 STOCK READY FORCE FIX */
+(function(){
+  const oldLoad = window.loadData;
+  window.loadData = async function(){
+    if(oldLoad) await oldLoad();
+    try{
+      if(!Array.isArray(window.stocks) || window.stocks.length <= 4){
+        const r = await fetch("./ohlc-data.json", {cache:"no-store"});
+        const d = await r.json();
+        if(d.stocks && d.stocks.length > 4){
+          if(typeof toSummary === "function") window.stocks = toSummary(d).stocks;
+          else window.stocks = d.stocks;
+          window.rawFullData = d;
+          if(typeof renderAll === "function") renderAll();
+          const st = document.getElementById("loadStatus");
+          if(st) st.textContent = "30 stocks ready";
+        }
+      }
+    }catch(e){}
+  };
+  window.addEventListener("DOMContentLoaded",()=>setTimeout(()=>window.loadData&&window.loadData(),700));
+})();
+</script>
+
 </body>
 </html>
