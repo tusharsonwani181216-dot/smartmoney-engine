@@ -1,9 +1,11 @@
 {
-  "name": "smartmoney-engine",
-  "version": "1.0.0",
+  "name": "smartmoney-nse-bse-login",
+  "version": "2.0.0",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "seed": "node seed-data.js",
+    "update": "node update-data.js"
   },
   "dependencies": {
     "cors": "^2.8.5",

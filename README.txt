@@ -1,15 +1,22 @@
-SmartMoney Frontend - Render Connected
+SmartMoney NSE+BSE Login Dashboard
 
-Backend connected:
-https://smartmoney-engine-1e4g.onrender.com
+Replace full folder files into E:\smartmoney_engine or copy:
+- index.html
+- server.js
+- update-data.js
+- seed-data.js
+- package.json
+- watchlist.json
 
-Replace file:
-E:\smartmoney_engine\index.html
+Commands:
+npm install
+npm run seed
+git add .
+git commit -m "nse bse login dashboard"
+git push
 
-Deploy:
-E:
-cd smartmoney_engine
+Firebase:
 firebase deploy
 
-Open:
-https://smartmoney-engine-india.web.app
+Render:
+Manual Deploy -> Clear build cache & deploy

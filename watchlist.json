@@ -32,6 +32,46 @@
     },
     {
       "market": "NSE",
+      "symbol": "BHARTIARTL.NS",
+      "name": "Bharti Airtel"
+    },
+    {
+      "market": "NSE",
+      "symbol": "ITC.NS",
+      "name": "ITC"
+    },
+    {
+      "market": "NSE",
+      "symbol": "LT.NS",
+      "name": "Larsen & Toubro"
+    },
+    {
+      "market": "NSE",
+      "symbol": "AXISBANK.NS",
+      "name": "Axis Bank"
+    },
+    {
+      "market": "NSE",
+      "symbol": "KOTAKBANK.NS",
+      "name": "Kotak Mahindra Bank"
+    },
+    {
+      "market": "NSE",
+      "symbol": "HINDUNILVR.NS",
+      "name": "Hindustan Unilever"
+    },
+    {
+      "market": "NSE",
+      "symbol": "BAJFINANCE.NS",
+      "name": "Bajaj Finance"
+    },
+    {
+      "market": "NSE",
+      "symbol": "ASIANPAINT.NS",
+      "name": "Asian Paints"
+    },
+    {
+      "market": "NSE",
       "symbol": "MARUTI.NS",
       "name": "Maruti Suzuki"
     },
@@ -39,6 +79,401 @@
       "market": "NSE",
       "symbol": "SUNPHARMA.NS",
       "name": "Sun Pharma"
+    },
+    {
+      "market": "NSE",
+      "symbol": "TITAN.NS",
+      "name": "Titan Company"
+    },
+    {
+      "market": "NSE",
+      "symbol": "ULTRACEMCO.NS",
+      "name": "UltraTech Cement"
+    },
+    {
+      "market": "NSE",
+      "symbol": "WIPRO.NS",
+      "name": "Wipro"
+    },
+    {
+      "market": "NSE",
+      "symbol": "HCLTECH.NS",
+      "name": "HCL Technologies"
+    },
+    {
+      "market": "NSE",
+      "symbol": "TECHM.NS",
+      "name": "Tech Mahindra"
+    },
+    {
+      "market": "NSE",
+      "symbol": "NTPC.NS",
+      "name": "NTPC"
+    },
+    {
+      "market": "NSE",
+      "symbol": "POWERGRID.NS",
+      "name": "Power Grid"
+    },
+    {
+      "market": "NSE",
+      "symbol": "TATASTEEL.NS",
+      "name": "Tata Steel"
+    },
+    {
+      "market": "NSE",
+      "symbol": "JSWSTEEL.NS",
+      "name": "JSW Steel"
+    },
+    {
+      "market": "NSE",
+      "symbol": "ONGC.NS",
+      "name": "ONGC"
+    },
+    {
+      "market": "NSE",
+      "symbol": "COALINDIA.NS",
+      "name": "Coal India"
+    },
+    {
+      "market": "NSE",
+      "symbol": "ADANIENT.NS",
+      "name": "Adani Enterprises"
+    },
+    {
+      "market": "NSE",
+      "symbol": "ADANIPORTS.NS",
+      "name": "Adani Ports"
+    },
+    {
+      "market": "NSE",
+      "symbol": "M&M.NS",
+      "name": "Mahindra & Mahindra"
+    },
+    {
+      "market": "NSE",
+      "symbol": "TATAMOTORS.NS",
+      "name": "Tata Motors"
+    },
+    {
+      "market": "NSE",
+      "symbol": "EICHERMOT.NS",
+      "name": "Eicher Motors"
+    },
+    {
+      "market": "NSE",
+      "symbol": "BAJAJFINSV.NS",
+      "name": "Bajaj Finserv"
+    },
+    {
+      "market": "NSE",
+      "symbol": "NESTLEIND.NS",
+      "name": "Nestle India"
+    },
+    {
+      "market": "NSE",
+      "symbol": "GRASIM.NS",
+      "name": "Grasim"
+    },
+    {
+      "market": "NSE",
+      "symbol": "CIPLA.NS",
+      "name": "Cipla"
+    },
+    {
+      "market": "NSE",
+      "symbol": "DRREDDY.NS",
+      "name": "Dr Reddy's"
+    },
+    {
+      "market": "NSE",
+      "symbol": "DIVISLAB.NS",
+      "name": "Divi's Laboratories"
+    },
+    {
+      "market": "NSE",
+      "symbol": "APOLLOHOSP.NS",
+      "name": "Apollo Hospitals"
+    },
+    {
+      "market": "NSE",
+      "symbol": "HEROMOTOCO.NS",
+      "name": "Hero MotoCorp"
+    },
+    {
+      "market": "NSE",
+      "symbol": "BRITANNIA.NS",
+      "name": "Britannia"
+    },
+    {
+      "market": "NSE",
+      "symbol": "BPCL.NS",
+      "name": "BPCL"
+    },
+    {
+      "market": "NSE",
+      "symbol": "HINDALCO.NS",
+      "name": "Hindalco"
+    },
+    {
+      "market": "NSE",
+      "symbol": "INDUSINDBK.NS",
+      "name": "IndusInd Bank"
+    },
+    {
+      "market": "NSE",
+      "symbol": "UPL.NS",
+      "name": "UPL"
+    },
+    {
+      "market": "NSE",
+      "symbol": "BAJAJ-AUTO.NS",
+      "name": "Bajaj Auto"
+    },
+    {
+      "market": "NSE",
+      "symbol": "SHREECEM.NS",
+      "name": "Shree Cement"
+    },
+    {
+      "market": "NSE",
+      "symbol": "TATACONSUM.NS",
+      "name": "Tata Consumer"
+    },
+    {
+      "market": "NSE",
+      "symbol": "SBILIFE.NS",
+      "name": "SBI Life"
+    },
+    {
+      "market": "NSE",
+      "symbol": "HDFCLIFE.NS",
+      "name": "HDFC Life"
+    },
+    {
+      "market": "BSE",
+      "symbol": "RELIANCE.BO",
+      "name": "Reliance Industries"
+    },
+    {
+      "market": "BSE",
+      "symbol": "TCS.BO",
+      "name": "Tata Consultancy Services"
+    },
+    {
+      "market": "BSE",
+      "symbol": "INFY.BO",
+      "name": "Infosys"
+    },
+    {
+      "market": "BSE",
+      "symbol": "HDFCBANK.BO",
+      "name": "HDFC Bank"
+    },
+    {
+      "market": "BSE",
+      "symbol": "ICICIBANK.BO",
+      "name": "ICICI Bank"
+    },
+    {
+      "market": "BSE",
+      "symbol": "SBIN.BO",
+      "name": "State Bank of India"
+    },
+    {
+      "market": "BSE",
+      "symbol": "BHARTIARTL.BO",
+      "name": "Bharti Airtel"
+    },
+    {
+      "market": "BSE",
+      "symbol": "ITC.BO",
+      "name": "ITC"
+    },
+    {
+      "market": "BSE",
+      "symbol": "LT.BO",
+      "name": "Larsen & Toubro"
+    },
+    {
+      "market": "BSE",
+      "symbol": "AXISBANK.BO",
+      "name": "Axis Bank"
+    },
+    {
+      "market": "BSE",
+      "symbol": "KOTAKBANK.BO",
+      "name": "Kotak Mahindra Bank"
+    },
+    {
+      "market": "BSE",
+      "symbol": "HINDUNILVR.BO",
+      "name": "Hindustan Unilever"
+    },
+    {
+      "market": "BSE",
+      "symbol": "BAJFINANCE.BO",
+      "name": "Bajaj Finance"
+    },
+    {
+      "market": "BSE",
+      "symbol": "ASIANPAINT.BO",
+      "name": "Asian Paints"
+    },
+    {
+      "market": "BSE",
+      "symbol": "MARUTI.BO",
+      "name": "Maruti Suzuki"
+    },
+    {
+      "market": "BSE",
+      "symbol": "SUNPHARMA.BO",
+      "name": "Sun Pharma"
+    },
+    {
+      "market": "BSE",
+      "symbol": "TITAN.BO",
+      "name": "Titan Company"
+    },
+    {
+      "market": "BSE",
+      "symbol": "ULTRACEMCO.BO",
+      "name": "UltraTech Cement"
+    },
+    {
+      "market": "BSE",
+      "symbol": "WIPRO.BO",
+      "name": "Wipro"
+    },
+    {
+      "market": "BSE",
+      "symbol": "HCLTECH.BO",
+      "name": "HCL Technologies"
+    },
+    {
+      "market": "BSE",
+      "symbol": "TECHM.BO",
+      "name": "Tech Mahindra"
+    },
+    {
+      "market": "BSE",
+      "symbol": "NTPC.BO",
+      "name": "NTPC"
+    },
+    {
+      "market": "BSE",
+      "symbol": "POWERGRID.BO",
+      "name": "Power Grid"
+    },
+    {
+      "market": "BSE",
+      "symbol": "TATASTEEL.BO",
+      "name": "Tata Steel"
+    },
+    {
+      "market": "BSE",
+      "symbol": "JSWSTEEL.BO",
+      "name": "JSW Steel"
+    },
+    {
+      "market": "BSE",
+      "symbol": "ONGC.BO",
+      "name": "ONGC"
+    },
+    {
+      "market": "BSE",
+      "symbol": "COALINDIA.BO",
+      "name": "Coal India"
+    },
+    {
+      "market": "BSE",
+      "symbol": "ADANIENT.BO",
+      "name": "Adani Enterprises"
+    },
+    {
+      "market": "BSE",
+      "symbol": "ADANIPORTS.BO",
+      "name": "Adani Ports"
+    },
+    {
+      "market": "BSE",
+      "symbol": "M&M.BO",
+      "name": "Mahindra & Mahindra"
+    },
+    {
+      "market": "BSE",
+      "symbol": "TATAMOTORS.BO",
+      "name": "Tata Motors"
+    },
+    {
+      "market": "BSE",
+      "symbol": "EICHERMOT.BO",
+      "name": "Eicher Motors"
+    },
+    {
+      "market": "BSE",
+      "symbol": "BAJAJFINSV.BO",
+      "name": "Bajaj Finserv"
+    },
+    {
+      "market": "BSE",
+      "symbol": "NESTLEIND.BO",
+      "name": "Nestle India"
+    },
+    {
+      "market": "BSE",
+      "symbol": "GRASIM.BO",
+      "name": "Grasim"
+    },
+    {
+      "market": "BSE",
+      "symbol": "CIPLA.BO",
+      "name": "Cipla"
+    },
+    {
+      "market": "BSE",
+      "symbol": "DRREDDY.BO",
+      "name": "Dr Reddy's"
+    },
+    {
+      "market": "BSE",
+      "symbol": "DIVISLAB.BO",
+      "name": "Divi's Laboratories"
+    },
+    {
+      "market": "BSE",
+      "symbol": "APOLLOHOSP.BO",
+      "name": "Apollo Hospitals"
+    },
+    {
+      "market": "BSE",
+      "symbol": "HEROMOTOCO.BO",
+      "name": "Hero MotoCorp"
+    },
+    {
+      "market": "BSE",
+      "symbol": "BRITANNIA.BO",
+      "name": "Britannia"
+    },
+    {
+      "market": "BSE",
+      "symbol": "BPCL.BO",
+      "name": "BPCL"
+    },
+    {
+      "market": "BSE",
+      "symbol": "HINDALCO.BO",
+      "name": "Hindalco"
+    },
+    {
+      "market": "BSE",
+      "symbol": "INDUSINDBK.BO",
+      "name": "IndusInd Bank"
+    },
+    {
+      "market": "BSE",
+      "symbol": "UPL.BO",
+      "name": "UPL"
     }
   ]
 }
