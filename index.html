@@ -1,258 +1,188 @@
-<!DOCTYPE html>
-<html lang="hi">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SmartMoney Pro</title>
-<style>
-*{box-sizing:border-box;margin:0;padding:0;font-family:Inter,Arial,sans-serif}
-body{background:radial-gradient(circle at top left,rgba(15,107,220,.12),transparent 34%),linear-gradient(180deg,#f6f9ff,#edf3fb);color:#071b3a}
-.hidden{display:none!important}.app{max-width:1420px;margin:auto;padding:18px}
-.loginPage{min-height:100vh;display:grid;place-items:center;background:linear-gradient(135deg,#071b3a,#0f4d9b)}
-.loginCard{width:min(430px,92vw);background:#fff;border-radius:28px;padding:30px;box-shadow:0 25px 70px rgba(0,0,0,.25)}
-.loginCard h1{font-size:32px;margin-bottom:8px}.loginCard input{width:100%;margin:8px 0 12px}
-input,select{padding:13px;border:1px solid #d9e5f2;border-radius:14px;background:#fff;font-size:14px;outline:none}
-button{border:none;border-radius:14px;padding:12px 16px;font-weight:900;cursor:pointer;transition:.18s;pointer-events:auto!important}
-button:hover{transform:translateY(-1px)}
-.primary{background:linear-gradient(135deg,#0f6bdc,#064ca8);color:#fff;box-shadow:0 10px 20px rgba(15,107,220,.20)}
-.secondary{background:#edf4ff;color:#064ca8}.danger{background:#ffe4e8;color:#b42318}.groww{background:#00b386;color:white}.tv{background:#2962ff;color:white}
-.hero{background:linear-gradient(135deg,#071b3a,#0f6bdc);color:#fff;border-radius:28px;padding:26px;box-shadow:0 18px 45px rgba(7,27,58,.22);display:flex;justify-content:space-between;gap:18px;align-items:center}
-.hero h1{font-size:34px;margin-bottom:6px}.hero p{opacity:.92}.userBox{text-align:right;line-height:1.5}
-.card{background:white;border:1px solid #dfeaf7;border-radius:24px;padding:20px;margin-top:18px;box-shadow:0 14px 36px rgba(15,35,70,.08)}
-.nav{position:sticky;top:0;z-index:50;background:rgba(243,246,251,.88);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.55);border-radius:24px;padding:12px;display:flex;gap:10px;flex-wrap:wrap;margin-top:18px;box-shadow:0 10px 28px rgba(15,35,70,.08)}
-.nav button{background:#edf4ff;color:#064ca8}.nav button.active{background:linear-gradient(135deg,#0f6bdc,#064ca8);color:white}
-.page{display:none}.page.active{display:block}
-.toolbar{display:flex;gap:10px;flex-wrap:wrap;align-items:center;background:#f8fbff;border:1px solid #e4edf8;border-radius:20px;padding:12px;margin-top:12px}
-.modeSwitch{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}.modeBtn{background:#edf4ff;color:#064ca8}.modeBtn.active{background:linear-gradient(135deg,#0f6bdc,#064ca8);color:white}
-.stats{display:grid;grid-template-columns:repeat(6,1fr);gap:12px;margin-top:14px}
-.stat{background:linear-gradient(180deg,#fff,#f4f8ff);border:1px solid #dfeaf7;border-radius:18px;padding:14px;box-shadow:0 10px 24px rgba(15,35,70,.06)}
-.stat small{display:block;color:#64748b;text-transform:uppercase;font-size:11px;font-weight:900;letter-spacing:.4px}.stat b{display:block;font-size:25px;margin-top:6px;color:#061b39}
-.dateTimeBar{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:14px}
-.dateTimeCard{background:#f8fbff;border:1px solid #e4edf8;border-radius:18px;padding:14px;box-shadow:0 8px 20px rgba(15,35,70,.06)}
-.dateTimeCard small{display:block;color:#64748b;font-size:11px;font-weight:900;text-transform:uppercase;margin-bottom:5px}.dateTimeCard b{font-size:18px}
-.simpleGrid,.gemGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:14px}
-.simpleCard,.panel{background:#fff;border:1px solid #dfeaf7;border-radius:22px;padding:18px;box-shadow:0 12px 28px rgba(15,35,70,.08);line-height:1.45}
-.logo{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,#0f6bdc,#071b3a);color:white;font-weight:950;box-shadow:0 8px 18px rgba(15,107,220,.20)}
-.stockCell{display:flex;align-items:center;gap:10px}.muted{color:#667085;font-size:13px}
-.badge{display:inline-block;padding:8px 11px;border-radius:999px;font-weight:950;font-size:12px;white-space:nowrap}
-.buy{background:#dcfae6;color:#087443}.wait{background:#fff7dc;color:#936200}.avoid{background:#ffe4e8;color:#b42318}.sell{background:#fff0e6;color:#b54708}
-.infoBox{background:#f8fbff;border:1px solid #e4edf8;border-radius:16px;padding:12px;margin-top:10px;line-height:1.55}
-.actionBtns{display:flex;gap:8px;flex-wrap:wrap}
-.tableWrap{overflow-x:auto;border-radius:18px;box-shadow:0 12px 32px rgba(15,35,70,.08);margin-top:14px}
-table{width:100%;min-width:1120px;border-collapse:collapse;background:white;border-radius:18px;overflow:hidden}
-th{background:#eaf2fb;color:#21354f;text-align:left;padding:13px;font-size:12px;text-transform:uppercase;letter-spacing:.35px}
-td{padding:14px;border-top:1px solid #edf2f7;vertical-align:middle}tr:hover td{background:#f8fbff}
-.scoreBar{height:9px;border-radius:999px;background:#e8eef6;overflow:hidden;margin-top:6px}.scoreFill{height:100%;background:linear-gradient(90deg,#f04438,#fdb022,#12b76a)}
-.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.levelPanel{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:14px}
-.levelChip{background:#fff;border:1px solid #dbe7f5;border-radius:14px;padding:12px 14px;font-weight:900;line-height:1.3;box-shadow:0 6px 16px rgba(15,35,70,.06)}.levelChip small{display:block;color:#132033;margin-top:4px;font-size:15px}
-.chartWrap{background:#fff;border:1px solid #e4edf8;border-radius:18px;padding:14px;overflow:auto;margin-top:14px}canvas{display:block;width:100%;min-width:980px;height:470px}
-.heatmap{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}.heatTile{border-radius:16px;padding:12px;min-height:88px;border:1px solid #e7eef8;cursor:pointer;line-height:1.35}.heatTile strong{font-size:20px;display:block;margin-top:6px}.heatGreen{background:#dcfae6}.heatRed{background:#ffe4e8}.heatYellow{background:#fff7dc}.heatBlue{background:#e8f2ff}
-.statusPill{display:inline-block;padding:8px 12px;border-radius:999px;background:#e8f2ff;color:#0f4d9b;font-weight:900}
-@media(max-width:1000px){.stats,.grid4,.dateTimeBar{grid-template-columns:1fr 1fr}.simpleGrid,.gemGrid{grid-template-columns:1fr 1fr}.heatmap{grid-template-columns:repeat(3,1fr)}.hero{display:block}.userBox{text-align:left;margin-top:12px}}
-@media(max-width:620px){.app{padding:10px}.stats,.simpleGrid,.gemGrid,.grid4,.dateTimeBar{grid-template-columns:1fr}.heatmap{grid-template-columns:1fr 1fr}.hero h1{font-size:25px}.nav{display:grid;grid-template-columns:1fr 1fr}}
-</style>
-</head>
-<body>
-<section id="loginPage" class="loginPage">
-  <div class="loginCard">
-    <h1>SmartMoney Pro</h1>
-    <input id="loginName" placeholder="Name">
-    <input id="loginMobile" placeholder="Mobile / User ID">
-    <button class="primary" style="width:100%" onclick="login()">Login</button>
-  </div>
-</section>
+function getMarketSession() {
+  const now = new Date();
+  const ist = new Date(now.toLocaleString("en-US", { timeZone: "Asia/Kolkata" }));
 
-<main id="mainApp" class="app hidden">
-  <section class="hero">
-    <div><h1>SmartMoney Pro</h1><p>AI Intraday Scanner</p></div>
-    <div class="userBox"><b id="userName"></b><br><span id="userId"></span><br><button class="secondary" onclick="logout()">Logout</button></div>
-  </section>
-  <section class="nav">
-    <button class="active" onclick="openPage('dashboard',this)">Dashboard</button>
-    <button onclick="openPage('heatmap',this)">Heatmap</button>
-    <button onclick="openPage('index',this)">Index</button>
-    <button onclick="openPage('group',this)">Group</button>
-    <button onclick="openPage('hidden',this)">Hidden Gems</button>
-    <button onclick="openPage('option',this)">Option Chain</button>
-    <button onclick="openPage('chart',this)">Chart</button>
-  </section>
+  const day = ist.getDay();
+  const mins = ist.getHours() * 60 + ist.getMinutes();
 
-  <section id="dashboard" class="page active card">
-    <h2>Dashboard</h2>
-    <div class="toolbar">
-      <select id="marketSelect"><option value="ALL">NSE + BSE</option><option value="NSE">NSE</option><option value="BSE">BSE</option></select>
-      <select id="limitSelect"><option value="30">30 Stocks</option><option value="50">50 Stocks</option><option value="75">75 Stocks</option><option value="100">100 Stocks</option></select>
-      <button class="primary" onclick="loadData()">Load Data</button>
-      <button class="secondary" onclick="updateNow()">Update Market</button>
-      <button class="secondary" id="autoBtn" onclick="toggleAuto()">Auto OFF</button>
-      <input id="search" placeholder="Search stock" oninput="renderAll()" style="width:220px">
-      <input id="capital" type="number" value="10000" style="width:120px" oninput="saveRisk();renderAll()"><span>Capital</span>
-      <input id="riskPct" type="number" value="0.5" style="width:90px" oninput="saveRisk();renderAll()"><span>Risk %</span>
-      <span id="loadStatus" class="statusPill">Backend first</span>
-    </div>
-    <div class="dateTimeBar">
-      <div class="dateTimeCard"><small>Today Date</small><b id="todayDate">-</b></div>
-      <div class="dateTimeCard"><small>Current Time IST</small><b id="currentTimeIST">-</b></div>
-      <div class="dateTimeCard"><small>Last Data Update</small><b id="lastDataUpdate">-</b></div>
-    </div>
-    <div class="modeSwitch"><button id="simpleBtn" class="modeBtn active" onclick="setMode('simple')">Simple</button><button id="expertBtn" class="modeBtn" onclick="setMode('expert')">Expert</button></div>
-    <div id="dashStats" class="stats"></div>
-    <div id="simpleView"></div>
-    <div id="expertView" class="hidden"></div>
-  </section>
+  if (day === 0 || day === 6) {
+    return { status: "MARKET CLOSED", action: "NO TRADE", cls: "avoid" };
+  }
 
-  <section id="heatmap" class="page card"><h2>Live Heatmap</h2><div id="heatmapBox" class="heatmap"></div></section>
-  <section id="index" class="page card"><h2>Index Analysis</h2><div class="toolbar"><select id="indexSelect" onchange="renderIndex()"><option value="NIFTY50">NIFTY 50</option><option value="BANKNIFTY">BANK NIFTY</option><option value="FINNIFTY">FINNIFTY</option><option value="SENSEX">SENSEX</option></select></div><div id="indexBox"></div></section>
-  <section id="group" class="page card"><h2>Group Analysis</h2><div class="toolbar"><select id="groupSelect" onchange="renderGroup()"><option value="IT">IT</option><option value="AUTO">Auto</option><option value="PHARMA">Pharma</option><option value="BANKNIFTY">Banking</option></select></div><div id="groupBox"></div></section>
-  <section id="hidden" class="page card"><h2>Hidden Gems</h2><div id="hiddenBox"></div></section>
-  <section id="option" class="page card"><h2>Option Chain AI</h2><div class="toolbar"><select id="optionSelect" onchange="renderOption()"><option value="NIFTY50">NIFTY</option><option value="BANKNIFTY">BANK NIFTY</option><option value="FINNIFTY">FINNIFTY</option></select></div><div id="optionBox"></div></section>
-  <section id="chart" class="page card"><h2>Chart</h2><div id="chartBox" class="infoBox">Dashboard se kisi stock ka Chart button dabao.</div></section>
-</main>
+  if (mins < 9 * 60) {
+    return { status: "BEFORE MARKET", action: "NO TRADE", cls: "avoid" };
+  }
 
-<script>
-const API="https://smartmoney-engine-1e4q.onrender.com";
-const SESSION_KEY="sm_professional_user", MODE_KEY="sm_professional_mode", RISK_KEY="sm_professional_risk";
-let stocks=[], mode=localStorage.getItem(MODE_KEY)||"simple", autoTimer=null, currentChart=-1, fullCandlesLoaded=false, rawFullData=null;
-let risk=JSON.parse(localStorage.getItem(RISK_KEY)||'{"capital":10000,"riskPct":0.5}');
-const $=id=>document.getElementById(id), num=v=>isNaN(parseFloat(v))?0:parseFloat(v);
-const GROUPS={
-NIFTY50:["RELIANCE","TCS","INFY","HDFCBANK","ICICIBANK","SBIN","BHARTIARTL","ITC","LT","AXISBANK","KOTAKBANK","HINDUNILVR","BAJFINANCE","ASIANPAINT","MARUTI","SUNPHARMA","TITAN","ULTRACEMCO","WIPRO","HCLTECH","TECHM","NTPC","POWERGRID","TATASTEEL","JSWSTEEL","ONGC","COALINDIA","ADANIENT","ADANIPORTS","M&M","TATAMOTORS"],
-BANKNIFTY:["HDFCBANK","ICICIBANK","SBIN","AXISBANK","KOTAKBANK","INDUSINDBK","BANKBARODA","PNB","FEDERALBNK","AUBANK"],
-FINNIFTY:["HDFCBANK","ICICIBANK","SBIN","AXISBANK","KOTAKBANK","BAJFINANCE","BAJAJFINSV","HDFCLIFE","SBILIFE","ICICIPRULI"],
-SENSEX:["RELIANCE","TCS","INFY","HDFCBANK","ICICIBANK","SBIN","BHARTIARTL","ITC","LT","AXISBANK","KOTAKBANK","HINDUNILVR","BAJFINANCE","ASIANPAINT","MARUTI","SUNPHARMA","TITAN","ULTRACEMCO","WIPRO","HCLTECH"],
-IT:["TCS","INFY","WIPRO","HCLTECH","TECHM","LTIM","MPHASIS","PERSISTENT"],
-AUTO:["MARUTI","TATAMOTORS","M&M","EICHERMOT","BAJAJ-AUTO","HEROMOTOCO","TVSMOTOR","ASHOKLEY"],
-PHARMA:["SUNPHARMA","CIPLA","DRREDDY","DIVISLAB","APOLLOHOSP","LUPIN","AUROPHARMA","TORNTPHARM"]
-};
+  if (mins >= 9 * 60 && mins < 9 * 60 + 15) {
+    return { status: "PRE OPEN", action: "WAIT", cls: "wait" };
+  }
 
-function login(){localStorage.setItem(SESSION_KEY,JSON.stringify({name:loginName.value||"User",id:loginMobile.value||"Demo"}));showApp()}
-function logout(){localStorage.removeItem(SESSION_KEY);location.reload()}
-function showApp(){const u=JSON.parse(localStorage.getItem(SESSION_KEY)||"null");if(!u)return;loginPage.classList.add("hidden");mainApp.classList.remove("hidden");userName.textContent=u.name;userId.textContent=u.id;capital.value=risk.capital;riskPct.value=risk.riskPct;setMode(mode);updateClock();loadData()}
-function clean(s){return String(s||"").replace(".NS","").replace(".BO","")}
-function fmt(n){return Number(n||0).toFixed(2)}
-function avg(a){const b=a.filter(x=>Number.isFinite(Number(x))).map(Number);return b.length?b.reduce((x,y)=>x+y,0)/b.length:0}
-function calcRsi(c,p=14){if(c.length<p+1)return 50;let g=0,l=0;for(let i=c.length-p;i<c.length;i++){let d=c[i]-c[i-1];if(d>=0)g+=d;else l-=d}if(l===0)return 70;let rs=g/l;return Math.round((100-(100/(1+rs)))*10)/10}
-function metrics(s){
- const c=(s.candles||[]).slice(-80);
- if(c.length){
-  const last=c[c.length-1],cl=c.map(x=>x.close),hi=c.map(x=>x.high),lo=c.map(x=>x.low),vol=c.map(x=>x.volume||0),price=last.close,vwap=avg(cl.slice(-20)),first=cl[0],support=Math.min(...lo.slice(-20)),resistance=Math.max(...hi.slice(-20)),openingHigh=Math.max(...hi.slice(0,3)),openingLow=Math.min(...lo.slice(0,3)),base=avg(vol.slice(0,Math.max(5,vol.length-5))),spike=base?((avg(vol.slice(-5))-base)/base)*100:0;
-  return{last,price:+fmt(price),vwap:+fmt(vwap),rsi:calcRsi(cl),support:+fmt(support),resistance:+fmt(resistance),trend:price>vwap&&price>first?"Bullish":price<vwap&&price<first?"Bearish":"Range",volumeSpike:+spike.toFixed(1),openingHigh,openingLow}
- }
- const price=Number(s.price||0),vwap=Number(s.vwap||price),support=Number(s.low||price),resistance=Number(s.high||price);
- return{price:+fmt(price),vwap:+fmt(vwap),rsi:price>=vwap?58:42,support:+fmt(support),resistance:+fmt(resistance),trend:price>vwap?"Bullish":price<vwap?"Bearish":"Range",volumeSpike:0,openingHigh:resistance,openingLow:support}
+  if (mins >= 9 * 60 + 15 && mins < 9 * 60 + 30) {
+    return { status: "OPENING VOLATILE", action: "WAIT 15 MIN", cls: "wait" };
+  }
+
+  if (mins >= 9 * 60 + 30 && mins < 14 * 60 + 45) {
+    return { status: "ACTIVE MARKET", action: "BUY/SELL ALLOWED", cls: "buy" };
+  }
+
+  if (mins >= 14 * 60 + 45 && mins < 15 * 60 + 15) {
+    return { status: "LATE SESSION", action: "ONLY BEST SETUP", cls: "wait" };
+  }
+
+  if (mins >= 15 * 60 + 15 && mins < 15 * 60 + 30) {
+    return { status: "SQUARE OFF TIME", action: "EXIT / BOOK PROFIT", cls: "sell" };
+  }
+
+  return { status: "MARKET CLOSED", action: "NO FRESH TRADE", cls: "avoid" };
 }
-function perf(s){const c=(s.candles||[]).slice(-80);if(c.length){const first=c[0]?.open||0,last=c[c.length-1]?.close||0;return first?((last-first)/first)*100:0}return s.open?((Number(s.price||0)-Number(s.open||0))/Number(s.open))*100:0}
-function analyze(s){const m=metrics(s);if(!m)return{score:0,signal:"WAIT",decision:"WAIT",cls:"wait",m:null,entry:0,sl:0,target:0,qty:0,rule:"Data load"};let score=50,rs=[];if(m.trend==="Bullish"){score+=14;rs.push("Trend bullish")}if(m.trend==="Bearish"){score-=14;rs.push("Trend bearish")}if(m.price>m.vwap){score+=14;rs.push("VWAP support")}else{score-=12;rs.push("VWAP weakness")}if(m.rsi>=40&&m.rsi<=68){score+=10;rs.push("RSI safe")}else if(m.rsi>72){score-=10;rs.push("RSI high")}if(m.volumeSpike>=15){score+=7;rs.push("Volume active")}if(m.price>m.openingHigh){score+=6;rs.push("Opening breakout")}if(m.price<m.openingLow){score-=6;rs.push("Opening breakdown")}score=Math.max(0,Math.min(96,Math.round(score)));let signal="WAIT",decision="WAIT CONFIRM",cls="wait",rule="Confirm ke baad";if(score>=70&&m.price>m.vwap&&m.rsi<72){signal="BUY STUDY";decision="TRADE POSSIBLE";cls="buy";rule="Small qty + strict SL"}else if(score>=58&&m.price>m.vwap){signal="BUY STUDY";decision="WAIT CONFIRM";cls="wait";rule="Breakout confirm"}else if(score<=42&&m.price<m.vwap){signal="SELL STUDY";decision="BUY AVOID";cls="sell";rule="Weakness"}else if(score<35||m.rsi>75){signal="AVOID";decision="AVOID";cls="avoid";rule="Risk high"}const entry=m.price,sl=signal==="SELL STUDY"?m.resistance:m.support,target=signal==="SELL STUDY"?m.support:m.resistance,rps=Math.abs(entry-sl),maxRisk=(num(risk.capital)||10000)*(num(risk.riskPct)||0.5)/100,qty=rps?Math.floor(maxRisk/rps):0;return{score,signal,decision,cls,m,entry:+fmt(entry),sl:+fmt(sl),target:+fmt(target),qty,reason:rs.join(" • "),rule,risk:rps?"₹"+Math.round(maxRisk):"-"}}
-function sigClass(s){return s==="BUY STUDY"?"buy":s==="SELL STUDY"?"sell":s==="AVOID"?"avoid":"wait"}
-function saveRisk(){risk={capital:num(capital.value)||10000,riskPct:num(riskPct.value)||0.5};localStorage.setItem(RISK_KEY,JSON.stringify(risk))}
-function setMode(m){mode=m;localStorage.setItem(MODE_KEY,m);simpleBtn.classList.toggle("active",m==="simple");expertBtn.classList.toggle("active",m==="expert");simpleView.classList.toggle("hidden",m!=="simple");expertView.classList.toggle("hidden",m!=="expert");renderDashboard()}
-function openPage(id,btn){document.querySelectorAll(".page").forEach(p=>p.classList.remove("active"));$(id).classList.add("active");document.querySelectorAll(".nav button").forEach(b=>b.classList.remove("active"));if(btn)btn.classList.add("active");if(id!=="chart")currentChart=-1;window.scrollTo({top:0,behavior:"smooth"});renderAll()}
-function growwUrl(s){return"https://groww.in/search?q="+encodeURIComponent(s.name||clean(s.symbol))}
-function tvUrl(s){return"https://www.tradingview.com/chart/?symbol=NSE:"+encodeURIComponent(clean(s.symbol))}
-async function fetchJson(url,tries=2){let err;for(let i=0;i<tries;i++){try{const r=await fetch(url,{cache:"no-store"});if(!r.ok)throw Error("HTTP "+r.status);return await r.json()}catch(e){err=e;await new Promise(res=>setTimeout(res,600))}}throw err}
-function toSummary(data){return{updatedAt:data.updatedAt,stocks:(data.stocks||[]).map(s=>{const c=s.candles||[],last=c[c.length-1]||{},recent=c.slice(-25),cl=recent.map(x=>Number(x.close)).filter(Number.isFinite),hi=recent.map(x=>Number(x.high)).filter(Number.isFinite),lo=recent.map(x=>Number(x.low)).filter(Number.isFinite),first=c[0]||last;return{market:s.market,symbol:s.symbol,name:s.name,price:Number(last.close||0),open:Number(first.open||last.open||0),vwap:+fmt(avg(cl)),high:+fmt(hi.length?Math.max(...hi):last.high||0),low:+fmt(lo.length?Math.min(...lo):last.low||0)}})}}
-async function loadData(){
- loadStatus.textContent="Loading...";
- try{
-  let d;
-  // Backend first: full 30/50/75/100 stocks will come from Render API.
-  try{
-    d = await fetchJson(API + "/api/summary-data", 2);
-    stocks = d.stocks || [];
-    rawFullData = null;
-    fullCandlesLoaded = false;
-    loadStatus.textContent = "Live ready";
-  }catch(e1){
-    // Fallback: full backend OHLC
-    try{
-      d = await fetchJson(API + "/api/ohlc-data", 2);
-      rawFullData = d;
-      stocks = toSummary(d).stocks;
-      fullCandlesLoaded = false;
-      loadStatus.textContent = "Backend OHLC";
-    }catch(e2){
-      // Last fallback: local sample file
-      d = await fetchJson("./ohlc-data.json", 1);
-      rawFullData = d;
-      stocks = toSummary(d).stocks;
-      fullCandlesLoaded = false;
-      loadStatus.textContent = "Local fallback";
+
+function analyze(s) {
+  const m = metrics(s);
+
+  if (!m) {
+    return {
+      score: 0,
+      signal: "WAIT",
+      decision: "WAIT",
+      cls: "wait",
+      m: null,
+      entry: 0,
+      sl: 0,
+      target: 0,
+      qty: 0,
+      rule: "Data load",
+      marketStatus: "-",
+      marketAction: "-"
+    };
+  }
+
+  let score = 50;
+  let rs = [];
+
+  if (m.trend === "Bullish") {
+    score += 14;
+    rs.push("Trend bullish");
+  }
+
+  if (m.trend === "Bearish") {
+    score -= 14;
+    rs.push("Trend bearish");
+  }
+
+  if (m.price > m.vwap) {
+    score += 14;
+    rs.push("VWAP support");
+  } else {
+    score -= 12;
+    rs.push("VWAP weakness");
+  }
+
+  if (m.rsi >= 40 && m.rsi <= 68) {
+    score += 10;
+    rs.push("RSI safe");
+  } else if (m.rsi > 72) {
+    score -= 10;
+    rs.push("RSI high");
+  }
+
+  if (m.volumeSpike >= 15) {
+    score += 7;
+    rs.push("Volume active");
+  }
+
+  if (m.price > m.openingHigh) {
+    score += 6;
+    rs.push("Opening breakout");
+  }
+
+  if (m.price < m.openingLow) {
+    score -= 6;
+    rs.push("Opening breakdown");
+  }
+
+  score = Math.max(0, Math.min(96, Math.round(score)));
+
+  let signal = "WAIT";
+  let decision = "WAIT CONFIRM";
+  let cls = "wait";
+  let rule = "Confirm ke baad";
+
+  if (score >= 70 && m.price > m.vwap && m.rsi < 72) {
+    signal = "BUY STUDY";
+    decision = "TRADE POSSIBLE";
+    cls = "buy";
+    rule = "Small qty + strict SL";
+  } else if (score >= 58 && m.price > m.vwap) {
+    signal = "BUY STUDY";
+    decision = "WAIT CONFIRM";
+    cls = "wait";
+    rule = "Breakout confirm";
+  } else if (score <= 42 && m.price < m.vwap) {
+    signal = "SELL STUDY";
+    decision = "BUY AVOID";
+    cls = "sell";
+    rule = "Weakness";
+  } else if (score < 35 || m.rsi > 75) {
+    signal = "AVOID";
+    decision = "AVOID";
+    cls = "avoid";
+    rule = "Risk high";
+  }
+
+  const session = getMarketSession();
+
+  if (session.action === "NO TRADE" || session.action === "NO FRESH TRADE") {
+    signal = "NO TRADE";
+    decision = "MARKET CLOSED";
+    cls = "avoid";
+    rule = "Market band hai, fresh buy/sell mat karo";
+  }
+
+  if (session.action === "WAIT" || session.action === "WAIT 15 MIN") {
+    signal = "WAIT";
+    decision = "WAIT";
+    cls = "wait";
+    rule = "Opening volatility hai, wait karo";
+  }
+
+  if (session.action === "ONLY BEST SETUP") {
+    if (score < 75) {
+      signal = "WAIT";
+      decision = "ONLY BEST SETUP";
+      cls = "wait";
+      rule = "Late session hai, sirf high score setup";
     }
   }
 
-  renderAll();
-  updateLastDate((d || {}).updatedAt);
+  if (session.action === "EXIT / BOOK PROFIT") {
+    signal = "SELL STUDY";
+    decision = "EXIT / BOOK PROFIT";
+    cls = "sell";
+    rule = "Market close se pehle position square-off karo";
+  }
 
- }catch(e){
-  loadStatus.textContent="Load failed";
-  alert("Data load fail: " + e.message);
- }
-}
-async function updateNow(){
- loadStatus.textContent="Updating...";
- try{await fetchJson(API+"/api/update-now",1)}catch(e){}
- await loadData();
-}
-function toggleAuto(){if(autoTimer){clearInterval(autoTimer);autoTimer=null;autoBtn.textContent="Auto OFF";autoBtn.className="secondary";return}autoTimer=setInterval(()=>{if(!document.hidden)loadData()},180000);autoBtn.textContent="Auto ON";autoBtn.className="danger";loadData()}
-function filtered(){const q=search.value.toLowerCase(),limit=num(limitSelect.value)||30,market=marketSelect.value;return stocks.map((s,i)=>({s,i,a:analyze(s),p:perf(s)})).filter(x=>(market==="ALL"||x.s.market===market)&&((x.s.symbol+" "+(x.s.name||"")).toLowerCase().includes(q))).sort((a,b)=>b.a.score-a.a.score).slice(0,limit)}
-function renderStats(list){dashStats.innerHTML=`<div class="stat"><small>Total</small><b>${list.length}</b></div><div class="stat"><small>Buy Study</small><b>${list.filter(x=>x.a.signal==="BUY STUDY").length}</b></div><div class="stat"><small>Wait</small><b>${list.filter(x=>x.a.signal==="WAIT").length}</b></div><div class="stat"><small>Avoid/Sell</small><b>${list.filter(x=>x.a.signal==="AVOID"||x.a.signal==="SELL STUDY").length}</b></div><div class="stat"><small>Mode</small><b>${mode==="simple"?"Simple":"Expert"}</b></div><div class="stat"><small>Loaded</small><b>${stocks.length}</b></div>`}
-function renderDashboard(){saveRisk();const list=filtered();renderStats(list);if(mode==="simple")renderSimple(list);else renderExpert(list)}
-function renderSimple(list){simpleView.innerHTML=list.length?`<div class="simpleGrid">${list.map(x=>`<div class="simpleCard"><div class="stockCell"><div class="logo">${clean(x.s.symbol)[0]||"S"}</div><div><h3>${clean(x.s.symbol)}</h3><div class="muted">${x.s.name||""} / ${x.s.market||""}</div></div></div><span class="badge ${x.a.cls}">${x.a.decision}</span><div class="infoBox"><b>Entry:</b> ₹${x.a.entry}<br><b>SL:</b> ₹${x.a.sl}<br><b>Target:</b> ₹${x.a.target}<br><b>Score:</b> ${x.a.score}/100<br><b>Perf:</b> <span style="color:${x.p>=0?'#087443':'#b42318'};font-weight:900">${x.p.toFixed(2)}%</span></div><div class="actionBtns" style="margin-top:12px"><button class="primary" onclick="showChart(${x.i})">Chart</button><button class="groww" onclick="window.open('${growwUrl(x.s)}','_blank')">Groww</button><button class="tv" onclick="window.open('${tvUrl(x.s)}','_blank')">TV</button></div></div>`).join("")}</div>`:`<div class="infoBox"><b>Data ready nahi hai.</b><br>Load Data dabao.</div>`}
-function renderExpert(list){expertView.innerHTML=list.length?`<div class="tableWrap"><table><thead><tr><th>Stock</th><th>Perf</th><th>Signal</th><th>Score</th><th>Price/VWAP/RSI</th><th>Entry/SL/Target</th><th>Qty/Risk</th><th>Decision</th><th>Action</th></tr></thead><tbody>${list.map(x=>`<tr><td><div class="stockCell"><div class="logo">${clean(x.s.symbol)[0]||"S"}</div><div><b>${clean(x.s.symbol)}</b><br><span class="muted">${x.s.name||""} / ${x.s.market||""}</span></div></div></td><td><b style="color:${x.p>=0?'#087443':'#b42318'}">${x.p.toFixed(2)}%</b></td><td><span class="badge ${sigClass(x.a.signal)}">${x.a.signal}</span></td><td><b>${x.a.score}/100</b><div class="scoreBar"><div class="scoreFill" style="width:${x.a.score}%"></div></div></td><td>₹${x.a.m?.price||"-"}<br>VWAP ₹${x.a.m?.vwap||"-"}<br>RSI ${x.a.m?.rsi||"-"}</td><td>Entry ₹${x.a.entry}<br>SL ₹${x.a.sl}<br>Target ₹${x.a.target}</td><td>Qty ${x.a.qty}<br>Risk ${x.a.risk}</td><td><span class="badge ${x.a.cls}">${x.a.decision}</span></td><td><div class="actionBtns"><button class="primary" onclick="showChart(${x.i})">Chart</button><button class="groww" onclick="window.open('${growwUrl(x.s)}','_blank')">Groww</button><button class="tv" onclick="window.open('${tvUrl(x.s)}','_blank')">TV</button></div></td></tr>`).join("")}</tbody></table></div>`:`<div class="infoBox"><b>Data ready nahi hai.</b><br>Load Data dabao.</div>`}
-function groupList(key){const arr=GROUPS[key]||[];return stocks.map((s,i)=>({s,i,a:analyze(s),p:perf(s)})).filter(x=>arr.includes(clean(x.s.symbol))).sort((a,b)=>b.p-a.p)}
-function callPut(list,key){if(!list.length)return null;const avgScore=Math.round(avg(list.map(x=>x.a.score))),avgMove=avg(list.map(x=>x.p)),buy=list.filter(x=>x.a.signal==="BUY STUDY").length,sell=list.filter(x=>x.a.signal==="SELL STUDY"||x.a.signal==="AVOID").length,ce=Math.max(5,Math.min(95,Math.round(50+avgMove*8+(buy-sell)*4))),pe=100-ce,base={NIFTY50:24000,BANKNIFTY:52000,FINNIFTY:22000,SENSEX:80000,IT:36000,AUTO:23000,PHARMA:21000}[key]||24000,spot=Math.round(base*(1+avgMove/100)),step=key==="BANKNIFTY"?100:50,strike=Math.round(spot/step)*step;let decision="NO TRADE / RANGE",cls="wait",reason="Direction clear nahi hai";if(ce>=62&&avgScore>=56){decision="CALL STUDY";cls="buy";reason="Upside strength hai"}else if(pe>=62&&(avgScore<=50||sell>buy)){decision="PUT STUDY";cls="sell";reason="Downside pressure hai"}return{avgScore,avgMove,buy,sell,ce,pe,spot,strike,decision,cls,reason}}
-function summaryCards(key,d){return`<div class="grid4"><div class="panel"><h3>${key}</h3><div style="font-size:30px;font-weight:950">${d.spot.toLocaleString("en-IN")}</div><span class="badge ${d.cls}">${d.decision}</span></div><div class="panel"><h3>Move</h3><b style="font-size:28px;color:${d.avgMove>=0?'#087443':'#b42318'}">${d.avgMove.toFixed(2)}%</b><br>Score ${d.avgScore}/100</div><div class="panel"><h3>CALL</h3><b style="font-size:28px">${d.ce}%</b><br>Buy setups ${d.buy}</div><div class="panel"><h3>PUT</h3><b style="font-size:28px">${d.pe}%</b><br>Sell/Avoid ${d.sell}</div></div>`}
-function miniTable(list){return`<div class="tableWrap"><table><thead><tr><th>Stock</th><th>Perf</th><th>Decision</th><th>Score</th><th>Entry/SL/Target</th><th>Action</th></tr></thead><tbody>${list.map(x=>`<tr><td><b>${clean(x.s.symbol)}</b><br><span class="muted">${x.s.name||""}</span></td><td><b style="color:${x.p>=0?'#087443':'#b42318'}">${x.p.toFixed(2)}%</b></td><td><span class="badge ${x.a.cls}">${x.a.decision}</span></td><td>${x.a.score}/100</td><td>Entry ₹${x.a.entry}<br>SL ₹${x.a.sl}<br>Target ₹${x.a.target}</td><td><button class="primary" onclick="showChart(${x.i})">Chart</button></td></tr>`).join("")}</tbody></table></div>`}
-function renderIndex(){const key=indexSelect.value,list=groupList(key),d=callPut(list,key);indexBox.innerHTML=!d?`<div class="infoBox">Data ready nahi hai.</div>`:`${summaryCards(key,d)}${miniTable(list.slice(0,12))}`}
-function renderGroup(){const key=groupSelect.value,list=groupList(key),d=callPut(list,key);groupBox.innerHTML=!d?`<div class="infoBox">Data ready nahi hai.</div>`:`${summaryCards(key,d)}${miniTable(list.slice(0,12))}`}
-function renderOption(){const key=optionSelect.value,list=groupList(key),d=callPut(list,key);optionBox.innerHTML=!d?`<div class="infoBox">Data ready nahi hai.</div>`:`${summaryCards(key,d)}<div class="infoBox"><b>ATM Strike:</b> ${d.strike}<br><b>CALL Strength:</b> ${d.ce}%<br><b>PUT Strength:</b> ${d.pe}%</div>`}
-function renderHeatmap(){const list=stocks.map((s,i)=>({s,i,a:analyze(s),p:perf(s)})).sort((a,b)=>Math.abs(b.p)-Math.abs(a.p)).slice(0,30);heatmapBox.innerHTML=list.map(x=>{let c=x.p>0.8?"heatGreen":x.p<-0.8?"heatRed":Math.abs(x.p)<0.25?"heatYellow":"heatBlue";return`<div class="heatTile ${c}" onclick="showChart(${x.i})"><b>${clean(x.s.symbol)}</b><br><small>${x.s.market||""}</small><strong>${x.p.toFixed(2)}%</strong><small>${x.a.decision} • ${x.a.score}/100</small></div>`}).join("")}
-function renderHidden(){const list=stocks.map((s,i)=>({s,i,a:analyze(s),p:perf(s)})).filter(x=>x.a.score>=56&&x.a.signal!=="AVOID").sort((a,b)=>b.a.score-a.a.score).slice(0,18);hiddenBox.innerHTML=`<div class="gemGrid">${list.map(x=>`<div class="simpleCard"><h3>${clean(x.s.symbol)}</h3><div class="muted">${x.s.name||""}</div><span class="badge ${x.a.cls}">${x.a.decision}</span><div class="infoBox">Score ${x.a.score}/100<br>Entry ₹${x.a.entry}<br>SL ₹${x.a.sl}<br>Target ₹${x.a.target}</div><button class="primary" onclick="showChart(${x.i})">Chart</button></div>`).join("")}</div>`}
-async function ensureFullCandles(){
- if(fullCandlesLoaded)return;
- if(rawFullData){stocks=rawFullData.stocks||[];fullCandlesLoaded=true;return}
- try{const d=await fetchJson("./ohlc-data.json",1);rawFullData=d;stocks=d.stocks||[];fullCandlesLoaded=true}catch(e){const d=await fetchJson(API+"/api/ohlc-data",1);rawFullData=d;stocks=d.stocks||[];fullCandlesLoaded=true}
-}
-async function showChart(i){
- currentChart=i;chartBox.innerHTML='<div class="infoBox"><b>Chart loading...</b></div>';
- await ensureFullCandles();
- const s=stocks[i],a=analyze(s),m=a.m;if(!s||!m)return;
- chartBox.innerHTML=`<h2>${clean(s.symbol)} — ${s.name||""}</h2><div class="grid4"><div class="panel"><h3>Decision</h3><span class="badge ${a.cls}">${a.decision}</span></div><div class="panel"><h3>Entry</h3><b>₹${a.entry}</b></div><div class="panel"><h3>SL</h3><b>₹${a.sl}</b></div><div class="panel"><h3>Target</h3><b>₹${a.target}</b></div></div><div class="chartWrap"><canvas id="candleCanvas" width="1250" height="470"></canvas></div><div class="levelPanel"><div class="levelChip" style="color:#2563eb">VWAP<small>₹${fmt(m.vwap)}</small></div><div class="levelChip" style="color:#f59e0b">Support<small>₹${fmt(m.support)}</small></div><div class="levelChip" style="color:#f59e0b">Resistance<small>₹${fmt(m.resistance)}</small></div><div class="levelChip" style="color:#7c3aed">Entry<small>₹${fmt(a.entry)}</small></div><div class="levelChip" style="color:#dc2626">SL<small>₹${fmt(a.sl)}</small></div><div class="levelChip" style="color:#16a34a">Target<small>₹${fmt(a.target)}</small></div></div><div class="actionBtns" style="margin-top:12px"><button class="groww" onclick="window.open('${growwUrl(s)}','_blank')">Open Groww</button><button class="tv" onclick="window.open('${tvUrl(s)}','_blank')">TradingView</button></div>`;
- requestAnimationFrame(()=>drawChart((s.candles||[]).slice(-80),a,m));
- document.querySelectorAll(".page").forEach(p=>p.classList.remove("active"));chart.classList.add("active");document.querySelectorAll(".nav button").forEach(b=>b.classList.remove("active"));document.querySelectorAll(".nav button")[6].classList.add("active");window.scrollTo({top:0,behavior:"smooth"})
-}
-function drawChart(candles,a,m){const canvas=$("candleCanvas"),ctx=canvas.getContext("2d"),W=canvas.width,H=canvas.height;ctx.clearRect(0,0,W,H);if(!candles.length)return;let padL=65,padR=92,padT=30,padB=50,vals=[];candles.forEach(c=>vals.push(c.high,c.low));[m.vwap,m.support,m.resistance,a.entry,a.sl,a.target].forEach(v=>vals.push(v));let min=Math.min(...vals),max=Math.max(...vals),range=max-min||1;min-=range*.14;max+=range*.14;const y=v=>padT+(max-v)/(max-min)*(H-padT-padB),x=i=>padL+i*(W-padL-padR)/Math.max(1,candles.length-1);ctx.strokeStyle="#e7eef8";ctx.fillStyle="#667085";ctx.font="12px Arial";for(let g=0;g<=5;g++){let yy=padT+g*(H-padT-padB)/5;ctx.beginPath();ctx.moveTo(padL,yy);ctx.lineTo(W-padR,yy);ctx.stroke();ctx.fillText("₹"+(max-g*(max-min)/5).toFixed(2),W-padR+8,yy+4)}let cw=Math.max(5,(W-padL-padR)/candles.length*.45);candles.forEach((c,i)=>{let xx=x(i),yo=y(c.open),yc=y(c.close),bull=c.close>=c.open;ctx.strokeStyle=bull?"#16a34a":"#dc2626";ctx.fillStyle=ctx.strokeStyle;ctx.lineWidth=2;ctx.beginPath();ctx.moveTo(xx,y(c.high));ctx.lineTo(xx,y(c.low));ctx.stroke();ctx.fillRect(xx-cw/2,Math.min(yo,yc),cw,Math.max(3,Math.abs(yc-yo)))});function line(v,color,dash){let yy=y(v);ctx.save();ctx.strokeStyle=color;ctx.lineWidth=2;if(dash)ctx.setLineDash([8,6]);ctx.beginPath();ctx.moveTo(padL,yy);ctx.lineTo(W-padR,yy);ctx.stroke();ctx.restore()}line(m.vwap,"#2563eb",true);line(m.support,"#f59e0b",true);line(m.resistance,"#f59e0b",true);line(a.entry,"#7c3aed");line(a.sl,"#dc2626");line(a.target,"#16a34a")}
-function renderAll(){renderDashboard();renderHeatmap();renderIndex();renderGroup();renderHidden();renderOption()}
-function updateClock(){const now=new Date();todayDate.textContent=now.toLocaleDateString("en-IN",{timeZone:"Asia/Kolkata",day:"2-digit",month:"2-digit",year:"numeric"});currentTimeIST.textContent=now.toLocaleTimeString("en-IN",{timeZone:"Asia/Kolkata",hour:"2-digit",minute:"2-digit",second:"2-digit",hour12:true})}
-function updateLastDate(v){if(v)lastDataUpdate.textContent=new Date(v).toLocaleString("en-IN",{timeZone:"Asia/Kolkata",day:"2-digit",month:"2-digit",year:"numeric",hour:"2-digit",minute:"2-digit",second:"2-digit",hour12:true})}
-setInterval(updateClock,1000);
-showApp();
-</script>
+  const entry = m.price;
+  const sl = signal === "SELL STUDY" ? m.resistance : m.support;
+  const target = signal === "SELL STUDY" ? m.support : m.resistance;
 
-<script>
-/* 30 STOCK READY FORCE FIX */
-(function(){
-  const oldLoad = window.loadData;
-  window.loadData = async function(){
-    if(oldLoad) await oldLoad();
-    try{
-      if(!Array.isArray(window.stocks) || window.stocks.length <= 4){
-        const r = await fetch("./ohlc-data.json", {cache:"no-store"});
-        const d = await r.json();
-        if(d.stocks && d.stocks.length > 4){
-          if(typeof toSummary === "function") window.stocks = toSummary(d).stocks;
-          else window.stocks = d.stocks;
-          window.rawFullData = d;
-          if(typeof renderAll === "function") renderAll();
-          const st = document.getElementById("loadStatus");
-          if(st) st.textContent = "30 stocks ready";
-        }
-      }
-    }catch(e){}
+  const rps = Math.abs(entry - sl);
+  const maxRisk = (num(risk.capital) || 10000) * (num(risk.riskPct) || 0.5) / 100;
+  const qty = rps ? Math.floor(maxRisk / rps) : 0;
+
+  return {
+    score,
+    signal,
+    decision,
+    cls,
+    m,
+    entry: +fmt(entry),
+    sl: +fmt(sl),
+    target: +fmt(target),
+    qty,
+    reason: rs.join(" • "),
+    rule,
+    risk: rps ? "₹" + Math.round(maxRisk) : "-",
+    marketStatus: session.status,
+    marketAction: session.action
   };
-  window.addEventListener("DOMContentLoaded",()=>setTimeout(()=>window.loadData&&window.loadData(),700));
-})();
-</script>
-
-</body>
-</html>
+}

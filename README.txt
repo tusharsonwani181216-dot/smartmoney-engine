@@ -1,20 +1,16 @@
-FULL NSE + BSE MARKET SETUP
 
-INSTALL:
+SMARTMONEY MARKET TIME PATCH
 
-npm install yahoo-finance2 axios fs-extra
+1. Open index.html
+2. Paste getMarketSession() above analyze()
+3. Add session logic inside analyze()
 
-RUN:
-
-node market-fetch.js
-
-AUTO UPDATE:
-Add server_patch.js code into server.js
-
-DEPLOY:
-
-git add .
-git commit -m "full nse bse support"
-git push
-
+Deploy:
 firebase deploy
+
+Features:
+- Market open/close logic
+- Buy/Sell only in active session
+- Opening wait logic
+- Exit/square-off logic
+- Weekend no-trade
