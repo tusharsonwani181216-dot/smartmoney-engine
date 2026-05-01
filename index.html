@@ -1,37 +1,92 @@
 <!DOCTYPE html>
 <html lang="hi">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>SmartMoney Pro</title>
 <style>
 *{box-sizing:border-box;margin:0;padding:0;font-family:Inter,Arial,sans-serif}
-body{background:#f3f6fb;color:#132033}.hidden{display:none!important}.app{max-width:1400px;margin:auto;padding:18px}
-.loginPage{min-height:100vh;display:grid;place-items:center;background:linear-gradient(135deg,#071b3a,#123f78)}
-.loginCard{width:min(420px,92vw);background:white;border-radius:28px;padding:28px;box-shadow:0 25px 70px rgba(0,0,0,.25)}
-.loginCard h1{color:#08214a;font-size:30px;margin-bottom:8px}.loginCard p{color:#667085;margin-bottom:18px;line-height:1.5}
-input,select{padding:12px;border:1px solid #d7e0ec;border-radius:12px;outline:none;font-size:14px;background:#fbfdff}
-.loginCard input{width:100%;margin:8px 0 12px}
-button{border:none;border-radius:14px;padding:12px 14px;font-weight:800;cursor:pointer;transition:.2s}button:hover{transform:translateY(-1px)}
-.primary{background:#0f6bdc;color:white}.secondary{background:#edf4ff;color:#0f4d9b}.danger{background:#ffecec;color:#b42318}.dark{background:#10233f;color:white}
-.topbar{background:linear-gradient(135deg,#071b3a,#123f78);color:white;border-radius:24px;padding:22px;display:flex;justify-content:space-between;gap:18px;align-items:center;box-shadow:0 16px 40px rgba(7,27,58,.22)}
-.topbar h1{font-size:32px}.topbar p{opacity:.9;margin-top:6px}.userBox{text-align:right;font-size:14px;opacity:.95}
-.card{background:white;border-radius:22px;padding:18px;box-shadow:0 10px 28px rgba(15,35,70,.08);border:1px solid #e5ecf6;margin-top:18px}
-h2{font-size:20px;margin-bottom:14px;color:#0b2143}.toolbar{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:14px;align-items:center}
-.stats{display:grid;grid-template-columns:repeat(6,1fr);gap:12px;margin-bottom:18px}.stat{background:#f8fbff;border:1px solid #e6eef9;border-radius:18px;padding:14px}.stat small{color:#66758a;font-weight:700}.stat b{display:block;margin-top:6px;font-size:20px}
-.table-wrap{overflow-x:auto;border-radius:16px;border:1px solid #e6eef9}table{width:100%;border-collapse:collapse;min-width:1180px;background:white}
-th{background:#f0f5fb;color:#34445a;font-size:13px;text-align:left;padding:12px}td{padding:12px;border-top:1px solid #edf2f7;font-size:14px;vertical-align:middle}
-.badge{display:inline-flex;padding:7px 10px;border-radius:999px;font-weight:900;font-size:12px;white-space:nowrap}.green{background:#e7f8ef;color:#087443}.orange{background:#fff0e6;color:#b54708}.gray{background:#f2f4f7;color:#667085}.yellow{background:#fff7dc;color:#936200}.red{background:#ffecec;color:#b42318}
-.scoreBox{height:10px;background:#e8eef6;border-radius:20px;overflow:hidden;margin-top:6px}.scoreFill{height:100%;border-radius:20px;background:linear-gradient(90deg,#f04438,#fdb022,#12b76a)}
-.grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}.analysisCard{background:#f8fbff;border:1px solid #e7eef8;border-radius:16px;padding:14px;line-height:1.55;margin-top:10px}
-.chartWrap{background:#fff;border:1px solid #e6eef9;border-radius:18px;padding:14px;margin-top:14px;overflow-x:auto}.chartCanvas{width:100%;height:470px;display:block}
-@media(max-width:960px){.stats,.grid{grid-template-columns:1fr 1fr}.topbar{display:block}.userBox{text-align:left;margin-top:12px}}@media(max-width:560px){.app{padding:10px}.stats,.grid{grid-template-columns:1fr}.topbar h1{font-size:24px}}
+body{background:radial-gradient(circle at top left,rgba(15,107,220,.12),transparent 34%),linear-gradient(180deg,#f6f9ff,#edf3fb);color:#071b3a}
+.app{max-width:1420px;margin:auto;padding:18px}.hidden{display:none!important}
+.loginPage{min-height:100vh;display:grid;place-items:center;background:linear-gradient(135deg,#071b3a,#0f4d9b)}
+.loginCard{width:min(430px,92vw);background:white;border-radius:28px;padding:30px;box-shadow:0 25px 70px rgba(0,0,0,.25)}
+.loginCard h1{font-size:32px;margin-bottom:8px}.loginCard p{color:#667085;margin-bottom:18px;line-height:1.45}.loginCard input{width:100%;margin:8px 0 12px}
+input,select{padding:13px;border:1px solid #d9e5f2;border-radius:14px;background:#fff;font-size:14px;outline:none}
+button{border:none;border-radius:14px;padding:12px 16px;font-weight:900;cursor:pointer;transition:.18s}button:hover{transform:translateY(-1px)}
+.primary{background:linear-gradient(135deg,#0f6bdc,#064ca8);color:white;box-shadow:0 10px 20px rgba(15,107,220,.20)}
+.secondary{background:#edf4ff;color:#064ca8}.danger{background:#ffe4e8;color:#b42318}.groww{background:#00b386;color:white}.tv{background:#2962ff;color:white}
+.hero{background:linear-gradient(135deg,#071b3a,#0f6bdc);color:white;border-radius:28px;padding:26px;box-shadow:0 18px 45px rgba(7,27,58,.22);display:flex;justify-content:space-between;gap:18px;align-items:center}
+.hero h1{font-size:34px;margin-bottom:6px}.hero p{opacity:.92}.userBox{text-align:right;font-size:14px;line-height:1.5}
+.card{background:white;border:1px solid #dfeaf7;border-radius:24px;padding:20px;margin-top:18px;box-shadow:0 14px 36px rgba(15,35,70,.08)}
+.nav{position:sticky;top:0;z-index:50;background:rgba(243,246,251,.88);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.55);border-radius:24px;padding:12px;display:flex;gap:10px;flex-wrap:wrap;margin-top:18px;box-shadow:0 10px 28px rgba(15,35,70,.08)}
+.nav button{background:#edf4ff;color:#064ca8}.nav button.active{background:linear-gradient(135deg,#0f6bdc,#064ca8);color:white}
+.page{display:none}.page.active{display:block}
+.toolbar{display:flex;gap:10px;flex-wrap:wrap;align-items:center;background:#f8fbff;border:1px solid #e4edf8;border-radius:20px;padding:12px;margin-top:12px}
+.stats{display:grid;grid-template-columns:repeat(6,1fr);gap:12px;margin-top:14px}.stat{background:linear-gradient(180deg,#fff,#f4f8ff);border:1px solid #dfeaf7;border-radius:18px;padding:14px;box-shadow:0 10px 24px rgba(15,35,70,.06)}.stat small{color:#64748b;text-transform:uppercase;font-size:11px;font-weight:900;letter-spacing:.4px}.stat b{display:block;font-size:25px;margin-top:6px;color:#061b39}
+.tableWrap{overflow-x:auto;border-radius:18px;box-shadow:0 12px 32px rgba(15,35,70,.08);margin-top:14px}table{width:100%;min-width:1120px;border-collapse:collapse;background:white;border-radius:18px;overflow:hidden}th{background:#eaf2fb;color:#21354f;text-align:left;padding:13px;font-size:12px;text-transform:uppercase;letter-spacing:.35px}td{padding:14px;border-top:1px solid #edf2f7;vertical-align:middle}tr:hover td{background:#f8fbff}
+.badge{display:inline-block;padding:8px 11px;border-radius:999px;font-weight:950;font-size:12px;white-space:nowrap}.buy{background:#dcfae6;color:#087443}.wait{background:#fff7dc;color:#936200}.avoid{background:#ffe4e8;color:#b42318}.sell{background:#fff0e6;color:#b54708}.blue{background:#e8f2ff;color:#0f4d9b}.gray{background:#eef2f7;color:#475467}
+.logo{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,#0f6bdc,#071b3a);color:white;font-weight:950;box-shadow:0 8px 18px rgba(15,107,220,.20)}
+.stockCell{display:flex;align-items:center;gap:10px}.muted{color:#667085;font-size:13px}.scoreBar{height:9px;border-radius:999px;background:#e8eef6;overflow:hidden;margin-top:6px}.scoreFill{height:100%;background:linear-gradient(90deg,#f04438,#fdb022,#12b76a)}
+.modeSwitch{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}.modeBtn{background:#edf4ff;color:#064ca8}.modeBtn.active{background:linear-gradient(135deg,#0f6bdc,#064ca8);color:white}
+.simpleGrid,.gemGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:14px}.simpleCard,.panel{background:white;border:1px solid #dfeaf7;border-radius:22px;padding:18px;box-shadow:0 12px 28px rgba(15,35,70,.08);line-height:1.45}.simpleCard h3{font-size:20px;margin-bottom:4px}.infoBox{background:#f8fbff;border:1px solid #e4edf8;border-radius:16px;padding:12px;margin-top:10px;line-height:1.55}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:18px}.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.chartWrap{background:#fff;border:1px solid #e4edf8;border-radius:18px;padding:14px;overflow:auto;margin-top:14px}canvas{display:block;width:100%;min-width:980px;height:470px}
+.levelPanel{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:14px}.levelChip{background:#fff;border:1px solid #dbe7f5;border-radius:14px;padding:12px 14px;font-weight:900;line-height:1.3;box-shadow:0 6px 16px rgba(15,35,70,.06)}.levelChip small{display:block;color:#132033;margin-top:4px;font-size:15px}
+.actionBtns{display:flex;gap:8px;flex-wrap:wrap}.heatmap{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}.heatTile{border-radius:16px;padding:12px;min-height:88px;border:1px solid #e7eef8;cursor:pointer;line-height:1.35}.heatTile strong{font-size:20px;display:block;margin-top:6px}.heatGreen{background:#dcfae6}.heatRed{background:#ffe4e8}.heatYellow{background:#fff7dc}.heatBlue{background:#e8f2ff}
+@media(max-width:1000px){.stats,.grid4{grid-template-columns:1fr 1fr}.simpleGrid,.gemGrid,.grid3{grid-template-columns:1fr 1fr}.grid2{grid-template-columns:1fr}.heatmap{grid-template-columns:repeat(3,1fr)}.hero{display:block}.userBox{text-align:left;margin-top:12px}}
+@media(max-width:620px){.app{padding:10px}.stats,.simpleGrid,.gemGrid,.grid3,.grid4{grid-template-columns:1fr}.heatmap{grid-template-columns:1fr 1fr}.hero h1{font-size:25px}.nav{display:grid;grid-template-columns:1fr 1fr}}
 </style>
+
+<style>
+.loginCard p:empty{display:none}
+.hero p:empty{display:none}
+.infoBox{background:#f8fbff;border:1px solid #e4edf8;border-radius:16px;padding:12px;margin-top:10px;line-height:1.55}
+</style>
+
+
+<style>
+#expertView:not(.hidden), #simpleView:not(.hidden){display:block!important}
+.hidden{display:none!important}
+button{pointer-events:auto!important}
+</style>
+
+
+<style>
+.dateTimeBar{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:12px;
+  margin-top:14px;
+}
+.dateTimeCard{
+  background:#f8fbff;
+  border:1px solid #e4edf8;
+  border-radius:18px;
+  padding:14px;
+  box-shadow:0 8px 20px rgba(15,35,70,.06);
+}
+.dateTimeCard small{
+  display:block;
+  color:#64748b;
+  font-size:11px;
+  font-weight:900;
+  text-transform:uppercase;
+  margin-bottom:5px;
+}
+.dateTimeCard b{
+  font-size:18px;
+}
+@media(max-width:800px){
+  .dateTimeBar{grid-template-columns:1fr}
+}
+</style>
+
 </head>
 <body>
 <section id="loginPage" class="loginPage">
   <div class="loginCard">
     <h1>SmartMoney Pro</h1>
-    <p>Login karke NSE/BSE intraday dashboard open karein.</p>
+    <p></p>
     <input id="loginName" placeholder="Name">
     <input id="loginMobile" placeholder="Mobile / User ID">
     <button class="primary" style="width:100%" onclick="login()">Login</button>
@@ -39,73 +94,582 @@ th{background:#f0f5fb;color:#34445a;font-size:13px;text-align:left;padding:12px}
 </section>
 
 <main id="mainApp" class="app hidden">
-  <section class="topbar">
-    <div><h1>SmartMoney Pro Dashboard</h1><p>NSE + BSE Real OHLC Scanner</p></div>
-    <div class="userBox"><b id="userName"></b><br><span id="userId"></span><br><button class="secondary" onclick="logout()" style="margin-top:8px">Logout</button></div>
+  <section class="hero">
+    <div><h1>SmartMoney Pro</h1><p>AI Intraday Scanner</p></div>
+    <div class="userBox"><b id="userName"></b><br><span id="userId"></span><br><button class="secondary" onclick="logout()">Logout</button></div>
   </section>
 
-  <section class="card">
-    <h2>Controls</h2>
+  <section class="nav">
+    <button class="active" onclick="openPage('dashboard',this)">Dashboard</button>
+    <button onclick="openPage('heatmap',this)">Heatmap</button>
+    <button onclick="openPage('index',this)">Index</button>
+    <button onclick="openPage('group',this)">Group</button>
+    <button onclick="openPage('hidden',this)">Hidden Gems</button>
+    <button onclick="openPage('option',this)">Option Chain</button>
+    <button onclick="openPage('chart',this)">Chart</button>
+  </section>
+
+  <section id="dashboard" class="page active card">
+    <h2>Dashboard</h2>
     <div class="toolbar">
       <select id="marketSelect"><option value="ALL">NSE + BSE</option><option value="NSE">NSE</option><option value="BSE">BSE</option></select>
       <select id="limitSelect"><option value="30">30 Stocks</option><option value="50">50 Stocks</option><option value="75">75 Stocks</option><option value="100">100 Stocks</option></select>
       <button class="primary" onclick="updateNow()">Update Market</button>
       <button class="secondary" onclick="loadData()">Load Data</button>
-      <button class="primary" onclick="toggleAuto()" id="autoBtn">Auto Refresh OFF</button>
-      <input id="refreshMin" type="number" value="5" style="width:90px"><span>min</span>
-      <input id="search" placeholder="Search symbol/company" oninput="render()" style="width:230px">
-      <select id="signalFilter" onchange="render()"><option value="all">All Signals</option><option>BUY STUDY</option><option>SELL STUDY</option><option>NO TRADE</option></select>
-      <input id="capital" type="number" value="10000" style="width:120px" oninput="saveRisk();render()"><span>Capital</span>
-      <input id="riskPct" type="number" value="0.5" style="width:90px" oninput="saveRisk();render()"><span>Risk %</span>
-      <input id="todayPL" type="number" value="0" style="width:120px" oninput="saveRisk();render()"><span>Today P/L</span>
+      <button class="secondary" id="autoBtn" onclick="toggleAuto()">Auto OFF</button>
+      <input id="search" placeholder="Search stock" oninput="renderAll()" style="width:220px">
+      <input id="capital" type="number" value="10000" style="width:120px" oninput="saveRisk();renderAll()"><span>Capital</span>
+      <input id="riskPct" type="number" value="0.5" style="width:90px" oninput="saveRisk();renderAll()"><span>Risk %</span>
     </div>
-    <div id="status" class="analysisCard">Ready</div>
+    <div class="modeSwitch"><button id="simpleBtn" class="modeBtn active" onclick="setMode('simple')">Simple</button><button id="expertBtn" class="modeBtn" onclick="setMode('expert')">Expert</button></div>
+    <div id="dashStats" class="stats"></div>
+    <div id="simpleView"></div>
+    <div id="expertView" class="hidden"></div>
   </section>
 
-  <section class="card">
-    <h2>Market Dashboard</h2>
-    <div class="stats">
-      <div class="stat"><small>Total</small><b id="total">0</b></div>
-      <div class="stat"><small>Buy Study</small><b id="buyCount">0</b></div>
-      <div class="stat"><small>Sell Study</small><b id="sellCount">0</b></div>
-      <div class="stat"><small>No Trade</small><b id="noCount">0</b></div>
-      <div class="stat"><small>Daily Lock</small><b id="lockStatus">OFF</b></div>
-      <div class="stat"><small>Last Update</small><b id="lastUpdate" style="font-size:13px">-</b></div>
-    </div>
-    <div class="table-wrap"><table><thead><tr><th>Stock</th><th>Signal</th><th>Score</th><th>Risk</th><th>OHLC</th><th>Levels</th><th>Position</th><th>Reason</th><th>Action</th></tr></thead><tbody id="rows"></tbody></table></div>
-    <section id="summaryBox" class="card" style="box-shadow:none;margin-top:18px"></section>
-    <section id="chartBox" class="card" style="box-shadow:none;margin-top:18px;display:none"></section>
-    <section id="detailBox" class="grid"></section>
-  </section>
+  <section id="heatmap" class="page card"><h2>Live Heatmap</h2><div id="heatmapBox" class="heatmap"></div></section>
+  <section id="index" class="page card"><h2>Index Analysis</h2><div class="toolbar"><select id="indexSelect" onchange="renderIndex()"><option value="NIFTY50">NIFTY 50</option><option value="BANKNIFTY">BANK NIFTY</option><option value="FINNIFTY">FINNIFTY</option><option value="SENSEX">SENSEX</option></select></div><div id="indexBox"></div></section>
+  <section id="group" class="page card"><h2>Group Analysis</h2><div class="toolbar"><select id="groupSelect" onchange="renderGroup()"><option value="IT">IT</option><option value="AUTO">Auto</option><option value="PHARMA">Pharma</option><option value="BANKNIFTY">Banking</option></select></div><div id="groupBox"></div></section>
+  <section id="hidden" class="page card"><h2>Hidden Gems</h2><div id="hiddenBox"></div></section>
+  <section id="option" class="page card"><h2>Option Chain AI</h2><div class="toolbar"><select id="optionSelect" onchange="renderOption()"><option value="NIFTY50">NIFTY</option><option value="BANKNIFTY">BANK NIFTY</option><option value="FINNIFTY">FINNIFTY</option></select></div><div id="optionBox"></div></section>
+  <section id="chart" class="page card"><h2>Chart</h2><div id="chartBox" class="infoBox">Dashboard se kisi stock ka Chart button dabao.</div></section>
 </main>
 
 <script>
-const API = "https://smartmoney-engine-1e4q.onrender.com";
-const SESSION_KEY="sm_user_v2", RISK_KEY="sm_risk_v2";
-let stocks=[], autoTimer=null, selectedIndex=-1;
-let risk=JSON.parse(localStorage.getItem(RISK_KEY)||'{"capital":10000,"riskPct":0.5,"todayPL":0,"dailyLossPct":2}');
-const num=v=>isNaN(parseFloat(v))?0:parseFloat(v);
-function login(){const name=loginName.value.trim()||"User", id=loginMobile.value.trim()||"Demo";localStorage.setItem(SESSION_KEY,JSON.stringify({name,id}));showApp();}
-function logout(){localStorage.removeItem(SESSION_KEY);location.reload();}
-function showApp(){const u=JSON.parse(localStorage.getItem(SESSION_KEY)||"null");if(!u)return;loginPage.classList.add("hidden");mainApp.classList.remove("hidden");userName.textContent=u.name;userId.textContent=u.id;capital.value=risk.capital;riskPct.value=risk.riskPct;todayPL.value=risk.todayPL;loadData();}
-function statusMsg(m){status.textContent=m}
-function saveRisk(){risk={capital:num(capital.value),riskPct:num(riskPct.value),todayPL:num(todayPL.value),dailyLossPct:2};localStorage.setItem(RISK_KEY,JSON.stringify(risk))}
-function isLocked(){return risk.todayPL<=-(risk.capital*risk.dailyLossPct/100)}
-function formatIST(ts){if(!ts)return"-";try{return new Date(ts).toLocaleString("en-IN",{timeZone:"Asia/Kolkata",hour12:true,day:"2-digit",month:"2-digit",year:"numeric",hour:"2-digit",minute:"2-digit",second:"2-digit"})}catch(e){return ts}}
-function avg(a){let c=a.filter(x=>Number.isFinite(Number(x))).map(Number);return c.length?c.reduce((x,y)=>x+y,0)/c.length:0}
-function calcRsi(closes,p=14){if(closes.length<p+1)return 50;let g=0,l=0;for(let i=closes.length-p;i<closes.length;i++){let d=closes[i]-closes[i-1];if(d>=0)g+=d;else l-=d}if(l===0)return 70;let rs=g/l;return Math.round((100-(100/(1+rs)))*10)/10}
-function metrics(s){let c=s.candles||[];if(!c.length)return null;let last=c[c.length-1],cl=c.map(x=>x.close),hi=c.map(x=>x.high),lo=c.map(x=>x.low),vol=c.map(x=>x.volume||0);let price=last.close,vwap=avg(cl.slice(-20)),rsi=calcRsi(cl),openingHigh=Math.max(...hi.slice(0,3)),openingLow=Math.min(...lo.slice(0,3)),support=Math.min(...lo.slice(-20)),resistance=Math.max(...hi.slice(-20)),first=cl[0];let trend=price>vwap&&price>first?"bullish":price<vwap&&price<first?"bearish":"sideways";let base=avg(vol.slice(0,Math.max(5,vol.length-5))),spike=base?((avg(vol.slice(-5))-base)/base)*100:0;return{price,vwap:Math.round(vwap*100)/100,rsi,openingHigh,openingLow,support,resistance,volumeSpike:Math.round(spike*10)/10,trend,last}}
-function analyze(s){let m=metrics(s);if(!m)return{score:0,signal:"NO TRADE",reasons:["No OHLC data"],warnings:["Update data"],entry:0,sl:0,target:0,qty:0,maxRisk:0,riskLevel:"High",rr:0,m:null};let raw=50,reasons=[],warnings=[];let above=m.price>m.vwap,below=m.price<m.vwap;if(m.trend==="bullish"){raw+=10;reasons.push("Trend bullish")}if(m.trend==="bearish"){raw-=10;reasons.push("Trend bearish")}if(above){raw+=10;reasons.push("VWAP strength")}if(below){raw-=10;reasons.push("VWAP weakness")}if(m.volumeSpike>=30){raw+=7;reasons.push("Volume active")}else{raw-=5;warnings.push("Volume normal")}if(m.rsi>=45&&m.rsi<=62){raw+=10;reasons.push("RSI healthy")}else if(m.rsi>70){raw-=15;warnings.push("RSI overbought")}if(m.price>m.openingHigh){raw+=8;reasons.push("Opening breakout")}if(m.price<m.openingLow){raw-=8;reasons.push("Opening breakdown")}let score=Math.max(0,Math.min(96,Math.round(raw)));let signal="NO TRADE";if(isLocked())signal="NO TRADE";else if(score>=72&&above&&m.rsi<=70)signal="BUY STUDY";else if(score<=42&&below&&m.rsi>=30)signal="SELL STUDY";let entry=m.price,sl=signal==="SELL STUDY"?m.resistance:m.support,target=signal==="SELL STUDY"?m.support:m.resistance,rps=Math.abs(entry-sl),maxRisk=risk.capital*risk.riskPct/100,qty=rps?Math.floor(maxRisk/rps):0,rr=rps?Math.abs(target-entry)/rps:0,riskLevel=score>=72?"Low":score>=50?"Medium":"High";return{score,signal,reasons,warnings,entry,sl,target,qty,maxRisk,riskLevel,rr,m}}
-function sigClass(s){return s==="BUY STUDY"?"green":s==="SELL STUDY"?"orange":"gray"}
-async function loadData(){try{let r=await fetch(API+"/api/ohlc-data");let d=await r.json();stocks=d.stocks||[];lastUpdate.textContent=formatIST(d.updatedAt);statusMsg("Loaded "+stocks.length+" stocks");selectedIndex=stocks.length?0:-1;render()}catch(e){statusMsg("Backend error: "+e.message)}}
-async function updateNow(){try{statusMsg("Updating market...");let r=await fetch(API+"/api/update-now",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({market:marketSelect.value,limit:Number(limitSelect.value)})});let d=await r.json();if(!d.ok)throw new Error(d.error||"update failed");statusMsg("Updated "+d.count+" stocks");await loadData()}catch(e){statusMsg("Update failed: "+e.message)}}
-function toggleAuto(){if(autoTimer){clearInterval(autoTimer);autoTimer=null;autoBtn.textContent="Auto Refresh OFF";autoBtn.className="primary";return}let mins=Math.max(1,num(refreshMin.value)||5);autoTimer=setInterval(updateNow,mins*60000);autoBtn.textContent="Auto Refresh ON";autoBtn.className="danger";updateNow()}
-function render(){saveRisk();let q=search.value.toLowerCase(),f=signalFilter.value;let list=stocks.map((s,i)=>Object.assign({},s,{idx:i,a:analyze(s)})).filter(s=>(f==="all"||s.a.signal===f)).filter(s=>String(s.symbol).toLowerCase().includes(q)||String(s.name).toLowerCase().includes(q)||String(s.market).toLowerCase().includes(q));let buy=0,sell=0,no=0;stocks.forEach(s=>{let a=analyze(s);if(a.signal==="BUY STUDY")buy++;else if(a.signal==="SELL STUDY")sell++;else no++});total.textContent=stocks.length;buyCount.textContent=buy;sellCount.textContent=sell;noCount.textContent=no;lockStatus.textContent=isLocked()?"ON":"OFF";rows.innerHTML=list.length?list.sort((a,b)=>b.a.score-a.a.score).map(s=>{let m=s.a.m;return `<tr><td><b>${s.symbol}</b><br><small>${s.name} / ${s.market}</small></td><td><span class="badge ${sigClass(s.a.signal)}">${s.a.signal}</span></td><td><b>${s.a.score}/100</b><div class="scoreBox"><div class="scoreFill" style="width:${s.a.score}%"></div></div></td><td><span class="badge ${s.a.riskLevel==="Low"?"green":s.a.riskLevel==="Medium"?"yellow":"red"}">${s.a.riskLevel}</span></td><td>O ₹${m.last.open}<br>H ₹${m.last.high}<br>L ₹${m.last.low}<br>C ₹${m.last.close}<br>RSI ${m.rsi}</td><td>Entry ₹${s.a.entry}<br>SL ₹${s.a.sl}<br>Target ₹${s.a.target}</td><td>Qty ${s.a.qty}<br>Max Risk ₹${Math.round(s.a.maxRisk)}</td><td>${s.a.reasons.slice(0,3).join("<br>")}</td><td><button class="primary" onclick="showChart(${s.idx})">Chart</button></td></tr>`}).join(""):`<tr><td colspan="9" style="text-align:center;padding:30px">No data</td></tr>`;renderSummary(list);renderDetail()}
-function renderSummary(list){let top=[...list].sort((a,b)=>b.a.score-a.a.score).slice(0,3);summaryBox.innerHTML=`<h2>Analysis Summary</h2><div class="grid">${top.map(s=>`<div class="analysisCard"><b>${s.symbol}</b><br><span class="badge ${sigClass(s.a.signal)}">${s.a.signal}</span><br>Score: ${s.a.score}/100<br>${s.a.reasons.join("<br>")}</div>`).join("")}</div>`}
-function renderDetail(){if(selectedIndex<0||!stocks[selectedIndex]){detailBox.innerHTML="";return}let s=stocks[selectedIndex],a=analyze(s);detailBox.innerHTML=`<div class="card" style="box-shadow:none"><h2>Analysis Report</h2><div class="analysisCard">${a.reasons.join("<br>")||"No strong reason"}</div></div><div class="card" style="box-shadow:none"><h2>Trade Plan Slip</h2><div class="analysisCard">Entry ₹${a.entry}<br>SL ₹${a.sl}<br>Target ₹${a.target}<br>Qty ${a.qty}</div></div>`}
-function showChart(i){selectedIndex=i;let s=stocks[i],a=analyze(s),m=a.m;chartBox.style.display="block";chartBox.innerHTML=`<h2>Real OHLC Candlestick Chart — ${s.symbol}</h2><div class="chartWrap"><canvas id="candleCanvas" class="chartCanvas" width="1250" height="470"></canvas></div><div class="analysisCard">${a.reasons.join("<br>")}</div>`;drawCandles("candleCanvas",s.candles,a,m);renderDetail();chartBox.scrollIntoView({behavior:"smooth"})}
-function drawCandles(id,candles,a,m){let canvas=document.getElementById(id),ctx=canvas.getContext("2d"),W=canvas.width,H=canvas.height;ctx.clearRect(0,0,W,H);let padL=65,padR=145,padT=30,padB=50,vals=[];candles.forEach(c=>vals.push(c.high,c.low));[m.vwap,m.support,m.resistance,a.entry,a.sl,a.target].forEach(v=>{if(v)vals.push(v)});let min=Math.min(...vals),max=Math.max(...vals),range=max-min||1;min-=range*.1;max+=range*.1;let y=v=>padT+(max-v)/(max-min)*(H-padT-padB),x=i=>padL+i*(W-padL-padR)/(candles.length-1);ctx.strokeStyle="#e7eef8";ctx.fillStyle="#667085";ctx.font="12px Arial";for(let g=0;g<=5;g++){let yy=padT+g*(H-padT-padB)/5;ctx.beginPath();ctx.moveTo(padL,yy);ctx.lineTo(W-padR,yy);ctx.stroke();ctx.fillText("₹"+(max-g*(max-min)/5).toFixed(2),W-padR+12,yy)}let cw=Math.max(5,(W-padL-padR)/candles.length*.45);candles.forEach((c,i)=>{let xx=x(i),yo=y(c.open),yc=y(c.close),yh=y(c.high),yl=y(c.low),bull=c.close>=c.open;ctx.strokeStyle=bull?"#16a34a":"#dc2626";ctx.fillStyle=ctx.strokeStyle;ctx.beginPath();ctx.moveTo(xx,yh);ctx.lineTo(xx,yl);ctx.stroke();ctx.fillRect(xx-cw/2,Math.min(yo,yc),cw,Math.max(3,Math.abs(yc-yo)))});function line(v,color,label){if(!v)return;let yy=y(v);ctx.strokeStyle=color;ctx.beginPath();ctx.moveTo(padL,yy);ctx.lineTo(W-padR,yy);ctx.stroke();ctx.fillStyle=color;ctx.fillText(label+" ₹"+Number(v).toFixed(2),W-padR+8,yy)}line(m.vwap,"#2563eb","VWAP");line(m.support,"#f59e0b","Support");line(m.resistance,"#f59e0b","Resistance");line(a.entry,"#7c3aed","Entry");line(a.sl,"#dc2626","SL");line(a.target,"#16a34a","Target")}
+const API="https://smartmoney-engine-1e4q.onrender.com";
+const SESSION_KEY="sm_professional_user", MODE_KEY="sm_professional_mode", RISK_KEY="sm_professional_risk";
+let stocks=[], mode=localStorage.getItem(MODE_KEY)||"simple", autoTimer=null, currentChart=-1;
+let risk=JSON.parse(localStorage.getItem(RISK_KEY)||'{"capital":10000,"riskPct":0.5}');
+const $=id=>document.getElementById(id), num=v=>isNaN(parseFloat(v))?0:parseFloat(v);
+const GROUPS={
+NIFTY50:["RELIANCE","TCS","INFY","HDFCBANK","ICICIBANK","SBIN","BHARTIARTL","ITC","LT","AXISBANK","KOTAKBANK","HINDUNILVR","BAJFINANCE","ASIANPAINT","MARUTI","SUNPHARMA","TITAN","ULTRACEMCO","WIPRO","HCLTECH","TECHM","NTPC","POWERGRID","TATASTEEL","JSWSTEEL","ONGC","COALINDIA","ADANIENT","ADANIPORTS","M&M","TATAMOTORS"],
+BANKNIFTY:["HDFCBANK","ICICIBANK","SBIN","AXISBANK","KOTAKBANK","INDUSINDBK","BANKBARODA","PNB","FEDERALBNK","AUBANK"],
+FINNIFTY:["HDFCBANK","ICICIBANK","SBIN","AXISBANK","KOTAKBANK","BAJFINANCE","BAJAJFINSV","HDFCLIFE","SBILIFE","ICICIPRULI"],
+SENSEX:["RELIANCE","TCS","INFY","HDFCBANK","ICICIBANK","SBIN","BHARTIARTL","ITC","LT","AXISBANK","KOTAKBANK","HINDUNILVR","BAJFINANCE","ASIANPAINT","MARUTI","SUNPHARMA","TITAN","ULTRACEMCO","WIPRO","HCLTECH"],
+IT:["TCS","INFY","WIPRO","HCLTECH","TECHM","LTIM","MPHASIS","PERSISTENT"],
+AUTO:["MARUTI","TATAMOTORS","M&M","EICHERMOT","BAJAJ-AUTO","HEROMOTOCO","TVSMOTOR","ASHOKLEY"],
+PHARMA:["SUNPHARMA","CIPLA","DRREDDY","DIVISLAB","APOLLOHOSP","LUPIN","AUROPHARMA","TORNTPHARM"]
+};
+function login(){localStorage.setItem(SESSION_KEY,JSON.stringify({name:loginName.value||"User",id:loginMobile.value||"Demo"}));showApp()}
+function logout(){localStorage.removeItem(SESSION_KEY);location.reload()}
+function showApp(){const u=JSON.parse(localStorage.getItem(SESSION_KEY)||"null");if(!u)return;loginPage.classList.add("hidden");mainApp.classList.remove("hidden");userName.textContent=u.name;userId.textContent=u.id;capital.value=risk.capital;riskPct.value=risk.riskPct;setMode(mode);loadData()}
+function clean(s){return String(s||"").replace(".NS","").replace(".BO","")}
+function fmt(n){return Number(n||0).toFixed(2)}
+function avg(a){const b=a.filter(x=>Number.isFinite(Number(x))).map(Number);return b.length?b.reduce((x,y)=>x+y,0)/b.length:0}
+function calcRsi(c,p=14){if(c.length<p+1)return 50;let g=0,l=0;for(let i=c.length-p;i<c.length;i++){let d=c[i]-c[i-1];if(d>=0)g+=d;else l-=d}if(l===0)return 70;let rs=g/l;return Math.round((100-(100/(1+rs)))*10)/10}
+function metrics(s){const c=s.candles||[];if(!c.length)return null;const last=c[c.length-1],cl=c.map(x=>x.close),hi=c.map(x=>x.high),lo=c.map(x=>x.low),vol=c.map(x=>x.volume||0),price=last.close,vwap=avg(cl.slice(-20)),first=cl[0],support=Math.min(...lo.slice(-20)),resistance=Math.max(...hi.slice(-20)),openingHigh=Math.max(...hi.slice(0,3)),openingLow=Math.min(...lo.slice(0,3)),base=avg(vol.slice(0,Math.max(5,vol.length-5))),spike=base?((avg(vol.slice(-5))-base)/base)*100:0;return{last,price:+fmt(price),vwap:+fmt(vwap),rsi:calcRsi(cl),support:+fmt(support),resistance:+fmt(resistance),trend:price>vwap&&price>first?"Bullish":price<vwap&&price<first?"Bearish":"Range",volumeSpike:+spike.toFixed(1),openingHigh,openingLow}}
+function perf(s){const c=s.candles||[];const first=c[0]?.open||0,last=c[c.length-1]?.close||0;return first?((last-first)/first)*100:0}
+function analyze(s){const m=metrics(s);if(!m)return{score:0,signal:"WAIT",decision:"WAIT",cls:"wait",m:null,entry:0,sl:0,target:0,qty:0,reason:"No data",rule:"Load data"};let score=50,rs=[];if(m.trend==="Bullish"){score+=14;rs.push("Trend bullish")}if(m.trend==="Bearish"){score-=14;rs.push("Trend bearish")}if(m.price>m.vwap){score+=14;rs.push("VWAP support")}else{score-=12;rs.push("VWAP weakness")}if(m.rsi>=40&&m.rsi<=68){score+=10;rs.push("RSI safe")}else if(m.rsi>72){score-=10;rs.push("RSI high")}if(m.volumeSpike>=15){score+=7;rs.push("Volume active")}else rs.push("Volume normal");if(m.price>m.openingHigh){score+=6;rs.push("Opening breakout")}if(m.price<m.openingLow){score-=6;rs.push("Opening breakdown")}score=Math.max(0,Math.min(96,Math.round(score)));let signal="WAIT",decision="WAIT",cls="wait",rule="Confirmation candle ka wait karo";if(score>=70&&m.price>m.vwap&&m.rsi<72){signal="BUY STUDY";decision="TRADE POSSIBLE";cls="buy";rule="Small quantity + strict SL ke saath entry study"}else if(score>=58&&m.price>m.vwap){signal="BUY STUDY";decision="WAIT CONFIRM";cls="wait";rule="Breakout/volume confirm hone par entry"}else if(score<=42&&m.price<m.vwap){signal="SELL STUDY";decision="BUY AVOID";cls="sell";rule="Buy avoid, weakness hai"}else if(score<35||m.rsi>75){signal="AVOID";decision="AVOID";cls="avoid";rule="Risk high, trade skip"}const entry=m.price,sl=signal==="SELL STUDY"?m.resistance:m.support,target=signal==="SELL STUDY"?m.support:m.resistance,rps=Math.abs(entry-sl),maxRisk=(num(risk.capital)||10000)*(num(risk.riskPct)||0.5)/100,qty=rps?Math.floor(maxRisk/rps):0;return{score,signal,decision,cls,m,entry:+fmt(entry),sl:+fmt(sl),target:+fmt(target),qty,reason:rs.join(" • "),rule,risk:rps?"₹"+Math.round(maxRisk):"-"}}
+function sigClass(s){return s==="BUY STUDY"?"buy":s==="SELL STUDY"?"sell":s==="AVOID"?"avoid":"wait"}
+function saveRisk(){risk={capital:num(capital.value)||10000,riskPct:num(riskPct.value)||0.5};localStorage.setItem(RISK_KEY,JSON.stringify(risk))}
+function setMode(m){mode=m;localStorage.setItem(MODE_KEY,m);simpleBtn.classList.toggle("active",m==="simple");expertBtn.classList.toggle("active",m==="expert");simpleView.classList.toggle("hidden",m!=="simple");expertView.classList.toggle("hidden",m!=="expert");renderDashboard()}
+function openPage(id,btn){document.querySelectorAll(".page").forEach(p=>p.classList.remove("active"));$(id).classList.add("active");document.querySelectorAll(".nav button").forEach(b=>b.classList.remove("active"));btn.classList.add("active");window.scrollTo({top:0,behavior:"smooth"});renderAll()}
+function growwUrl(s){return"https://groww.in/search?q="+encodeURIComponent(s.name||clean(s.symbol))}
+function tvUrl(s){return"https://www.tradingview.com/chart/?symbol=NSE:"+encodeURIComponent(clean(s.symbol))}
+async function loadData(){try{const r=await fetch(API+"/api/ohlc-data");const d=await r.json();stocks=d.stocks||[];renderAll()}catch(e){alert("Backend load fail: "+e.message)}}
+async function updateNow(){try{const r=await fetch(API+"/api/update-now",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({market:marketSelect.value,limit:+limitSelect.value})});await r.json();await loadData()}catch(e){alert("Update fail: "+e.message)}}
+function toggleAuto(){if(autoTimer){clearInterval(autoTimer);autoTimer=null;autoBtn.textContent="Auto OFF";autoBtn.className="secondary";return}autoTimer=setInterval(loadData,120000);autoBtn.textContent="Auto ON";autoBtn.className="danger";loadData()}
+function filtered(){const q=search.value.toLowerCase();return stocks.map((s,i)=>({s,i,a:analyze(s),p:perf(s)})).filter(x=>(x.s.symbol+" "+(x.s.name||"")).toLowerCase().includes(q)).sort((a,b)=>b.a.score-a.a.score)}
+function renderStats(list){dashStats.innerHTML=`<div class="stat"><small>Total</small><b>${list.length}</b></div><div class="stat"><small>Buy Study</small><b>${list.filter(x=>x.a.signal==="BUY STUDY").length}</b></div><div class="stat"><small>Wait</small><b>${list.filter(x=>x.a.signal==="WAIT").length}</b></div><div class="stat"><small>Avoid/Sell</small><b>${list.filter(x=>x.a.signal==="AVOID"||x.a.signal==="SELL STUDY").length}</b></div><div class="stat"><small>Mode</small><b>${mode==="simple"?"Simple":"Expert"}</b></div><div class="stat"><small>Loaded</small><b>${stocks.length}</b></div>`}
+function renderDashboard(){saveRisk();const list=filtered();renderStats(list);if(mode==="simple")renderSimple(list);else renderExpert(list)}
+function renderSimple(list){simpleView.innerHTML=`<div class="simpleGrid">${list.slice(0,30).map(x=>`<div class="simpleCard"><div class="stockCell"><div class="logo">${clean(x.s.symbol)[0]||"S"}</div><div><h3>${clean(x.s.symbol)}</h3><div class="muted">${x.s.name||""} / ${x.s.market||""}</div></div></div><span class="badge ${x.a.cls}">${x.a.decision}</span><div><b>${x.a.rule}</b></div><div class="infoBox"><b>Entry:</b> ₹${x.a.entry}<br><b>SL:</b> ₹${x.a.sl}<br><b>Target:</b> ₹${x.a.target}<br><b>Score:</b> ${x.a.score}/100<br><b>Perf:</b> <span style="color:${x.p>=0?'#087443':'#b42318'};font-weight:900">${x.p.toFixed(2)}%</span></div><div class="actionBtns" style="margin-top:12px"><button class="primary" onclick="showChart(${x.i})">Chart</button><button class="groww" onclick="window.open('${growwUrl(x.s)}','_blank')">Groww</button><button class="tv" onclick="window.open('${tvUrl(x.s)}','_blank')">TV</button></div></div>`).join("")}</div>`}
+function renderExpert(list){expertView.innerHTML=`<div class="tableWrap"><table><thead><tr><th>Stock</th><th>Perf</th><th>Signal</th><th>Score</th><th>Price/VWAP/RSI</th><th>Entry/SL/Target</th><th>Qty/Risk</th><th>Decision</th><th>Action</th></tr></thead><tbody>${list.map(x=>`<tr><td><div class="stockCell"><div class="logo">${clean(x.s.symbol)[0]||"S"}</div><div><b>${clean(x.s.symbol)}</b><br><span class="muted">${x.s.name||""} / ${x.s.market||""}</span></div></div></td><td><b style="color:${x.p>=0?'#087443':'#b42318'}">${x.p.toFixed(2)}%</b></td><td><span class="badge ${sigClass(x.a.signal)}">${x.a.signal}</span></td><td><b>${x.a.score}/100</b><div class="scoreBar"><div class="scoreFill" style="width:${x.a.score}%"></div></div></td><td>₹${x.a.m?.price||"-"}<br>VWAP ₹${x.a.m?.vwap||"-"}<br>RSI ${x.a.m?.rsi||"-"}</td><td>Entry ₹${x.a.entry}<br>SL ₹${x.a.sl}<br>Target ₹${x.a.target}</td><td>Qty ${x.a.qty}<br>Risk ${x.a.risk}</td><td><span class="badge ${x.a.cls}">${x.a.decision}</span><br><span class="muted">${x.a.rule}</span></td><td><div class="actionBtns"><button class="primary" onclick="showChart(${x.i})">Chart</button><button class="groww" onclick="window.open('${growwUrl(x.s)}','_blank')">Groww</button><button class="tv" onclick="window.open('${tvUrl(x.s)}','_blank')">TV</button></div></td></tr>`).join("")}</tbody></table></div>`}
+function groupList(key){const arr=GROUPS[key]||[];return stocks.map((s,i)=>({s,i,a:analyze(s),p:perf(s)})).filter(x=>arr.includes(clean(x.s.symbol))).sort((a,b)=>b.p-a.p)}
+function callPut(list,key){if(!list.length)return null;const avgScore=Math.round(avg(list.map(x=>x.a.score))),avgMove=avg(list.map(x=>x.p)),buy=list.filter(x=>x.a.signal==="BUY STUDY").length,sell=list.filter(x=>x.a.signal==="SELL STUDY"||x.a.signal==="AVOID").length,ce=Math.max(5,Math.min(95,Math.round(50+avgMove*8+(buy-sell)*4))),pe=100-ce,base={NIFTY50:24000,BANKNIFTY:52000,FINNIFTY:22000,SENSEX:80000,IT:36000,AUTO:23000,PHARMA:21000}[key]||24000,spot=Math.round(base*(1+avgMove/100)),step=key==="BANKNIFTY"?100:50,strike=Math.round(spot/step)*step;let decision="NO TRADE / RANGE",cls="wait",reason="Direction clear nahi hai";if(ce>=62&&avgScore>=56){decision="CALL STUDY";cls="buy";reason="Upside strength hai"}else if(pe>=62&&(avgScore<=50||sell>buy)){decision="PUT STUDY";cls="sell";reason="Downside pressure hai"}return{avgScore,avgMove,buy,sell,ce,pe,spot,strike,decision,cls,reason}}
+function renderIndex(){const key=indexSelect.value,list=groupList(key),d=callPut(list,key);indexBox.innerHTML=!d?`<div class="infoBox">Data not loaded. Update Market dabao.</div>`:`${summaryCards(key,d)}${miniTable(list.slice(0,12))}`}
+function renderGroup(){const key=groupSelect.value,list=groupList(key),d=callPut(list,key);groupBox.innerHTML=!d?`<div class="infoBox">Group data not loaded.</div>`:`${summaryCards(key,d)}${miniTable(list.slice(0,12))}`}
+function renderOption(){const key=optionSelect.value,list=groupList(key),d=callPut(list,key);optionBox.innerHTML=!d?`<div class="infoBox">Option data not loaded.</div>`:`${summaryCards(key,d)}<div class="infoBox"><b>AI Option View:</b><br>${d.reason}<br>ATM Strike: <b>${d.strike}</b><br>CALL Strength: ${d.ce}% | PUT Strength: ${d.pe}%</div>`}
+function summaryCards(key,d){return`<div class="grid4"><div class="panel"><h3>${key}</h3><div style="font-size:30px;font-weight:950">${d.spot.toLocaleString("en-IN")}</div><span class="badge ${d.cls}">${d.decision}</span><br><small>${d.reason}</small></div><div class="panel"><h3>Move</h3><b style="font-size:28px;color:${d.avgMove>=0?'#087443':'#b42318'}">${d.avgMove.toFixed(2)}%</b><br>Score ${d.avgScore}/100</div><div class="panel"><h3>CALL</h3><b style="font-size:28px">${d.ce}%</b><br>Buy setups ${d.buy}</div><div class="panel"><h3>PUT</h3><b style="font-size:28px">${d.pe}%</b><br>Sell/Avoid ${d.sell}</div></div>`}
+function miniTable(list){return`<div class="tableWrap"><table><thead><tr><th>Stock</th><th>Perf</th><th>Decision</th><th>Score</th><th>Entry/SL/Target</th><th>Action</th></tr></thead><tbody>${list.map(x=>`<tr><td><b>${clean(x.s.symbol)}</b><br><span class="muted">${x.s.name||""}</span></td><td><b style="color:${x.p>=0?'#087443':'#b42318'}">${x.p.toFixed(2)}%</b></td><td><span class="badge ${x.a.cls}">${x.a.decision}</span></td><td>${x.a.score}/100</td><td>Entry ₹${x.a.entry}<br>SL ₹${x.a.sl}<br>Target ₹${x.a.target}</td><td><button class="primary" onclick="showChart(${x.i})">Chart</button></td></tr>`).join("")}</tbody></table></div>`}
+function renderHeatmap(){const list=stocks.map((s,i)=>({s,i,a:analyze(s),p:perf(s)})).sort((a,b)=>Math.abs(b.p)-Math.abs(a.p)).slice(0,30);heatmapBox.innerHTML=list.map(x=>{let c=x.p>0.8?"heatGreen":x.p<-0.8?"heatRed":Math.abs(x.p)<0.25?"heatYellow":"heatBlue";return`<div class="heatTile ${c}" onclick="showChart(${x.i})"><b>${clean(x.s.symbol)}</b><br><small>${x.s.market||""}</small><strong>${x.p.toFixed(2)}%</strong><small>${x.a.decision} • ${x.a.score}/100</small></div>`}).join("")}
+function renderHidden(){const list=stocks.map((s,i)=>({s,i,a:analyze(s),p:perf(s)})).filter(x=>x.a.score>=56&&x.a.signal!=="AVOID").sort((a,b)=>b.a.score-a.a.score).slice(0,18);hiddenBox.innerHTML=`<div class="gemGrid">${list.map(x=>`<div class="simpleCard"><h3>${clean(x.s.symbol)}</h3><div class="muted">${x.s.name||""}</div><span class="badge ${x.a.cls}">${x.a.decision}</span><div class="infoBox">Score ${x.a.score}/100<br>Entry ₹${x.a.entry}<br>SL ₹${x.a.sl}<br>Target ₹${x.a.target}</div><button class="primary" onclick="showChart(${x.i})">Chart</button></div>`).join("")}</div>`}
+function showChart(i){currentChart=i;const s=stocks[i],a=analyze(s),m=a.m;if(!s||!m)return;chartBox.innerHTML=`<h2>${clean(s.symbol)} — ${s.name||""}</h2><div class="grid4"><div class="panel"><h3>Decision</h3><span class="badge ${a.cls}">${a.decision}</span><br>${a.rule}</div><div class="panel"><h3>Entry</h3><b>₹${a.entry}</b></div><div class="panel"><h3>SL</h3><b>₹${a.sl}</b></div><div class="panel"><h3>Target</h3><b>₹${a.target}</b></div></div><div class="chartWrap"><canvas id="candleCanvas" width="1250" height="470"></canvas></div><div class="levelPanel"><div class="levelChip" style="color:#2563eb">VWAP<small>₹${fmt(m.vwap)}</small></div><div class="levelChip" style="color:#f59e0b">Support<small>₹${fmt(m.support)}</small></div><div class="levelChip" style="color:#f59e0b">Resistance<small>₹${fmt(m.resistance)}</small></div><div class="levelChip" style="color:#7c3aed">Entry<small>₹${fmt(a.entry)}</small></div><div class="levelChip" style="color:#dc2626">SL<small>₹${fmt(a.sl)}</small></div><div class="levelChip" style="color:#16a34a">Target<small>₹${fmt(a.target)}</small></div></div><div class="infoBox"><b>Analysis:</b><br>${a.reason}</div><div class="actionBtns" style="margin-top:12px"><button class="groww" onclick="window.open('${growwUrl(s)}','_blank')">Open Groww</button><button class="tv" onclick="window.open('${tvUrl(s)}','_blank')">TradingView</button></div>`;drawChart(s.candles,a,m);document.querySelectorAll(".page").forEach(p=>p.classList.remove("active"));chart.classList.add("active");document.querySelectorAll(".nav button").forEach(b=>b.classList.remove("active"));document.querySelectorAll(".nav button")[6].classList.add("active");window.scrollTo({top:0,behavior:"smooth"})}
+function drawChart(candles,a,m){const canvas=$("candleCanvas"),ctx=canvas.getContext("2d"),W=canvas.width,H=canvas.height;ctx.clearRect(0,0,W,H);let padL=65,padR=92,padT=30,padB=50,vals=[];candles.forEach(c=>vals.push(c.high,c.low));[m.vwap,m.support,m.resistance,a.entry,a.sl,a.target].forEach(v=>vals.push(v));let min=Math.min(...vals),max=Math.max(...vals),range=max-min||1;min-=range*.14;max+=range*.14;const y=v=>padT+(max-v)/(max-min)*(H-padT-padB),x=i=>padL+i*(W-padL-padR)/Math.max(1,candles.length-1);ctx.strokeStyle="#e7eef8";ctx.fillStyle="#667085";ctx.font="12px Arial";for(let g=0;g<=5;g++){let yy=padT+g*(H-padT-padB)/5;ctx.beginPath();ctx.moveTo(padL,yy);ctx.lineTo(W-padR,yy);ctx.stroke();ctx.fillText("₹"+(max-g*(max-min)/5).toFixed(2),W-padR+8,yy+4)}let cw=Math.max(5,(W-padL-padR)/candles.length*.45);candles.forEach((c,i)=>{let xx=x(i),yo=y(c.open),yc=y(c.close),bull=c.close>=c.open;ctx.strokeStyle=bull?"#16a34a":"#dc2626";ctx.fillStyle=ctx.strokeStyle;ctx.lineWidth=2;ctx.beginPath();ctx.moveTo(xx,y(c.high));ctx.lineTo(xx,y(c.low));ctx.stroke();ctx.fillRect(xx-cw/2,Math.min(yo,yc),cw,Math.max(3,Math.abs(yc-yo)))});function line(v,color,dash){let yy=y(v);ctx.save();ctx.strokeStyle=color;ctx.lineWidth=2;if(dash)ctx.setLineDash([8,6]);ctx.beginPath();ctx.moveTo(padL,yy);ctx.lineTo(W-padR,yy);ctx.stroke();ctx.restore()}line(m.vwap,"#2563eb",true);line(m.support,"#f59e0b",true);line(m.resistance,"#f59e0b",true);line(a.entry,"#7c3aed");line(a.sl,"#dc2626");line(a.target,"#16a34a")}
+function renderAll(){
+  renderDashboard();
+  renderHeatmap();
+  renderIndex();
+  renderGroup();
+  renderHidden();
+  renderOption();
+  // Chart ko auto reopen/redraw mat karo. Ye tab switching ko hang karta tha.
+}
 showApp();
+
+/* CHART HANG FIX */
+const _oldOpenPageStable = window.openPage;
+window.openPage = function(id, btn){
+  document.querySelectorAll(".page").forEach(p=>p.classList.remove("active"));
+  document.getElementById(id).classList.add("active");
+  document.querySelectorAll(".nav button").forEach(b=>b.classList.remove("active"));
+  if(btn) btn.classList.add("active");
+  if(id !== "chart") {
+    currentChart = -1;   // chart lock हटाया
+  }
+  window.scrollTo({top:0, behavior:"smooth"});
+  if(id==="dashboard") renderDashboard();
+  if(id==="heatmap") renderHeatmap();
+  if(id==="index") renderIndex();
+  if(id==="group") renderGroup();
+  if(id==="hidden") renderHidden();
+  if(id==="option") renderOption();
+};
+
+window.safeRefreshData = async function(){
+  const activeId = document.querySelector(".page.active")?.id || "dashboard";
+  await loadData();
+  if(activeId !== "chart") currentChart = -1;
+};
+
+
 </script>
+
+<script>
+/* FINAL WORKING CLEAN FIX */
+(function(){
+  function qs(id){ return document.getElementById(id); }
+
+  function ensureLoggedInUI(){
+    const saved = localStorage.getItem("sm_professional_user");
+    if(!saved) return;
+    try{
+      const u = JSON.parse(saved);
+      if(qs("loginPage")) qs("loginPage").classList.add("hidden");
+      if(qs("mainApp")) qs("mainApp").classList.remove("hidden");
+      if(qs("userName")) qs("userName").textContent = u.name || "User";
+      if(qs("userId")) qs("userId").textContent = u.id || "Demo";
+    }catch(e){}
+  }
+
+  window.login = function(){
+    const name = qs("loginName")?.value || "User";
+    const id = qs("loginMobile")?.value || "Demo";
+    localStorage.setItem("sm_professional_user", JSON.stringify({name:name,id:id}));
+    ensureLoggedInUI();
+    setTimeout(function(){
+      if(typeof loadData === "function") loadData();
+      if(typeof renderAll === "function") renderAll();
+    }, 150);
+  };
+
+  window.logout = function(){
+    localStorage.removeItem("sm_professional_user");
+    location.reload();
+  };
+
+  // Safe page switching without chart lock
+  window.openPage = function(id, btn){
+    document.querySelectorAll(".page").forEach(function(p){p.classList.remove("active");});
+    const page = qs(id);
+    if(page) page.classList.add("active");
+    document.querySelectorAll(".nav button").forEach(function(b){b.classList.remove("active");});
+    if(btn) btn.classList.add("active");
+
+    if(id !== "chart" && typeof currentChart !== "undefined") currentChart = -1;
+
+    if(id === "dashboard" && typeof renderDashboard === "function") renderDashboard();
+    if(id === "heatmap" && typeof renderHeatmap === "function") renderHeatmap();
+    if(id === "index" && typeof renderIndex === "function") renderIndex();
+    if(id === "group" && typeof renderGroup === "function") renderGroup();
+    if(id === "hidden" && typeof renderHidden === "function") renderHidden();
+    if(id === "option" && typeof renderOption === "function") renderOption();
+
+    window.scrollTo({top:0, behavior:"smooth"});
+  };
+
+  // Override renderAll so chart never loops/hangs and dashboard always appears.
+  window.renderAll = function(){
+    try{ if(typeof renderDashboard === "function") renderDashboard(); }catch(e){ console.warn(e); }
+    try{ if(typeof renderHeatmap === "function") renderHeatmap(); }catch(e){}
+    try{ if(typeof renderIndex === "function") renderIndex(); }catch(e){}
+    try{ if(typeof renderGroup === "function") renderGroup(); }catch(e){}
+    try{ if(typeof renderHidden === "function") renderHidden(); }catch(e){}
+    try{ if(typeof renderOption === "function") renderOption(); }catch(e){}
+    setTimeout(showDashboardFallbackIfBlank, 200);
+  };
+
+  function showDashboardFallbackIfBlank(){
+    const simple = qs("simpleView");
+    const expert = qs("expertView");
+    const hasData = (window.stocks && window.stocks.length) || false;
+    const simpleEmpty = simple && simple.innerHTML.trim().length < 20;
+    const expertEmpty = expert && expert.innerHTML.trim().length < 20;
+    if(hasData && simpleEmpty && expertEmpty && typeof filtered === "function"){
+      try{
+        const list = filtered();
+        if(typeof renderSimple === "function") renderSimple(list);
+      }catch(e){}
+    }
+    if(!hasData && simple && simple.innerHTML.trim().length < 20){
+      simple.innerHTML = '<div class="infoBox"><b>Fast data ready hone wala hai...</b><br>Agar data na aaye to Load Data dabao.</div>';
+    }
+  }
+
+  // Ensure buttons work even if old script missed handlers
+  window.addEventListener("DOMContentLoaded", function(){
+    ensureLoggedInUI();
+    const loginBtn = document.querySelector("#loginPage button");
+    if(loginBtn) loginBtn.onclick = window.login;
+
+    setTimeout(function(){
+      ensureLoggedInUI();
+      if(localStorage.getItem("sm_professional_user")){
+        if(typeof loadData === "function") loadData();
+        setTimeout(function(){ if(typeof renderAll === "function") renderAll(); }, 800);
+      }
+    }, 300);
+  });
+})();
+</script>
+
+
+<script>
+/* TABLE RENDER FIX - NO FALLBACK OVERWRITE */
+(function(){
+  function byId(id){ return document.getElementById(id); }
+
+  function clearLoadingBox(){
+    const simple = byId("simpleView");
+    const expert = byId("expertView");
+    if(simple && simple.textContent.includes("Data loading")) simple.innerHTML = "";
+    if(expert && expert.textContent.includes("Data loading")) expert.innerHTML = "";
+  }
+
+  function forceRenderCurrentMode(){
+    try{
+      clearLoadingBox();
+      if(!Array.isArray(window.stocks) || window.stocks.length === 0) return;
+
+      // Use saved/current mode. If Expert button is active, force expert table.
+      let currentMode = window.mode || localStorage.getItem("sm_professional_mode") || "simple";
+      const expertBtn = byId("expertBtn");
+      const simpleBtn = byId("simpleBtn");
+      const simpleView = byId("simpleView");
+      const expertView = byId("expertView");
+
+      if(expertBtn && expertBtn.classList.contains("active")) currentMode = "expert";
+      if(simpleBtn && simpleBtn.classList.contains("active")) currentMode = "simple";
+
+      if(typeof window.filtered !== "function") return;
+      const list = window.filtered();
+
+      if(typeof window.renderStats === "function") window.renderStats(list);
+
+      if(currentMode === "expert"){
+        window.mode = "expert";
+        if(simpleBtn) simpleBtn.classList.remove("active");
+        if(expertBtn) expertBtn.classList.add("active");
+        if(simpleView) simpleView.classList.add("hidden");
+        if(expertView) expertView.classList.remove("hidden");
+        if(typeof window.renderExpert === "function") window.renderExpert(list);
+      } else {
+        window.mode = "simple";
+        if(expertBtn) expertBtn.classList.remove("active");
+        if(simpleBtn) simpleBtn.classList.add("active");
+        if(expertView) expertView.classList.add("hidden");
+        if(simpleView) simpleView.classList.remove("hidden");
+        if(typeof window.renderSimple === "function") window.renderSimple(list);
+      }
+    }catch(e){
+      console.warn("forceRenderCurrentMode failed", e);
+    }
+  }
+
+  // override setMode safely
+  const oldSetMode = window.setMode;
+  window.setMode = function(m){
+    window.mode = m;
+    localStorage.setItem("sm_professional_mode", m);
+    const simpleBtn = byId("simpleBtn");
+    const expertBtn = byId("expertBtn");
+    const simpleView = byId("simpleView");
+    const expertView = byId("expertView");
+
+    if(simpleBtn) simpleBtn.classList.toggle("active", m==="simple");
+    if(expertBtn) expertBtn.classList.toggle("active", m==="expert");
+    if(simpleView) simpleView.classList.toggle("hidden", m!=="simple");
+    if(expertView) expertView.classList.toggle("hidden", m!=="expert");
+    forceRenderCurrentMode();
+  };
+
+  const oldLoad = window.loadData;
+  window.loadData = async function(){
+    const btn = document.querySelector('button[onclick="loadData()"]');
+    const oldText = btn ? btn.textContent : "";
+    if(btn) btn.textContent = "Loading...";
+    try{
+      if(oldLoad) await oldLoad();
+      if(Array.isArray(window.stocks)){
+        window.stocks.forEach(s=>{
+          if(Array.isArray(s.candles) && s.candles.length > 80) s.candles = s.candles.slice(-80);
+        });
+      }
+      forceRenderCurrentMode();
+    }catch(e){
+      alert("Data load fail: " + e.message);
+    }finally{
+      if(btn) btn.textContent = oldText || "Load Data";
+    }
+  };
+
+  const oldUpdate = window.updateNow;
+  window.updateNow = async function(){
+    const btn = document.querySelector('button[onclick="updateNow()"]');
+    const oldText = btn ? btn.textContent : "";
+    if(btn) btn.textContent = "Updating...";
+    try{
+      if(oldUpdate) await oldUpdate();
+      forceRenderCurrentMode();
+    }catch(e){
+      alert("Update fail: " + e.message);
+    }finally{
+      if(btn) btn.textContent = oldText || "Update Market";
+    }
+  };
+
+  const oldRenderAll = window.renderAll;
+  window.renderAll = function(){
+    try{
+      if(oldRenderAll) oldRenderAll();
+    }catch(e){}
+    setTimeout(forceRenderCurrentMode, 50);
+  };
+
+  // Login restore
+  const oldLogin = window.login;
+  window.login = function(){
+    if(oldLogin) oldLogin();
+    setTimeout(function(){
+      if(typeof window.loadData === "function") window.loadData();
+      forceRenderCurrentMode();
+    }, 500);
+  };
+
+  window.addEventListener("DOMContentLoaded", function(){
+    setTimeout(forceRenderCurrentMode, 1200);
+    setTimeout(forceRenderCurrentMode, 2500);
+  });
+})();
+</script>
+
+
+<script>
+/* DATE TIME FIX */
+(function(){
+  function byId(id){ return document.getElementById(id); }
+
+  function istDateTime(){
+    const now = new Date();
+    return {
+      date: now.toLocaleDateString("en-IN", {
+        timeZone:"Asia/Kolkata",
+        day:"2-digit",
+        month:"2-digit",
+        year:"numeric"
+      }),
+      time: now.toLocaleTimeString("en-IN", {
+        timeZone:"Asia/Kolkata",
+        hour:"2-digit",
+        minute:"2-digit",
+        second:"2-digit",
+        hour12:true
+      })
+    };
+  }
+
+  function formatIST(v){
+    if(!v) return "-";
+    try{
+      return new Date(v).toLocaleString("en-IN", {
+        timeZone:"Asia/Kolkata",
+        day:"2-digit",
+        month:"2-digit",
+        year:"numeric",
+        hour:"2-digit",
+        minute:"2-digit",
+        second:"2-digit",
+        hour12:true
+      });
+    }catch(e){ return "-"; }
+  }
+
+  function ensureDateTimeBar(){
+    const dashboard = byId("dashboard");
+    if(!dashboard || byId("dateTimeBar")) return;
+
+    const bar = document.createElement("div");
+    bar.id = "dateTimeBar";
+    bar.className = "dateTimeBar";
+    bar.innerHTML = `
+      <div class="dateTimeCard">
+        <small>Today Date</small>
+        <b id="todayDate">-</b>
+      </div>
+      <div class="dateTimeCard">
+        <small>Current Time IST</small>
+        <b id="currentTimeIST">-</b>
+      </div>
+      <div class="dateTimeCard">
+        <small>Last Data Update</small>
+        <b id="lastDataUpdate">-</b>
+      </div>
+    `;
+
+    const toolbar = dashboard.querySelector(".toolbar");
+    if(toolbar) toolbar.insertAdjacentElement("afterend", bar);
+    else dashboard.prepend(bar);
+  }
+
+  function updateClock(){
+    ensureDateTimeBar();
+    const t = istDateTime();
+    if(byId("todayDate")) byId("todayDate").textContent = t.date;
+    if(byId("currentTimeIST")) byId("currentTimeIST").textContent = t.time;
+  }
+
+  const oldLoadData = window.loadData;
+  window.loadData = async function(){
+    if(oldLoadData) await oldLoadData();
+    updateClock();
+    try{
+      if(Array.isArray(window.stocks) && window.stocks.length && byId("lastDataUpdate")){
+        // Try current server updatedAt from already loaded API by fetching only lightweight header data
+        fetch("https://smartmoney-engine-1e4q.onrender.com/api/ohlc-data")
+          .then(r=>r.json())
+          .then(d=>{
+            if(byId("lastDataUpdate")) byId("lastDataUpdate").textContent = formatIST(d.updatedAt);
+          })
+          .catch(()=>{});
+      }
+    }catch(e){}
+  };
+
+  const oldUpdateNow = window.updateNow;
+  window.updateNow = async function(){
+    if(oldUpdateNow) await oldUpdateNow();
+    updateClock();
+    if(byId("lastDataUpdate")) byId("lastDataUpdate").textContent = formatIST(new Date().toISOString());
+  };
+
+  window.addEventListener("DOMContentLoaded", function(){
+    ensureDateTimeBar();
+    updateClock();
+    setInterval(updateClock, 1000);
+  });
+
+  setTimeout(function(){
+    ensureDateTimeBar();
+    updateClock();
+  }, 800);
+})();
+</script>
+
+
+<script>
+/* ULTRA FAST LOADING PATCH */
+(function(){
+  const API_BASE = "https://smartmoney-engine-1e4q.onrender.com";
+  let fullDataLoaded = false;
+
+  function miniMetrics(s){
+    const price = Number(s.price||0);
+    const vwap = Number(s.vwap||0);
+    const support = Number(s.low||0);
+    const resistance = Number(s.high||0);
+    const perf = s.open ? ((price - Number(s.open)) / Number(s.open)) * 100 : 0;
+    return {
+      price, vwap, support, resistance,
+      rsi: price > vwap ? 58 : 42,
+      trend: price > vwap ? "Bullish" : price < vwap ? "Bearish" : "Range",
+      volumeSpike: 0,
+      openingHigh: resistance,
+      openingLow: support,
+      perf
+    };
+  }
+
+  window.metrics = function(s){
+    if(!s) return null;
+    if(Array.isArray(s.candles) && s.candles.length){
+      const c=s.candles.slice(-60);
+      const last=c[c.length-1], cl=c.map(x=>x.close), hi=c.map(x=>x.high), lo=c.map(x=>x.low), vol=c.map(x=>x.volume||0);
+      const avg=a=>a.filter(x=>Number.isFinite(Number(x))).map(Number).reduce((x,y,i,arr)=>x+y/arr.length,0);
+      const price=Number(last.close||0), vwap=Number(avg(cl.slice(-20)).toFixed(2));
+      return {
+        last,
+        price:+price.toFixed(2),
+        vwap,
+        rsi: price>vwap?58:42,
+        support:+Math.min(...lo.slice(-20)).toFixed(2),
+        resistance:+Math.max(...hi.slice(-20)).toFixed(2),
+        trend: price>vwap?"Bullish":price<vwap?"Bearish":"Range",
+        volumeSpike:0,
+        openingHigh:Math.max(...hi.slice(0,3)),
+        openingLow:Math.min(...lo.slice(0,3))
+      };
+    }
+    return miniMetrics(s);
+  };
+
+  window.perf = function(s){
+    if(Array.isArray(s.candles) && s.candles.length){
+      const c=s.candles.slice(-60);
+      const first=c[0]?.open||0,last=c[c.length-1]?.close||0;
+      return first?((last-first)/first)*100:0;
+    }
+    return miniMetrics(s).perf || 0;
+  };
+
+  const oldLoadData = window.loadData;
+  window.loadData = async function(){
+    const btn = document.querySelector('button[onclick="loadData()"]');
+    const oldText = btn ? btn.textContent : "";
+    try{
+      if(btn) btn.textContent = "Fast Loading...";
+      const r = await fetch(API_BASE + "/api/summary-data", {cache:"no-store"});
+      if(!r.ok) throw new Error("summary endpoint not ready");
+      const d = await r.json();
+      window.stocks = d.stocks || [];
+      fullDataLoaded = false;
+      if(typeof window.renderAll === "function") window.renderAll();
+      const last = document.getElementById("lastDataUpdate");
+      if(last && d.updatedAt){
+        last.textContent = new Date(d.updatedAt).toLocaleString("en-IN",{timeZone:"Asia/Kolkata",hour12:true});
+      }
+    }catch(e){
+      if(oldLoadData) await oldLoadData();
+    }finally{
+      if(btn) btn.textContent = oldText || "Load Data";
+    }
+  };
+
+  const oldShowChart = window.showChart;
+  window.showChart = async function(i){
+    if(!fullDataLoaded || !window.stocks[i]?.candles){
+      const box = document.getElementById("chartBox");
+      if(box) box.innerHTML = '<div class="infoBox"><b>Chart loading...</b></div>';
+      try{
+        const r = await fetch(API_BASE + "/api/ohlc-data", {cache:"no-store"});
+        const d = await r.json();
+        const full = d.stocks || [];
+        window.stocks = window.stocks.map((s,idx)=>Object.assign({}, s, full[idx] || {}));
+        window.stocks.forEach(s=>{
+          if(Array.isArray(s.candles) && s.candles.length>80) s.candles=s.candles.slice(-80);
+        });
+        fullDataLoaded = true;
+      }catch(e){
+        alert("Chart data load fail: " + e.message);
+        return;
+      }
+    }
+    if(oldShowChart) oldShowChart(i);
+  };
+
+  window.addEventListener("DOMContentLoaded", function(){
+    setTimeout(()=>{ if(typeof window.loadData==="function") window.loadData(); }, 300);
+  });
+})();
+</script>
+
 </body>
 </html>

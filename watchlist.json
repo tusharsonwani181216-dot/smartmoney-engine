@@ -474,6 +474,136 @@
       "market": "BSE",
       "symbol": "UPL.BO",
       "name": "UPL"
+    },
+    {
+      "market": "NSE",
+      "symbol": "BANKBARODA.NS",
+      "name": "Bank of Baroda"
+    },
+    {
+      "market": "NSE",
+      "symbol": "PNB.NS",
+      "name": "Punjab National Bank"
+    },
+    {
+      "market": "NSE",
+      "symbol": "FEDERALBNK.NS",
+      "name": "Federal Bank"
+    },
+    {
+      "market": "NSE",
+      "symbol": "AUBANK.NS",
+      "name": "AU Small Finance Bank"
+    },
+    {
+      "market": "NSE",
+      "symbol": "ICICIPRULI.NS",
+      "name": "ICICI Prudential Life"
+    },
+    {
+      "market": "NSE",
+      "symbol": "LTIM.NS",
+      "name": "LTIMindtree"
+    },
+    {
+      "market": "NSE",
+      "symbol": "MPHASIS.NS",
+      "name": "Mphasis"
+    },
+    {
+      "market": "NSE",
+      "symbol": "PERSISTENT.NS",
+      "name": "Persistent Systems"
+    },
+    {
+      "market": "NSE",
+      "symbol": "TVSMOTOR.NS",
+      "name": "TVS Motor"
+    },
+    {
+      "market": "NSE",
+      "symbol": "ASHOKLEY.NS",
+      "name": "Ashok Leyland"
+    },
+    {
+      "market": "NSE",
+      "symbol": "LUPIN.NS",
+      "name": "Lupin"
+    },
+    {
+      "market": "NSE",
+      "symbol": "AUROPHARMA.NS",
+      "name": "Aurobindo Pharma"
+    },
+    {
+      "market": "NSE",
+      "symbol": "TORNTPHARM.NS",
+      "name": "Torrent Pharma"
+    },
+    {
+      "market": "BSE",
+      "symbol": "BANKBARODA.BO",
+      "name": "Bank of Baroda"
+    },
+    {
+      "market": "BSE",
+      "symbol": "PNB.BO",
+      "name": "Punjab National Bank"
+    },
+    {
+      "market": "BSE",
+      "symbol": "FEDERALBNK.BO",
+      "name": "Federal Bank"
+    },
+    {
+      "market": "BSE",
+      "symbol": "AUBANK.BO",
+      "name": "AU Small Finance Bank"
+    },
+    {
+      "market": "BSE",
+      "symbol": "ICICIPRULI.BO",
+      "name": "ICICI Prudential Life"
+    },
+    {
+      "market": "BSE",
+      "symbol": "LTIM.BO",
+      "name": "LTIMindtree"
+    },
+    {
+      "market": "BSE",
+      "symbol": "MPHASIS.BO",
+      "name": "Mphasis"
+    },
+    {
+      "market": "BSE",
+      "symbol": "PERSISTENT.BO",
+      "name": "Persistent Systems"
+    },
+    {
+      "market": "BSE",
+      "symbol": "TVSMOTOR.BO",
+      "name": "TVS Motor"
+    },
+    {
+      "market": "BSE",
+      "symbol": "ASHOKLEY.BO",
+      "name": "Ashok Leyland"
+    },
+    {
+      "market": "BSE",
+      "symbol": "LUPIN.BO",
+      "name": "Lupin"
+    },
+    {
+      "market": "BSE",
+      "symbol": "AUROPHARMA.BO",
+      "name": "Aurobindo Pharma"
+    },
+    {
+      "market": "BSE",
+      "symbol": "TORNTPHARM.BO",
+      "name": "Torrent Pharma"
     }
   ]
 }
