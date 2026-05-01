@@ -1,18 +1,20 @@
-SmartMoney 30 Stock Ready Build
+FULL NSE + BSE MARKET SETUP
 
-Is ZIP me local ohlc-data.json me 30 stocks already added hain.
-Ab Firebase deploy ke turant baad 4 ki jagah 30 stocks dikhenge.
+INSTALL:
 
-Important:
-1) Firebase deploy updates frontend + local ohlc-data.json.
-2) Backend Render update ke liye git push bhi zaruri hai.
-3) Agar backend old data de raha ho tab bhi local 30 stocks fallback force fix chalega.
+npm install yahoo-finance2 axios fs-extra
 
-Commands:
-firebase deploy
+RUN:
 
-Backend:
-npm install
+node market-fetch.js
+
+AUTO UPDATE:
+Add server_patch.js code into server.js
+
+DEPLOY:
+
 git add .
-git commit -m "30 stock ready build"
+git commit -m "full nse bse support"
 git push
+
+firebase deploy
