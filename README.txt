@@ -1,60 +1,17 @@
-SmartMoney Pro Complete Professional ZIP
+SmartMoney Backend First Full Build
 
-This build replaces the old conflicting single HTML with one stable render engine.
+Fix:
+- Backend first load: /api/summary-data
+- Fallback: /api/ohlc-data
+- Last fallback: local ohlc-data.json
+- So dashboard can show 30/50/75/100 stocks from backend, not only 4 local sample stocks.
+- Chart full candles load on click.
 
-Features:
-- Login
-- Dashboard
-- Simple Mode
-- Expert Mode
-- Heatmap
-- Index analysis
-- Group analysis
-- Hidden Gems
-- Option Chain AI
-- Stable chart
-- Groww and TradingView buttons
-- Entry / SL / Target / Qty / Risk
-- No duplicate JS render conflict
-- No disappearing table
-
-Deploy Firebase:
+Deploy frontend:
 firebase deploy
 
-Backend Render:
+Deploy backend:
 npm install
-npm start
 git add .
-git commit -m "complete professional stable build"
+git commit -m "backend first full stocks"
 git push
-
-Chart Hang Fix:
-- Removed auto showChart call from renderAll
-- Leaving chart tab clears chart lock
-- Tabs work normally after chart opens
-- No repeated chart redraw on every data refresh
-
-
-FINAL WORKING CLEAN FIX:
-- Login works
-- Dashboard renders after login
-- Load Data works
-- Update Market works
-- Chart does not lock UI
-- Notes removed safely without breaking JavaScript
-
-TABLE RENDER FIX:
-- Loaded data now renders table/cards
-- Expert/Simple mode stable
-- Data loading fallback removed after data arrives
-
-DATE TIME FIX:
-- Today date added
-- Current IST time added
-- Last data update added
-
-ULTRA FAST LOADING:
-- Added /api/summary-data lightweight backend endpoint
-- Dashboard loads summary only
-- Full candle data loads only when chart is clicked
-- Faster first load
