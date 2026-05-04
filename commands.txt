@@ -1,11 +1,11 @@
 cd /d E:\smartmoney_engine
 
-npm install yahoo-finance2
+npm install yahoo-finance2 fs-extra axios
 
 node market-fetch.js
 
 git add .
-git commit -m "fix real stock price and auto update"
+git commit -m "dynamic live entry exit and real market data"
 git push
 
 firebase deploy

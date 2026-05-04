@@ -1,16 +1,7 @@
+SmartMoney Dynamic Entry/Exit Ready Build
 
-SMARTMONEY MARKET TIME PATCH
-
-1. Open index.html
-2. Paste getMarketSession() above analyze()
-3. Add session logic inside analyze()
-
-Deploy:
-firebase deploy
-
-Features:
-- Market open/close logic
-- Buy/Sell only in active session
-- Opening wait logic
-- Exit/square-off logic
-- Weekend no-trade
+Includes:
+- Real YahooFinance market-fetch.js
+- Dynamic Entry / Stop Loss / Target based on live price
+- Auto refresh every 60 seconds when enabled
+- Server auto-updater patch every 5 minutes

@@ -439,5 +439,68 @@ showApp();
 })();
 </script>
 
-</body>
+
+<script>
+/* DYNAMIC ENTRY EXIT LIVE PATCH */
+(function(){
+  const oldAnalyzeDynamic = window.analyze;
+
+  window.analyze = function(s){
+    const a = oldAnalyzeDynamic ? oldAnalyzeDynamic(s) : null;
+    if(!a || !a.m) return a;
+
+    const livePrice = Number(a.m.price || a.entry || 0);
+    if(!livePrice) return a;
+
+    let entry = livePrice;
+    let sl = 0;
+    let target = 0;
+
+    if(a.signal === "BUY STUDY" || a.decision === "TRADE POSSIBLE" || a.cls === "buy"){
+      sl = +(livePrice * 0.992).toFixed(2);
+      target = +(livePrice * 1.018).toFixed(2);
+    } else if(a.signal === "SELL STUDY" || a.decision === "BUY AVOID" || a.cls === "sell"){
+      sl = +(livePrice * 1.008).toFixed(2);
+      target = +(livePrice * 0.982).toFixed(2);
+    } else {
+      sl = +(livePrice * 0.995).toFixed(2);
+      target = +(livePrice * 1.005).toFixed(2);
+    }
+
+    const rps = Math.abs(entry - sl);
+    let maxRisk = 50;
+    try{
+      maxRisk = (Number(window.risk?.capital || document.getElementById("capital")?.value || 10000) *
+                 Number(window.risk?.riskPct || document.getElementById("riskPct")?.value || 0.5)) / 100;
+    }catch(e){}
+
+    a.entry = +entry.toFixed(2);
+    a.sl = sl;
+    a.target = target;
+    a.qty = rps ? Math.floor(maxRisk / rps) : 0;
+    a.risk = rps ? "₹" + Math.round(maxRisk) : "-";
+    a.rule = (a.rule || "") + " • Live Entry/SL/Target";
+
+    return a;
+  };
+
+  window.toggleAuto = function(){
+    if(window.autoTimer){
+      clearInterval(window.autoTimer);
+      window.autoTimer = null;
+      const btn = document.getElementById("autoBtn");
+      if(btn){ btn.textContent = "Auto OFF"; btn.className = "secondary"; }
+      return;
+    }
+    window.autoTimer = setInterval(async function(){
+      if(document.hidden) return;
+      if(typeof window.loadData === "function") await window.loadData();
+    }, 60000);
+    const btn = document.getElementById("autoBtn");
+    if(btn){ btn.textContent = "Auto ON"; btn.className = "danger"; }
+    if(typeof window.loadData === "function") window.loadData();
+  };
+})();
+</script>
+\n</body>
 </html>
