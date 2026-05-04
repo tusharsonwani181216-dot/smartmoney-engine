@@ -1,0 +1,11 @@
+cd /d E:\smartmoney_engine
+
+npm install yahoo-finance2
+
+node market-fetch.js
+
+git add .
+git commit -m "fix real stock price and auto update"
+git push
+
+firebase deploy
