@@ -1,77 +1,77 @@
 {
-  "updated": 1777876844001,
+  "updated": 1777983449973,
   "stocks": [
     {
       "symbol": "TATASTEEL.NS",
-      "price": 212.61,
-      "open": 212.55,
-      "high": 214.5,
-      "low": 212.33,
-      "volume": 10704978,
-      "time": "4/5/2026, 12:10:42 pm"
+      "price": 211.32,
+      "open": 212.2,
+      "high": 212.34,
+      "low": 209.45,
+      "volume": 20730945,
+      "time": "5/5/2026, 5:47:29 pm"
     },
     {
       "symbol": "RELIANCE.NS",
-      "price": 1449.2,
-      "open": 1433.4,
-      "high": 1452.7,
-      "low": 1433.4,
-      "volume": 7928768,
-      "time": "4/5/2026, 12:10:42 pm"
+      "price": 1463.6,
+      "open": 1460,
+      "high": 1473.4,
+      "low": 1450,
+      "volume": 23541837,
+      "time": "5/5/2026, 5:47:29 pm"
     },
     {
       "symbol": "TCS.NS",
-      "price": 2438.1,
-      "open": 2494,
-      "high": 2498.3,
-      "low": 2434,
-      "volume": 1347357,
-      "time": "4/5/2026, 12:10:42 pm"
+      "price": 2427.3,
+      "open": 2430,
+      "high": 2460.4,
+      "low": 2412.2,
+      "volume": 3385505,
+      "time": "5/5/2026, 5:47:29 pm"
     },
     {
       "symbol": "INFY.NS",
-      "price": 1175.2,
-      "open": 1195,
-      "high": 1195,
-      "low": 1175,
-      "volume": 3443726,
-      "time": "4/5/2026, 12:10:43 pm"
+      "price": 1178.1,
+      "open": 1169.5,
+      "high": 1185.2,
+      "low": 1160.1,
+      "volume": 8163102,
+      "time": "5/5/2026, 5:47:29 pm"
     },
     {
       "symbol": "SBIN.NS",
-      "price": 1076.1,
-      "open": 1063.6,
-      "high": 1089.1,
-      "low": 1063.6,
-      "volume": 6508680,
-      "time": "4/5/2026, 12:10:43 pm"
+      "price": 1059.9,
+      "open": 1060.6,
+      "high": 1068.5,
+      "low": 1049.4,
+      "volume": 12192613,
+      "time": "5/5/2026, 5:47:29 pm"
     },
     {
       "symbol": "ICICIBANK.NS",
-      "price": 1275.2,
-      "open": 1264.3,
-      "high": 1282.2,
-      "low": 1264.3,
-      "volume": 6795584,
-      "time": "4/5/2026, 12:10:43 pm"
+      "price": 1251.3,
+      "open": 1264,
+      "high": 1266.7,
+      "low": 1245.5,
+      "volume": 24446141,
+      "time": "5/5/2026, 5:47:29 pm"
     },
     {
       "symbol": "HDFCBANK.NS",
-      "price": 783.1,
-      "open": 772.6,
-      "high": 786.6,
-      "low": 772.6,
-      "volume": 13129171,
-      "time": "4/5/2026, 12:10:43 pm"
+      "price": 772.3,
+      "open": 774.4,
+      "high": 776.9,
+      "low": 763.7,
+      "volume": 38885326,
+      "time": "5/5/2026, 5:47:29 pm"
     },
     {
       "symbol": "COALINDIA.NS",
-      "price": 479.7,
-      "open": 481.6,
-      "high": 487,
-      "low": 478.85,
-      "volume": 4724632,
-      "time": "4/5/2026, 12:10:44 pm"
+      "price": 472.6,
+      "open": 479.95,
+      "high": 480,
+      "low": 471.2,
+      "volume": 6946004,
+      "time": "5/5/2026, 5:47:29 pm"
     }
   ]
 }

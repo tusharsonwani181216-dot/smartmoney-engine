@@ -342,7 +342,7 @@ async function loadData(){
   let d;
   // Backend first: full 30/50/75/100 stocks will come from Render API.
   try{
-    d = await fetchJson(API + "/api/summary-data", 2);
+    d = await fetchJson(API + "/api/summary-data?t=" + Date.now(), 2);
     stocks = d.stocks || [];
     rawFullData = null;
     fullCandlesLoaded = false;
@@ -350,14 +350,14 @@ async function loadData(){
   }catch(e1){
     // Fallback: full backend OHLC
     try{
-      d = await fetchJson(API + "/api/ohlc-data", 2);
+      d = await fetchJson(API + "/api/ohlc-data?t=" + Date.now(), 2);
       rawFullData = d;
       stocks = toSummary(d).stocks;
       fullCandlesLoaded = false;
       loadStatus.textContent = "Backend OHLC";
     }catch(e2){
       // Last fallback: local sample file
-      d = await fetchJson("./ohlc-data.json", 1);
+      d = await fetchJson(API + "/api/ohlc-data?t=" + Date.now(), 1);
       rawFullData = d;
       stocks = toSummary(d).stocks;
       fullCandlesLoaded = false;
@@ -375,7 +375,7 @@ async function loadData(){
 }
 async function updateNow(){
  loadStatus.textContent="Updating...";
- try{await fetchJson(API+"/api/update-now",1)}catch(e){}
+ try{await fetchJson(API+"/api/update-now?t="+Date.now(),1)}catch(e){}
  await loadData();
 }
 function toggleAuto(){if(autoTimer){clearInterval(autoTimer);autoTimer=null;autoBtn.textContent="Auto OFF";autoBtn.className="secondary";return}autoTimer=setInterval(()=>{if(!document.hidden)loadData()},180000);autoBtn.textContent="Auto ON";autoBtn.className="danger";loadData()}
@@ -396,7 +396,7 @@ function renderHidden(){const list=stocks.map((s,i)=>({s,i,a:analyze(s),p:perf(s
 async function ensureFullCandles(){
  if(fullCandlesLoaded)return;
  if(rawFullData){stocks=rawFullData.stocks||[];fullCandlesLoaded=true;return}
- try{const d=await fetchJson("./ohlc-data.json",1);rawFullData=d;stocks=d.stocks||[];fullCandlesLoaded=true}catch(e){const d=await fetchJson(API+"/api/ohlc-data",1);rawFullData=d;stocks=d.stocks||[];fullCandlesLoaded=true}
+ try{const d=await fetchJson(API + "/api/ohlc-data?t=" + Date.now(), 1);rawFullData=d;stocks=d.stocks||[];fullCandlesLoaded=true}catch(e){const d=await fetchJson(API+"/api/ohlc-data?t="+Date.now(),1);rawFullData=d;stocks=d.stocks||[];fullCandlesLoaded=true}
 }
 async function showChart(i){
  currentChart=i;chartBox.innerHTML='<div class="infoBox"><b>Chart loading...</b></div>';
@@ -422,7 +422,7 @@ showApp();
     if(oldLoad) await oldLoad();
     try{
       if(!Array.isArray(window.stocks) || window.stocks.length <= 4){
-        const r = await fetch("./ohlc-data.json", {cache:"no-store"});
+        const r = await fetch(API + "/api/ohlc-data?t=" + Date.now(), {cache:"no-store"});
         const d = await r.json();
         if(d.stocks && d.stocks.length > 4){
           if(typeof toSummary === "function") window.stocks = toSummary(d).stocks;
@@ -502,5 +502,31 @@ showApp();
   };
 })();
 </script>
-\n</body>
+
+<script>
+/* LOGIN SAFETY PATCH */
+window.login = function(){
+  const nameEl = document.getElementById("loginName");
+  const mobileEl = document.getElementById("loginMobile");
+  const name = nameEl ? (nameEl.value || "tushar") : "tushar";
+  const id = mobileEl ? (mobileEl.value || "6260033419") : "6260033419";
+
+  localStorage.setItem(
+    "sm_professional_user",
+    JSON.stringify({ name: name, id: id })
+  );
+
+  const loginPage = document.getElementById("loginPage");
+  const mainApp = document.getElementById("mainApp");
+
+  if (loginPage) loginPage.classList.add("hidden");
+  if (mainApp) mainApp.classList.remove("hidden");
+
+  if (typeof showApp === "function") {
+    showApp();
+  }
+};
+</script>
+
+</body>
 </html>

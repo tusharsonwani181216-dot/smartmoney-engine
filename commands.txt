@@ -1,7 +1,5 @@
 cd /d E:\smartmoney_engine
 
-npm install yahoo-finance2
-
-node market-fetch.js
+copy /Y "%USERPROFILE%\Downloads\index.html" "E:\smartmoney_engine\index.html"
 
 firebase deploy
