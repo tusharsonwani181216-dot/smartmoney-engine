@@ -1,15 +1,6 @@
 {
-  "updated": 1777983449973,
+  "updated": 1777990605388,
   "stocks": [
-    {
-      "symbol": "TATASTEEL.NS",
-      "price": 211.32,
-      "open": 212.2,
-      "high": 212.34,
-      "low": 209.45,
-      "volume": 20730945,
-      "time": "5/5/2026, 5:47:29 pm"
-    },
     {
       "symbol": "RELIANCE.NS",
       "price": 1463.6,
@@ -17,7 +8,7 @@
       "high": 1473.4,
       "low": 1450,
       "volume": 23541837,
-      "time": "5/5/2026, 5:47:29 pm"
+      "time": "5/5/2026, 7:46:36 pm"
     },
     {
       "symbol": "TCS.NS",
@@ -26,7 +17,7 @@
       "high": 2460.4,
       "low": 2412.2,
       "volume": 3385505,
-      "time": "5/5/2026, 5:47:29 pm"
+      "time": "5/5/2026, 7:46:36 pm"
     },
     {
       "symbol": "INFY.NS",
@@ -35,25 +26,7 @@
       "high": 1185.2,
       "low": 1160.1,
       "volume": 8163102,
-      "time": "5/5/2026, 5:47:29 pm"
-    },
-    {
-      "symbol": "SBIN.NS",
-      "price": 1059.9,
-      "open": 1060.6,
-      "high": 1068.5,
-      "low": 1049.4,
-      "volume": 12192613,
-      "time": "5/5/2026, 5:47:29 pm"
-    },
-    {
-      "symbol": "ICICIBANK.NS",
-      "price": 1251.3,
-      "open": 1264,
-      "high": 1266.7,
-      "low": 1245.5,
-      "volume": 24446141,
-      "time": "5/5/2026, 5:47:29 pm"
+      "time": "5/5/2026, 7:46:36 pm"
     },
     {
       "symbol": "HDFCBANK.NS",
@@ -62,7 +35,160 @@
       "high": 776.9,
       "low": 763.7,
       "volume": 38885326,
-      "time": "5/5/2026, 5:47:29 pm"
+      "time": "5/5/2026, 7:46:36 pm"
+    },
+    {
+      "symbol": "ICICIBANK.NS",
+      "price": 1251.3,
+      "open": 1264,
+      "high": 1266.7,
+      "low": 1245.5,
+      "volume": 24446141,
+      "time": "5/5/2026, 7:46:36 pm"
+    },
+    {
+      "symbol": "SBIN.NS",
+      "price": 1059.9,
+      "open": 1060.6,
+      "high": 1068.5,
+      "low": 1049.4,
+      "volume": 12192613,
+      "time": "5/5/2026, 7:46:36 pm"
+    },
+    {
+      "symbol": "BHARTIARTL.NS",
+      "price": 1806.1,
+      "open": 1828,
+      "high": 1846,
+      "low": 1801,
+      "volume": 11407135,
+      "time": "5/5/2026, 7:46:37 pm"
+    },
+    {
+      "symbol": "ITC.NS",
+      "price": 311.45,
+      "open": 311.1,
+      "high": 313.7,
+      "low": 309.65,
+      "volume": 26793325,
+      "time": "5/5/2026, 7:46:37 pm"
+    },
+    {
+      "symbol": "LT.NS",
+      "price": 4054.5,
+      "open": 4085,
+      "high": 4090,
+      "low": 4024,
+      "volume": 3849158,
+      "time": "5/5/2026, 7:46:37 pm"
+    },
+    {
+      "symbol": "AXISBANK.NS",
+      "price": 1259.7,
+      "open": 1268,
+      "high": 1273.7,
+      "low": 1252,
+      "volume": 10162874,
+      "time": "5/5/2026, 7:46:37 pm"
+    },
+    {
+      "symbol": "KOTAKBANK.NS",
+      "price": 371.35,
+      "open": 371,
+      "high": 375.5,
+      "low": 368.75,
+      "volume": 19082760,
+      "time": "5/5/2026, 7:46:37 pm"
+    },
+    {
+      "symbol": "WIPRO.NS",
+      "price": 199.78,
+      "open": 200,
+      "high": 202.3,
+      "low": 199.6,
+      "volume": 8875512,
+      "time": "5/5/2026, 7:46:37 pm"
+    },
+    {
+      "symbol": "TECHM.NS",
+      "price": 1452.2,
+      "open": 1465,
+      "high": 1483.8,
+      "low": 1447.1,
+      "volume": 711047,
+      "time": "5/5/2026, 7:46:37 pm"
+    },
+    {
+      "symbol": "SUNPHARMA.NS",
+      "price": 1820.8,
+      "open": 1828.5,
+      "high": 1831.7,
+      "low": 1798.6,
+      "volume": 3011325,
+      "time": "5/5/2026, 7:46:37 pm"
+    },
+    {
+      "symbol": "TITAN.NS",
+      "price": 4373.6,
+      "open": 4355,
+      "high": 4397,
+      "low": 4330.3,
+      "volume": 850704,
+      "time": "5/5/2026, 7:46:37 pm"
+    },
+    {
+      "symbol": "ULTRACEMCO.NS",
+      "price": 11963,
+      "open": 11671,
+      "high": 11987,
+      "low": 11624,
+      "volume": 350024,
+      "time": "5/5/2026, 7:46:38 pm"
+    },
+    {
+      "symbol": "MARUTI.NS",
+      "price": 13426,
+      "open": 13560,
+      "high": 13568,
+      "low": 13360,
+      "volume": 419485,
+      "time": "5/5/2026, 7:46:38 pm"
+    },
+    {
+      "symbol": "POWERGRID.NS",
+      "price": 319.45,
+      "open": 318.9,
+      "high": 321.3,
+      "low": 315,
+      "volume": 8569361,
+      "time": "5/5/2026, 7:46:38 pm"
+    },
+    {
+      "symbol": "NTPC.NS",
+      "price": 398.65,
+      "open": 398.3,
+      "high": 400.5,
+      "low": 394.55,
+      "volume": 6790575,
+      "time": "5/5/2026, 7:46:38 pm"
+    },
+    {
+      "symbol": "ONGC.NS",
+      "price": 289.95,
+      "open": 294.35,
+      "high": 295.9,
+      "low": 287,
+      "volume": 10749508,
+      "time": "5/5/2026, 7:46:38 pm"
+    },
+    {
+      "symbol": "TATASTEEL.NS",
+      "price": 211.32,
+      "open": 212.2,
+      "high": 212.34,
+      "low": 209.45,
+      "volume": 20730945,
+      "time": "5/5/2026, 7:46:38 pm"
     },
     {
       "symbol": "COALINDIA.NS",
@@ -71,7 +197,520 @@
       "high": 480,
       "low": 471.2,
       "volume": 6946004,
-      "time": "5/5/2026, 5:47:29 pm"
+      "time": "5/5/2026, 7:46:38 pm"
+    },
+    {
+      "symbol": "JSWSTEEL.NS",
+      "price": 1252.4,
+      "open": 1260.5,
+      "high": 1264.9,
+      "low": 1245.8,
+      "volume": 1471595,
+      "time": "5/5/2026, 7:46:38 pm"
+    },
+    {
+      "symbol": "HINDALCO.NS",
+      "price": 1054.7,
+      "open": 1036.3,
+      "high": 1059,
+      "low": 1031.1,
+      "volume": 4580446,
+      "time": "5/5/2026, 7:46:38 pm"
+    },
+    {
+      "symbol": "ADANIENT.NS",
+      "price": 2462,
+      "open": 2470,
+      "high": 2511.9,
+      "low": 2450,
+      "volume": 1622183,
+      "time": "5/5/2026, 7:46:39 pm"
+    },
+    {
+      "symbol": "ADANIPORTS.NS",
+      "price": 1725,
+      "open": 1749.8,
+      "high": 1757.4,
+      "low": 1718.7,
+      "volume": 4356531,
+      "time": "5/5/2026, 7:46:39 pm"
+    },
+    {
+      "symbol": "M&M.NS",
+      "price": 3210.8,
+      "open": 3114,
+      "high": 3222,
+      "low": 3070.2,
+      "volume": 6453356,
+      "time": "5/5/2026, 7:46:39 pm"
+    },
+    {
+      "symbol": "BAJFINANCE.NS",
+      "price": 958.6,
+      "open": 950.2,
+      "high": 961.1,
+      "low": 933.15,
+      "volume": 7289382,
+      "time": "5/5/2026, 7:46:39 pm"
+    },
+    {
+      "symbol": "HCLTECH.NS",
+      "price": 1200.2,
+      "open": 1200,
+      "high": 1205.4,
+      "low": 1190,
+      "volume": 2459326,
+      "time": "5/5/2026, 7:46:39 pm"
+    },
+    {
+      "symbol": "CIPLA.NS",
+      "price": 1333.7,
+      "open": 1339,
+      "high": 1339.4,
+      "low": 1316.4,
+      "volume": 1051012,
+      "time": "5/5/2026, 7:46:39 pm"
+    },
+    {
+      "symbol": "DRREDDY.NS",
+      "price": 1271.2,
+      "open": 1287.6,
+      "high": 1292.4,
+      "low": 1268.5,
+      "volume": 986256,
+      "time": "5/5/2026, 7:46:39 pm"
+    },
+    {
+      "symbol": "LUPIN.NS",
+      "price": 2343.3,
+      "open": 2354,
+      "high": 2364.6,
+      "low": 2326.6,
+      "volume": 1418756,
+      "time": "5/5/2026, 7:46:39 pm"
+    },
+    {
+      "symbol": "AUROPHARMA.NS",
+      "price": 1428.1,
+      "open": 1373.9,
+      "high": 1431,
+      "low": 1367,
+      "volume": 1811546,
+      "time": "5/5/2026, 7:46:40 pm"
+    },
+    {
+      "symbol": "TORNTPHARM.NS",
+      "price": 4275.1,
+      "open": 4251.8,
+      "high": 4300,
+      "low": 4236.4,
+      "volume": 162267,
+      "time": "5/5/2026, 7:46:40 pm"
+    },
+    {
+      "symbol": "BANKBARODA.NS",
+      "price": 263.4,
+      "open": 265.4,
+      "high": 265.8,
+      "low": 261.55,
+      "volume": 6129715,
+      "time": "5/5/2026, 7:46:40 pm"
+    },
+    {
+      "symbol": "PNB.NS",
+      "price": 107.89,
+      "open": 108.8,
+      "high": 111.41,
+      "low": 105.45,
+      "volume": 57258947,
+      "time": "5/5/2026, 7:46:40 pm"
+    },
+    {
+      "symbol": "CANBK.NS",
+      "price": 134.31,
+      "open": 134.98,
+      "high": 135.33,
+      "low": 133.13,
+      "volume": 11744675,
+      "time": "5/5/2026, 7:46:40 pm"
+    },
+    {
+      "symbol": "FEDERALBNK.NS",
+      "price": 292.6,
+      "open": 289.35,
+      "high": 295,
+      "low": 286.6,
+      "volume": 5868359,
+      "time": "5/5/2026, 7:46:40 pm"
+    },
+    {
+      "symbol": "IDFCFIRSTB.NS",
+      "price": 68.75,
+      "open": 69.51,
+      "high": 69.59,
+      "low": 68.36,
+      "volume": 15312282,
+      "time": "5/5/2026, 7:46:40 pm"
+    },
+    {
+      "symbol": "EICHERMOT.NS",
+      "price": 7301.5,
+      "open": 7325,
+      "high": 7345,
+      "low": 7213.5,
+      "volume": 482486,
+      "time": "5/5/2026, 7:46:40 pm"
+    },
+    {
+      "symbol": "BAJAJ-AUTO.NS",
+      "price": 10046,
+      "open": 10131,
+      "high": 10175,
+      "low": 10016,
+      "volume": 233403,
+      "time": "5/5/2026, 7:46:40 pm"
+    },
+    {
+      "symbol": "HEROMOTOCO.NS",
+      "price": 5109,
+      "open": 5060,
+      "high": 5135,
+      "low": 5018,
+      "volume": 573382,
+      "time": "5/5/2026, 7:46:41 pm"
+    },
+    {
+      "symbol": "TVSMOTOR.NS",
+      "price": 3534.4,
+      "open": 3499.9,
+      "high": 3544,
+      "low": 3462.8,
+      "volume": 391329,
+      "time": "5/5/2026, 7:46:41 pm"
+    },
+    {
+      "symbol": "ASHOKLEY.NS",
+      "price": 160.25,
+      "open": 160,
+      "high": 161.66,
+      "low": 158.59,
+      "volume": 12569752,
+      "time": "5/5/2026, 7:46:41 pm"
+    },
+    {
+      "symbol": "MPHASIS.NS",
+      "price": 2209.8,
+      "open": 2276.1,
+      "high": 2298.2,
+      "low": 2194.6,
+      "volume": 565449,
+      "time": "5/5/2026, 7:46:41 pm"
+    },
+    {
+      "symbol": "PERSISTENT.NS",
+      "price": 4816.3,
+      "open": 4770,
+      "high": 4858.7,
+      "low": 4743.1,
+      "volume": 499602,
+      "time": "5/5/2026, 7:46:41 pm"
+    },
+    {
+      "symbol": "COFORGE.NS",
+      "price": 1168.8,
+      "open": 1166,
+      "high": 1181.3,
+      "low": 1147.5,
+      "volume": 1607004,
+      "time": "5/5/2026, 7:46:41 pm"
+    },
+    {
+      "symbol": "OFSS.NS",
+      "price": 9707,
+      "open": 9770,
+      "high": 9860,
+      "low": 9654.5,
+      "volume": 245355,
+      "time": "5/5/2026, 7:46:41 pm"
+    },
+    {
+      "symbol": "GAIL.NS",
+      "price": 163.7,
+      "open": 164.8,
+      "high": 165.8,
+      "low": 162.5,
+      "volume": 14542881,
+      "time": "5/5/2026, 7:46:41 pm"
+    },
+    {
+      "symbol": "IOC.NS",
+      "price": 142.14,
+      "open": 142,
+      "high": 142.62,
+      "low": 140.5,
+      "volume": 8412487,
+      "time": "5/5/2026, 7:46:42 pm"
+    },
+    {
+      "symbol": "BPCL.NS",
+      "price": 298.5,
+      "open": 300.25,
+      "high": 300.45,
+      "low": 293.3,
+      "volume": 12433640,
+      "time": "5/5/2026, 7:46:42 pm"
+    },
+    {
+      "symbol": "HINDPETRO.NS",
+      "price": 373.9,
+      "open": 370,
+      "high": 376,
+      "low": 365.4,
+      "volume": 6211921,
+      "time": "5/5/2026, 7:46:42 pm"
+    },
+    {
+      "symbol": "OIL.NS",
+      "price": 476.5,
+      "open": 479.95,
+      "high": 482.4,
+      "low": 463.7,
+      "volume": 4775102,
+      "time": "5/5/2026, 7:46:42 pm"
+    },
+    {
+      "symbol": "NHPC.NS",
+      "price": 83.17,
+      "open": 83.2,
+      "high": 83.68,
+      "low": 82.45,
+      "volume": 8263978,
+      "time": "5/5/2026, 7:46:42 pm"
+    },
+    {
+      "symbol": "SJVN.NS",
+      "price": 79.36,
+      "open": 79.85,
+      "high": 80.59,
+      "low": 79.02,
+      "volume": 2764695,
+      "time": "5/5/2026, 7:46:42 pm"
+    },
+    {
+      "symbol": "IRCTC.NS",
+      "price": 569.1,
+      "open": 555,
+      "high": 581.3,
+      "low": 550.65,
+      "volume": 4973433,
+      "time": "5/5/2026, 7:46:42 pm"
+    },
+    {
+      "symbol": "RVNL.NS",
+      "price": 300.45,
+      "open": 296,
+      "high": 304.6,
+      "low": 295.45,
+      "volume": 7030570,
+      "time": "5/5/2026, 7:46:42 pm"
+    },
+    {
+      "symbol": "IRCON.NS",
+      "price": 158.86,
+      "open": 154,
+      "high": 162.1,
+      "low": 153.13,
+      "volume": 15184183,
+      "time": "5/5/2026, 7:46:43 pm"
+    },
+    {
+      "symbol": "BHEL.NS",
+      "price": 374.95,
+      "open": 379.9,
+      "high": 388.4,
+      "low": 371.3,
+      "volume": 33269243,
+      "time": "5/5/2026, 7:46:43 pm"
+    },
+    {
+      "symbol": "BEL.NS",
+      "price": 433.35,
+      "open": 433.5,
+      "high": 436.5,
+      "low": 429.3,
+      "volume": 11641620,
+      "time": "5/5/2026, 7:46:43 pm"
+    },
+    {
+      "symbol": "HAL.NS",
+      "price": 4610.4,
+      "open": 4559,
+      "high": 4677.5,
+      "low": 4534,
+      "volume": 1476422,
+      "time": "5/5/2026, 7:46:43 pm"
+    },
+    {
+      "symbol": "MAZDOCK.NS",
+      "price": 2633.4,
+      "open": 2615,
+      "high": 2651.4,
+      "low": 2596,
+      "volume": 1757048,
+      "time": "5/5/2026, 7:46:43 pm"
+    },
+    {
+      "symbol": "COCHINSHIP.NS",
+      "price": 1712.2,
+      "open": 1710.9,
+      "high": 1733.8,
+      "low": 1693.8,
+      "volume": 1249040,
+      "time": "5/5/2026, 7:46:43 pm"
+    },
+    {
+      "symbol": "DMART.NS",
+      "price": 4358.7,
+      "open": 4380,
+      "high": 4385.9,
+      "low": 4303,
+      "volume": 318089,
+      "time": "5/5/2026, 7:46:43 pm"
+    },
+    {
+      "symbol": "TRENT.NS",
+      "price": 4135.4,
+      "open": 4150.1,
+      "high": 4158.5,
+      "low": 4075.6,
+      "volume": 465122,
+      "time": "5/5/2026, 7:46:43 pm"
+    },
+    {
+      "symbol": "VBL.NS",
+      "price": 511.7,
+      "open": 503.95,
+      "high": 513,
+      "low": 499.8,
+      "volume": 4854532,
+      "time": "5/5/2026, 7:46:43 pm"
+    },
+    {
+      "symbol": "DABUR.NS",
+      "price": 460.55,
+      "open": 446.8,
+      "high": 462.2,
+      "low": 445.85,
+      "volume": 2742847,
+      "time": "5/5/2026, 7:46:44 pm"
+    },
+    {
+      "symbol": "MARICO.NS",
+      "price": 807.2,
+      "open": 789.05,
+      "high": 810.5,
+      "low": 760.6,
+      "volume": 5184585,
+      "time": "5/5/2026, 7:46:44 pm"
+    },
+    {
+      "symbol": "ACC.NS",
+      "price": 1392.6,
+      "open": 1396.1,
+      "high": 1396.1,
+      "low": 1375.1,
+      "volume": 316018,
+      "time": "5/5/2026, 7:46:44 pm"
+    },
+    {
+      "symbol": "SHREECEM.NS",
+      "price": 24845,
+      "open": 24600,
+      "high": 24990,
+      "low": 24405,
+      "volume": 19536,
+      "time": "5/5/2026, 7:46:44 pm"
+    },
+    {
+      "symbol": "SAIL.NS",
+      "price": 187.31,
+      "open": 185.8,
+      "high": 188.83,
+      "low": 185.02,
+      "volume": 15578324,
+      "time": "5/5/2026, 7:46:44 pm"
+    },
+    {
+      "symbol": "NMDC.NS",
+      "price": 88.83,
+      "open": 89,
+      "high": 89.64,
+      "low": 87.96,
+      "volume": 12333893,
+      "time": "5/5/2026, 7:46:44 pm"
+    },
+    {
+      "symbol": "VEDL.NS",
+      "price": 303.9,
+      "open": 296.95,
+      "high": 305.9,
+      "low": 292,
+      "volume": 69516182,
+      "time": "5/5/2026, 7:46:44 pm"
+    },
+    {
+      "symbol": "SUZLON.NS",
+      "price": 54.85,
+      "open": 54.95,
+      "high": 56,
+      "low": 54.56,
+      "volume": 71803199,
+      "time": "5/5/2026, 7:46:44 pm"
+    },
+    {
+      "symbol": "IDEA.NS",
+      "price": 10.8,
+      "open": 10.52,
+      "high": 11.32,
+      "low": 10.5,
+      "volume": 808204179,
+      "time": "5/5/2026, 7:46:44 pm"
+    },
+    {
+      "symbol": "PAYTM.NS",
+      "price": 1088,
+      "open": 1111.6,
+      "high": 1121.9,
+      "low": 1075.1,
+      "volume": 1742069,
+      "time": "5/5/2026, 7:46:45 pm"
+    },
+    {
+      "symbol": "NYKAA.NS",
+      "price": 270,
+      "open": 264.85,
+      "high": 271.5,
+      "low": 263.25,
+      "volume": 2388594,
+      "time": "5/5/2026, 7:46:45 pm"
+    },
+    {
+      "symbol": "BSE.NS",
+      "price": 3726.2,
+      "open": 3712,
+      "high": 3790,
+      "low": 3691,
+      "volume": 3120371,
+      "time": "5/5/2026, 7:46:45 pm"
+    },
+    {
+      "symbol": "CDSL.NS",
+      "price": 1254.7,
+      "open": 1230,
+      "high": 1262.8,
+      "low": 1222.1,
+      "volume": 2522199,
+      "time": "5/5/2026, 7:46:45 pm"
     }
   ]
 }
