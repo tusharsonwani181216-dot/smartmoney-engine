@@ -1,5 +1,5 @@
 {
-  "updated": 1777991027489,
+  "updated": 1777991318057,
   "stocks": [
     {
       "symbol": "RELIANCE.NS",
@@ -13,8 +13,8 @@
       "volume": 23541837,
       "changePercent": 0.034174014,
       "rsi": 58,
-      "score": 51,
-      "time": "5/5/2026, 7:53:38 pm"
+      "score": 54,
+      "time": "5/5/2026, 7:58:26 pm"
     },
     {
       "symbol": "TCS.NS",
@@ -28,8 +28,8 @@
       "volume": 3385505,
       "changePercent": -0.16452104,
       "rsi": 58,
-      "score": 67,
-      "time": "5/5/2026, 7:53:38 pm"
+      "score": 60,
+      "time": "5/5/2026, 7:58:26 pm"
     },
     {
       "symbol": "INFY.NS",
@@ -43,8 +43,8 @@
       "volume": 8163102,
       "changePercent": 0.8301909,
       "rsi": 58,
-      "score": 58,
-      "time": "5/5/2026, 7:53:38 pm"
+      "score": 54,
+      "time": "5/5/2026, 7:58:27 pm"
     },
     {
       "symbol": "HDFCBANK.NS",
@@ -58,8 +58,8 @@
       "volume": 38885326,
       "changePercent": -0.9109618,
       "rsi": 58,
-      "score": 54,
-      "time": "5/5/2026, 7:53:38 pm"
+      "score": 71,
+      "time": "5/5/2026, 7:58:27 pm"
     },
     {
       "symbol": "ICICIBANK.NS",
@@ -73,8 +73,8 @@
       "volume": 24446141,
       "changePercent": -1.5344665,
       "rsi": 58,
-      "score": 55,
-      "time": "5/5/2026, 7:53:38 pm"
+      "score": 52,
+      "time": "5/5/2026, 7:58:27 pm"
     },
     {
       "symbol": "SBIN.NS",
@@ -88,8 +88,8 @@
       "volume": 12192613,
       "changePercent": -0.7955821,
       "rsi": 58,
-      "score": 62,
-      "time": "5/5/2026, 7:53:38 pm"
+      "score": 55,
+      "time": "5/5/2026, 7:58:27 pm"
     },
     {
       "symbol": "BHARTIARTL.NS",
@@ -103,8 +103,8 @@
       "volume": 11407135,
       "changePercent": -1.1493624,
       "rsi": 58,
-      "score": 66,
-      "time": "5/5/2026, 7:53:38 pm"
+      "score": 59,
+      "time": "5/5/2026, 7:58:27 pm"
     },
     {
       "symbol": "ITC.NS",
@@ -118,8 +118,8 @@
       "volume": 26793325,
       "changePercent": 0.11250598,
       "rsi": 58,
-      "score": 64,
-      "time": "5/5/2026, 7:53:38 pm"
+      "score": 48,
+      "time": "5/5/2026, 7:58:27 pm"
     },
     {
       "symbol": "LT.NS",
@@ -133,8 +133,8 @@
       "volume": 3849158,
       "changePercent": -1.1290433,
       "rsi": 58,
-      "score": 55,
-      "time": "5/5/2026, 7:53:39 pm"
+      "score": 67,
+      "time": "5/5/2026, 7:58:28 pm"
     },
     {
       "symbol": "AXISBANK.NS",
@@ -148,8 +148,8 @@
       "volume": 10162874,
       "changePercent": -1.2077504,
       "rsi": 58,
-      "score": 67,
-      "time": "5/5/2026, 7:53:39 pm"
+      "score": 69,
+      "time": "5/5/2026, 7:58:28 pm"
     },
     {
       "symbol": "KOTAKBANK.NS",
@@ -163,8 +163,8 @@
       "volume": 19082760,
       "changePercent": -0.080717824,
       "rsi": 58,
-      "score": 56,
-      "time": "5/5/2026, 7:53:39 pm"
+      "score": 60,
+      "time": "5/5/2026, 7:58:28 pm"
     },
     {
       "symbol": "WIPRO.NS",
@@ -178,8 +178,8 @@
       "volume": 8875512,
       "changePercent": -0.48318863,
       "rsi": 58,
-      "score": 65,
-      "time": "5/5/2026, 7:53:39 pm"
+      "score": 70,
+      "time": "5/5/2026, 7:58:28 pm"
     },
     {
       "symbol": "TECHM.NS",
@@ -193,8 +193,8 @@
       "volume": 711047,
       "changePercent": -1.3182948,
       "rsi": 58,
-      "score": 70,
-      "time": "5/5/2026, 7:53:39 pm"
+      "score": 54,
+      "time": "5/5/2026, 7:58:28 pm"
     },
     {
       "symbol": "SUNPHARMA.NS",
@@ -208,8 +208,8 @@
       "volume": 3011325,
       "changePercent": -0.14806423,
       "rsi": 58,
-      "score": 58,
-      "time": "5/5/2026, 7:53:39 pm"
+      "score": 57,
+      "time": "5/5/2026, 7:58:28 pm"
     },
     {
       "symbol": "TITAN.NS",
@@ -223,8 +223,8 @@
       "volume": 850704,
       "changePercent": 0.24295433,
       "rsi": 58,
-      "score": 54,
-      "time": "5/5/2026, 7:53:39 pm"
+      "score": 71,
+      "time": "5/5/2026, 7:58:28 pm"
     },
     {
       "symbol": "ULTRACEMCO.NS",
@@ -238,8 +238,8 @@
       "volume": 350024,
       "changePercent": 1.7434938,
       "rsi": 58,
-      "score": 57,
-      "time": "5/5/2026, 7:53:39 pm"
+      "score": 50,
+      "time": "5/5/2026, 7:58:29 pm"
     },
     {
       "symbol": "MARUTI.NS",
@@ -253,8 +253,8 @@
       "volume": 419485,
       "changePercent": -1.1340207,
       "rsi": 58,
-      "score": 58,
-      "time": "5/5/2026, 7:53:39 pm"
+      "score": 63,
+      "time": "5/5/2026, 7:58:29 pm"
     },
     {
       "symbol": "POWERGRID.NS",
@@ -268,8 +268,8 @@
       "volume": 8569361,
       "changePercent": 0.12537986,
       "rsi": 58,
-      "score": 70,
-      "time": "5/5/2026, 7:53:40 pm"
+      "score": 64,
+      "time": "5/5/2026, 7:58:29 pm"
     },
     {
       "symbol": "NTPC.NS",
@@ -283,8 +283,8 @@
       "volume": 6790575,
       "changePercent": -0.34995475,
       "rsi": 58,
-      "score": 55,
-      "time": "5/5/2026, 7:53:40 pm"
+      "score": 56,
+      "time": "5/5/2026, 7:58:29 pm"
     },
     {
       "symbol": "ONGC.NS",
@@ -298,8 +298,8 @@
       "volume": 10749508,
       "changePercent": -1.0071634,
       "rsi": 58,
-      "score": 68,
-      "time": "5/5/2026, 7:53:40 pm"
+      "score": 50,
+      "time": "5/5/2026, 7:58:29 pm"
     },
     {
       "symbol": "TATASTEEL.NS",
@@ -313,8 +313,8 @@
       "volume": 20730945,
       "changePercent": -0.43347067,
       "rsi": 58,
-      "score": 58,
-      "time": "5/5/2026, 7:53:40 pm"
+      "score": 67,
+      "time": "5/5/2026, 7:58:29 pm"
     },
     {
       "symbol": "COALINDIA.NS",
@@ -329,7 +329,7 @@
       "changePercent": -1.5314108,
       "rsi": 58,
       "score": 52,
-      "time": "5/5/2026, 7:53:40 pm"
+      "time": "5/5/2026, 7:58:29 pm"
     },
     {
       "symbol": "JSWSTEEL.NS",
@@ -343,8 +343,8 @@
       "volume": 1471595,
       "changePercent": -1.1211078,
       "rsi": 58,
-      "score": 70,
-      "time": "5/5/2026, 7:53:40 pm"
+      "score": 67,
+      "time": "5/5/2026, 7:58:29 pm"
     },
     {
       "symbol": "HINDALCO.NS",
@@ -358,8 +358,8 @@
       "volume": 4580446,
       "changePercent": 1.1508584,
       "rsi": 58,
-      "score": 66,
-      "time": "5/5/2026, 7:53:40 pm"
+      "score": 53,
+      "time": "5/5/2026, 7:58:29 pm"
     },
     {
       "symbol": "ADANIENT.NS",
@@ -373,8 +373,8 @@
       "volume": 1622183,
       "changePercent": -0.9534518,
       "rsi": 58,
-      "score": 61,
-      "time": "5/5/2026, 7:53:40 pm"
+      "score": 69,
+      "time": "5/5/2026, 7:58:30 pm"
     },
     {
       "symbol": "ADANIPORTS.NS",
@@ -388,8 +388,8 @@
       "volume": 4356531,
       "changePercent": -1.0099837,
       "rsi": 58,
-      "score": 52,
-      "time": "5/5/2026, 7:53:41 pm"
+      "score": 61,
+      "time": "5/5/2026, 7:58:30 pm"
     },
     {
       "symbol": "M&M.NS",
@@ -403,8 +403,8 @@
       "volume": 6453356,
       "changePercent": 3.357478,
       "rsi": 58,
-      "score": 63,
-      "time": "5/5/2026, 7:53:41 pm"
+      "score": 52,
+      "time": "5/5/2026, 7:58:30 pm"
     },
     {
       "symbol": "BAJFINANCE.NS",
@@ -418,8 +418,8 @@
       "volume": 7289382,
       "changePercent": 0.8840205,
       "rsi": 58,
-      "score": 62,
-      "time": "5/5/2026, 7:53:41 pm"
+      "score": 69,
+      "time": "5/5/2026, 7:58:30 pm"
     },
     {
       "symbol": "HCLTECH.NS",
@@ -433,8 +433,8 @@
       "volume": 2459326,
       "changePercent": -0.024993654,
       "rsi": 58,
-      "score": 50,
-      "time": "5/5/2026, 7:53:41 pm"
+      "score": 54,
+      "time": "5/5/2026, 7:58:30 pm"
     },
     {
       "symbol": "CIPLA.NS",
@@ -448,8 +448,8 @@
       "volume": 1051012,
       "changePercent": -0.097381935,
       "rsi": 58,
-      "score": 55,
-      "time": "5/5/2026, 7:53:41 pm"
+      "score": 50,
+      "time": "5/5/2026, 7:58:30 pm"
     },
     {
       "symbol": "DRREDDY.NS",
@@ -463,8 +463,8 @@
       "volume": 986256,
       "changePercent": -1.2430081,
       "rsi": 58,
-      "score": 54,
-      "time": "5/5/2026, 7:53:41 pm"
+      "score": 64,
+      "time": "5/5/2026, 7:58:30 pm"
     },
     {
       "symbol": "LUPIN.NS",
@@ -478,8 +478,8 @@
       "volume": 1418756,
       "changePercent": -0.2341621,
       "rsi": 58,
-      "score": 58,
-      "time": "5/5/2026, 7:53:41 pm"
+      "score": 59,
+      "time": "5/5/2026, 7:58:30 pm"
     },
     {
       "symbol": "AUROPHARMA.NS",
@@ -494,7 +494,7 @@
       "changePercent": 3.7863355,
       "rsi": 58,
       "score": 57,
-      "time": "5/5/2026, 7:53:41 pm"
+      "time": "5/5/2026, 7:58:30 pm"
     },
     {
       "symbol": "TORNTPHARM.NS",
@@ -508,8 +508,8 @@
       "volume": 162267,
       "changePercent": 0.5480101,
       "rsi": 58,
-      "score": 60,
-      "time": "5/5/2026, 7:53:41 pm"
+      "score": 50,
+      "time": "5/5/2026, 7:58:31 pm"
     },
     {
       "symbol": "BANKBARODA.NS",
@@ -523,8 +523,8 @@
       "volume": 6129715,
       "changePercent": -0.641272,
       "rsi": 58,
-      "score": 68,
-      "time": "5/5/2026, 7:53:42 pm"
+      "score": 54,
+      "time": "5/5/2026, 7:58:31 pm"
     },
     {
       "symbol": "PNB.NS",
@@ -538,8 +538,8 @@
       "volume": 57258947,
       "changePercent": -0.7269055,
       "rsi": 58,
-      "score": 59,
-      "time": "5/5/2026, 7:53:42 pm"
+      "score": 70,
+      "time": "5/5/2026, 7:58:31 pm"
     },
     {
       "symbol": "CANBK.NS",
@@ -554,7 +554,7 @@
       "changePercent": -0.36350557,
       "rsi": 58,
       "score": 61,
-      "time": "5/5/2026, 7:53:42 pm"
+      "time": "5/5/2026, 7:58:31 pm"
     },
     {
       "symbol": "FEDERALBNK.NS",
@@ -568,8 +568,8 @@
       "volume": 5868359,
       "changePercent": 1.1931566,
       "rsi": 58,
-      "score": 52,
-      "time": "5/5/2026, 7:53:42 pm"
+      "score": 51,
+      "time": "5/5/2026, 7:58:31 pm"
     },
     {
       "symbol": "IDFCFIRSTB.NS",
@@ -583,8 +583,8 @@
       "volume": 15312282,
       "changePercent": -1.2070647,
       "rsi": 58,
-      "score": 52,
-      "time": "5/5/2026, 7:53:42 pm"
+      "score": 61,
+      "time": "5/5/2026, 7:58:31 pm"
     },
     {
       "symbol": "EICHERMOT.NS",
@@ -598,8 +598,8 @@
       "volume": 482486,
       "changePercent": -0.37522173,
       "rsi": 58,
-      "score": 57,
-      "time": "5/5/2026, 7:53:42 pm"
+      "score": 70,
+      "time": "5/5/2026, 7:58:31 pm"
     },
     {
       "symbol": "BAJAJ-AUTO.NS",
@@ -613,8 +613,8 @@
       "volume": 233403,
       "changePercent": -0.84879595,
       "rsi": 58,
-      "score": 70,
-      "time": "5/5/2026, 7:53:42 pm"
+      "score": 49,
+      "time": "5/5/2026, 7:58:32 pm"
     },
     {
       "symbol": "HEROMOTOCO.NS",
@@ -628,8 +628,8 @@
       "volume": 573382,
       "changePercent": 0.83884335,
       "rsi": 58,
-      "score": 64,
-      "time": "5/5/2026, 7:53:42 pm"
+      "score": 58,
+      "time": "5/5/2026, 7:58:32 pm"
     },
     {
       "symbol": "TVSMOTOR.NS",
@@ -643,8 +643,8 @@
       "volume": 391329,
       "changePercent": 1.1128566,
       "rsi": 58,
-      "score": 70,
-      "time": "5/5/2026, 7:53:42 pm"
+      "score": 66,
+      "time": "5/5/2026, 7:58:32 pm"
     },
     {
       "symbol": "ASHOKLEY.NS",
@@ -658,8 +658,8 @@
       "volume": 12569752,
       "changePercent": -0.32344607,
       "rsi": 58,
-      "score": 58,
-      "time": "5/5/2026, 7:53:43 pm"
+      "score": 67,
+      "time": "5/5/2026, 7:58:32 pm"
     },
     {
       "symbol": "MPHASIS.NS",
@@ -673,8 +673,8 @@
       "volume": 565449,
       "changePercent": -2.9342022,
       "rsi": 58,
-      "score": 67,
-      "time": "5/5/2026, 7:53:43 pm"
+      "score": 72,
+      "time": "5/5/2026, 7:58:32 pm"
     },
     {
       "symbol": "PERSISTENT.NS",
@@ -688,8 +688,8 @@
       "volume": 499602,
       "changePercent": 0.58895403,
       "rsi": 58,
-      "score": 55,
-      "time": "5/5/2026, 7:53:43 pm"
+      "score": 64,
+      "time": "5/5/2026, 7:58:32 pm"
     },
     {
       "symbol": "COFORGE.NS",
@@ -703,8 +703,8 @@
       "volume": 1607004,
       "changePercent": 1.4935806,
       "rsi": 58,
-      "score": 68,
-      "time": "5/5/2026, 7:53:43 pm"
+      "score": 62,
+      "time": "5/5/2026, 7:58:33 pm"
     },
     {
       "symbol": "OFSS.NS",
@@ -718,8 +718,8 @@
       "volume": 245355,
       "changePercent": -0.2363823,
       "rsi": 58,
-      "score": 51,
-      "time": "5/5/2026, 7:53:43 pm"
+      "score": 50,
+      "time": "5/5/2026, 7:58:33 pm"
     },
     {
       "symbol": "GAIL.NS",
@@ -733,8 +733,8 @@
       "volume": 14542881,
       "changePercent": -0.47422108,
       "rsi": 58,
-      "score": 58,
-      "time": "5/5/2026, 7:53:43 pm"
+      "score": 66,
+      "time": "5/5/2026, 7:58:33 pm"
     },
     {
       "symbol": "IOC.NS",
@@ -748,8 +748,8 @@
       "volume": 8412487,
       "changePercent": -0.08434916,
       "rsi": 58,
-      "score": 58,
-      "time": "5/5/2026, 7:53:43 pm"
+      "score": 59,
+      "time": "5/5/2026, 7:58:33 pm"
     },
     {
       "symbol": "BPCL.NS",
@@ -763,8 +763,8 @@
       "volume": 12433640,
       "changePercent": -1.0606602,
       "rsi": 58,
-      "score": 69,
-      "time": "5/5/2026, 7:53:44 pm"
+      "score": 66,
+      "time": "5/5/2026, 7:58:33 pm"
     },
     {
       "symbol": "HINDPETRO.NS",
@@ -778,8 +778,8 @@
       "volume": 6211921,
       "changePercent": 0.013371083,
       "rsi": 58,
-      "score": 52,
-      "time": "5/5/2026, 7:53:44 pm"
+      "score": 61,
+      "time": "5/5/2026, 7:58:33 pm"
     },
     {
       "symbol": "OIL.NS",
@@ -793,8 +793,8 @@
       "volume": 4775102,
       "changePercent": 0.2946735,
       "rsi": 58,
-      "score": 55,
-      "time": "5/5/2026, 7:53:44 pm"
+      "score": 62,
+      "time": "5/5/2026, 7:58:33 pm"
     },
     {
       "symbol": "NHPC.NS",
@@ -809,7 +809,7 @@
       "changePercent": -0.13208526,
       "rsi": 58,
       "score": 58,
-      "time": "5/5/2026, 7:53:44 pm"
+      "time": "5/5/2026, 7:58:34 pm"
     },
     {
       "symbol": "SJVN.NS",
@@ -823,8 +823,8 @@
       "volume": 2764695,
       "changePercent": -0.62609565,
       "rsi": 58,
-      "score": 49,
-      "time": "5/5/2026, 7:53:44 pm"
+      "score": 61,
+      "time": "5/5/2026, 7:58:34 pm"
     },
     {
       "symbol": "IRCTC.NS",
@@ -838,8 +838,8 @@
       "volume": 4973433,
       "changePercent": 2.4943676,
       "rsi": 58,
-      "score": 66,
-      "time": "5/5/2026, 7:53:44 pm"
+      "score": 72,
+      "time": "5/5/2026, 7:58:34 pm"
     },
     {
       "symbol": "RVNL.NS",
@@ -853,8 +853,8 @@
       "volume": 7030570,
       "changePercent": 1.280977,
       "rsi": 58,
-      "score": 72,
-      "time": "5/5/2026, 7:53:44 pm"
+      "score": 49,
+      "time": "5/5/2026, 7:58:34 pm"
     },
     {
       "symbol": "IRCON.NS",
@@ -868,8 +868,8 @@
       "volume": 15184183,
       "changePercent": 3.209461,
       "rsi": 58,
-      "score": 69,
-      "time": "5/5/2026, 7:53:44 pm"
+      "score": 56,
+      "time": "5/5/2026, 7:58:34 pm"
     },
     {
       "symbol": "BHEL.NS",
@@ -883,8 +883,8 @@
       "volume": 33269243,
       "changePercent": -0.5569489,
       "rsi": 58,
-      "score": 64,
-      "time": "5/5/2026, 7:53:44 pm"
+      "score": 57,
+      "time": "5/5/2026, 7:58:34 pm"
     },
     {
       "symbol": "BEL.NS",
@@ -898,8 +898,8 @@
       "volume": 11641620,
       "changePercent": -0.04612656,
       "rsi": 58,
-      "score": 64,
-      "time": "5/5/2026, 7:53:45 pm"
+      "score": 59,
+      "time": "5/5/2026, 7:58:34 pm"
     },
     {
       "symbol": "HAL.NS",
@@ -913,8 +913,8 @@
       "volume": 1476422,
       "changePercent": 1.1163484,
       "rsi": 58,
-      "score": 50,
-      "time": "5/5/2026, 7:53:45 pm"
+      "score": 59,
+      "time": "5/5/2026, 7:58:34 pm"
     },
     {
       "symbol": "MAZDOCK.NS",
@@ -928,8 +928,8 @@
       "volume": 1757048,
       "changePercent": 0.8347298,
       "rsi": 58,
-      "score": 57,
-      "time": "5/5/2026, 7:53:45 pm"
+      "score": 52,
+      "time": "5/5/2026, 7:58:35 pm"
     },
     {
       "symbol": "COCHINSHIP.NS",
@@ -943,8 +943,8 @@
       "volume": 1249040,
       "changePercent": -0.41296446,
       "rsi": 58,
-      "score": 59,
-      "time": "5/5/2026, 7:53:45 pm"
+      "score": 65,
+      "time": "5/5/2026, 7:58:35 pm"
     },
     {
       "symbol": "DMART.NS",
@@ -958,8 +958,8 @@
       "volume": 318089,
       "changePercent": -0.40671322,
       "rsi": 58,
-      "score": 71,
-      "time": "5/5/2026, 7:53:45 pm"
+      "score": 58,
+      "time": "5/5/2026, 7:58:35 pm"
     },
     {
       "symbol": "TRENT.NS",
@@ -973,8 +973,8 @@
       "volume": 465122,
       "changePercent": -0.55549115,
       "rsi": 58,
-      "score": 70,
-      "time": "5/5/2026, 7:53:45 pm"
+      "score": 58,
+      "time": "5/5/2026, 7:58:35 pm"
     },
     {
       "symbol": "VBL.NS",
@@ -988,8 +988,8 @@
       "volume": 4854532,
       "changePercent": 0.97681546,
       "rsi": 58,
-      "score": 52,
-      "time": "5/5/2026, 7:53:45 pm"
+      "score": 55,
+      "time": "5/5/2026, 7:58:35 pm"
     },
     {
       "symbol": "DABUR.NS",
@@ -1003,8 +1003,8 @@
       "volume": 2742847,
       "changePercent": 3.3434298,
       "rsi": 58,
-      "score": 54,
-      "time": "5/5/2026, 7:53:45 pm"
+      "score": 52,
+      "time": "5/5/2026, 7:58:35 pm"
     },
     {
       "symbol": "MARICO.NS",
@@ -1018,8 +1018,8 @@
       "volume": 5184585,
       "changePercent": 2.8870084,
       "rsi": 58,
-      "score": 65,
-      "time": "5/5/2026, 7:53:46 pm"
+      "score": 58,
+      "time": "5/5/2026, 7:58:36 pm"
     },
     {
       "symbol": "ACC.NS",
@@ -1034,7 +1034,7 @@
       "changePercent": -0.40051323,
       "rsi": 58,
       "score": 68,
-      "time": "5/5/2026, 7:53:46 pm"
+      "time": "5/5/2026, 7:58:36 pm"
     },
     {
       "symbol": "SHREECEM.NS",
@@ -1048,8 +1048,8 @@
       "volume": 19536,
       "changePercent": 0.4244139,
       "rsi": 58,
-      "score": 60,
-      "time": "5/5/2026, 7:53:46 pm"
+      "score": 53,
+      "time": "5/5/2026, 7:58:36 pm"
     },
     {
       "symbol": "SAIL.NS",
@@ -1063,8 +1063,8 @@
       "volume": 15578324,
       "changePercent": 0.62315536,
       "rsi": 58,
-      "score": 61,
-      "time": "5/5/2026, 7:53:46 pm"
+      "score": 48,
+      "time": "5/5/2026, 7:58:36 pm"
     },
     {
       "symbol": "NMDC.NS",
@@ -1078,8 +1078,8 @@
       "volume": 12333893,
       "changePercent": -0.29183355,
       "rsi": 58,
-      "score": 58,
-      "time": "5/5/2026, 7:53:46 pm"
+      "score": 53,
+      "time": "5/5/2026, 7:58:36 pm"
     },
     {
       "symbol": "VEDL.NS",
@@ -1093,8 +1093,8 @@
       "volume": 69516182,
       "changePercent": 3.1393178,
       "rsi": 58,
-      "score": 50,
-      "time": "5/5/2026, 7:53:46 pm"
+      "score": 54,
+      "time": "5/5/2026, 7:58:36 pm"
     },
     {
       "symbol": "SUZLON.NS",
@@ -1108,8 +1108,8 @@
       "volume": 71803199,
       "changePercent": -0.20014668,
       "rsi": 58,
-      "score": 56,
-      "time": "5/5/2026, 7:53:46 pm"
+      "score": 49,
+      "time": "5/5/2026, 7:58:37 pm"
     },
     {
       "symbol": "IDEA.NS",
@@ -1123,8 +1123,8 @@
       "volume": 808204179,
       "changePercent": 2.6615944,
       "rsi": 58,
-      "score": 52,
-      "time": "5/5/2026, 7:53:47 pm"
+      "score": 48,
+      "time": "5/5/2026, 7:58:37 pm"
     },
     {
       "symbol": "PAYTM.NS",
@@ -1138,8 +1138,8 @@
       "volume": 1742069,
       "changePercent": -2.4914901,
       "rsi": 58,
-      "score": 57,
-      "time": "5/5/2026, 7:53:47 pm"
+      "score": 68,
+      "time": "5/5/2026, 7:58:37 pm"
     },
     {
       "symbol": "NYKAA.NS",
@@ -1153,8 +1153,8 @@
       "volume": 2388594,
       "changePercent": 1.9444946,
       "rsi": 58,
-      "score": 71,
-      "time": "5/5/2026, 7:53:47 pm"
+      "score": 55,
+      "time": "5/5/2026, 7:58:37 pm"
     },
     {
       "symbol": "BSE.NS",
@@ -1168,8 +1168,8 @@
       "volume": 3120371,
       "changePercent": 0.40147394,
       "rsi": 58,
-      "score": 70,
-      "time": "5/5/2026, 7:53:47 pm"
+      "score": 66,
+      "time": "5/5/2026, 7:58:37 pm"
     },
     {
       "symbol": "CDSL.NS",
@@ -1183,8 +1183,8 @@
       "volume": 2522199,
       "changePercent": 1.3243884,
       "rsi": 58,
-      "score": 48,
-      "time": "5/5/2026, 7:53:47 pm"
+      "score": 58,
+      "time": "5/5/2026, 7:58:38 pm"
     }
   ]
 }
