@@ -42,16 +42,41 @@ async function loadMarket() {
 
         const q = await yahooFinance.quote(symbol);
 
-        stocks.push({
-          symbol,
-          price: q.regularMarketPrice || 0,
-          open: q.regularMarketOpen || 0,
-          high: q.regularMarketDayHigh || 0,
-          low: q.regularMarketDayLow || 0,
-          volume: q.regularMarketVolume || 0,
-          time: new Date().toLocaleString("en-IN")
-        });
+       stocks.push({
+  symbol,
 
+  name: symbol.replace(".NS",""),
+
+  price: q.regularMarketPrice || 0,
+
+  close: q.regularMarketPreviousClose || q.regularMarketPrice || 0,
+
+  open: q.regularMarketOpen || 0,
+
+  high: q.regularMarketDayHigh || 0,
+
+  low: q.regularMarketDayLow || 0,
+
+  vwap:
+    (
+      (
+        (q.regularMarketDayHigh || 0) +
+        (q.regularMarketDayLow || 0) +
+        (q.regularMarketPrice || 0)
+      ) / 3
+    ).toFixed(2),
+
+  volume: q.regularMarketVolume || 0,
+
+  changePercent:
+    q.regularMarketChangePercent || 0,
+
+  rsi: 58,
+
+  score: Math.floor(Math.random() * 25) + 48,
+
+  time: new Date().toLocaleString("en-IN")
+});
       } catch (e) {
 
         console.log("FAILED:", symbol);
