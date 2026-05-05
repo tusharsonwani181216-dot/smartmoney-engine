@@ -1,7 +1,8 @@
-SmartMoney Dynamic Entry/Exit Ready Build
+READY TO REPLACE
 
-Includes:
-- Real YahooFinance market-fetch.js
-- Dynamic Entry / Stop Loss / Target based on live price
-- Auto refresh every 60 seconds when enabled
-- Server auto-updater patch every 5 minutes
+1. Extract ZIP
+2. Replace market-fetch.js
+3. Run commands.txt commands
+4. Keep CMD running for live updates
+
+Realtime refresh every 5 seconds.
